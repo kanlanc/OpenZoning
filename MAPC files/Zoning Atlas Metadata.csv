@@ -1,0 +1,117 @@
+﻿Name,Field Type,Alias,Details
+ZO_CODE,06_Formula - Final Result,Zone Code,Concatenation of MUNI_ID and ZO_ABBR. 
+MUNI_ID,01_Numerical Input - Bylaw or Ordinance,Municipality ID,"Municipality ID, as assigned by MassGIS."
+MUNI,03_Text - Descriptive,Municipality,Municipality name
+ZO_ABBR,03_Text - Descriptive,Zone Abbreviation,"Zoning district abbreviation, as it appears in the municipality's zoning by-law."
+ZO_NAME,03_Text - Descriptive,Zone Name,"Zoning district name, as it appears in the municipality's zoning by-law."
+ZO_USETY,01_Numerical Input - Bylaw or Ordinance,Zone Use Type,"0 - No Zone
+1 - Residential
+2 - Non-Residential
+3 - Mixed Use (Residential and Non-Residential)
+4 - Other (Open space, etc.)"
+ZO_USEDE,03_Text - Descriptive,Zone Use Description,A basic text description of the types of permitted uses allowed in a given district for a set of unique dimensional requirements.
+MULFAM2,01_Numerical Input - Bylaw or Ordinance,Multifamily (2 units),"Is multifamily housing allowed?
+0 - No
+1 - By special permit
+2 - By right"
+MULFAM3_4,04_Text - Explanatory,Multifamily (3 - 4 units),"Is multifamily housing allowed?
+0 - No
+1 - By special permit
+2 - By right"
+MF_NOTES,04_Text - Explanatory,Multifamily Notes,Notes for multifamily fields
+MULFAM5_19,,Multifamily (5 - 19 units),"Is multifamily housing allowed?
+0 - No
+1 - By special permit
+2 - By right"
+MULFAM20_,,Multifamily (20+ units),"Is multifamily housing allowed?
+0 - No
+1 - By special permit
+2 - By right"
+MINLOTSIZE,01_Numerical Input - Bylaw or Ordinance,Minimum Lot Size (SF),"Minimum lot size in square feet, as it appears in the zoning by-law for the highest density use."
+MNLS_SPEC,03_Text - Descriptive,Minimum Lot Size Specification,"'-999 - This dimensional regulation is referenced in the zoning code but the maximum (or minimum) value is specified with a formula. 
+0 - This dimensional regulation is referenced in the zoning code but a value is not defined.
+999 - This dimensional regulation is not referenced in the zoning code.
+Null - Unknown"
+MNLS_OVE,02_Numerical Input - Other Value,"Minimum Lot Size, Override (SF)","A field to accommodate estimated values for MNLS in cases where the general estimation method does not apply. Estimation notes in MNLS_OVEN.  This value will override all MNLS values, including MINLOTSIZE."
+MNLS_OVEN,04_Text - Explanatory,"Minimum Lot Size, Override Notes",Notes for minimum lot size override
+MNLS_CALC,05_Formula - Estimates,"Minimum Lot Size, Calculated (SF)","If MAXDU and LApDU both exceed 0, this value is equal to MAXDU*LApDU."
+MNLS_EFF,06_Formula - Final Result,"Minimum Lot Size, Effective (SF)","This value is MNLS_OVE where this field is populated, then MINLOTSIZE, then MNLS_EST."
+MNLS_ESVAL,06_Formula - Final Result,"Minimum Lot Size, Estimation Flag",This value is 1 if Minimum Lot Size is estimated and 0 if the Minimum Lot Size is what appears in the municipality's zoning by-law.
+MNLS_NOTES,04_Text - Explanatory,Minimum Lot Size Notes,Notes for minimum lot size
+PCTLOTCOV,01_Numerical Input - Bylaw or Ordinance,Percent Lot Coverage (%),"Percent lot coverage, as it appears in the zoning by-law for the highest density use."
+PLC_SPEC,03_Text - Descriptive,Percent Lot Cover Specification,"'-999 - This dimensional regulation is referenced in the zoning code but the maximum (or minimum) value is specified with a formula. 
+0 - This dimensional regulation is referenced in the zoning code but a value is not defined.
+999 - This dimensional regulation is not referenced in the zoning code.
+Null - Unknown"
+PLC_OVE,02_Numerical Input - Other Value,"Percent Lot Coverage, Override (%)","A field to accommodate estimated values for PLC in cases where the general estimation method does not apply. Estimation notes in PLC_OVEN. This value will override all PLC values, including PERLOTCOV."
+PLC_OVEN,04_Text - Explanatory,"Percent Lot Coverage, Override Notes",Notes for percent lot coverage override
+PLC_CALC,05_Formula - Estimates,"Percent Lot Coverage, Calculated (%)",This value is currently 100%.
+PLC_EFF,06_Formula - Final Result,"Percent Lot Coverage, Effective (%)","This value is PLC_OVE where this field is populated, then PCTLOTCOV, then PLC_ENTRY."
+PLC_ESVAL,06_Formula - Final Result,"Percent Lot Coverage, Estimation Flag",This value is 1 if Percent Lot Coverage is estimated and 0 if the Percent Lot Coverage is what appears in the municipality's zoning by-law.
+PLC_NOTES,04_Text - Explanatory,Percent Lot Coverage Notes,Notes for percent lot coverage
+LApDU,01_Numerical Input - Bylaw or Ordinance,Minimum Lot Area per Dwelling Unit (SF),"Formerly ""DU_DENS"""
+LApDU_SPEC,03_Text - Descriptive,Land Area per Dwelling Unit Specification,"'-999 - This dimensional regulation is referenced in the zoning code but the maximum (or minimum) value is specified with a formula. 
+0 - This dimensional regulation is referenced in the zoning code but a value is not defined.
+999 - This dimensional regulation is not referenced in the zoning code.
+Null - Unknown"
+LApDU_NOTE,04_Text - Explanatory,Minimum Lot Area per Dwelling Unit Notes,Notes for minimum lot area per dwelling unit 
+MAXFLRS,01_Numerical Input - Bylaw or Ordinance,Maximum Building Floors (#),"Maximum building floors, as it appears in the zoning by-law for the highest density use."
+MXFL_SPEC,03_Text - Descriptive,Maximum Building Floors Specification,"'-999 - This dimensional regulation is referenced in the zoning code but the maximum (or minimum) value is specified with a formula. 
+0 - This dimensional regulation is referenced in the zoning code but a value is not defined.
+999 - This dimensional regulation is not referenced in the zoning code.
+Null - Unknown"
+MXFL_CALC,05_Formula - Estimates,"Maximum Floors, Calculated (#)","If MAXHEIGHT is greater than 0, this value is MAXHEIGHT divided by 10, rounded down."
+MXFL_EFF,06_Formula - Final Result,"Maximum Floors, Effective (#)","This value is MAXFLRS where this field is populated, otherwise it is MXFL_CALC."
+MXFL_ESVAL,06_Formula - Final Result,"Maximum Floors, Estimation Flag",This value is 1 if Maximum Floors is estimated and 0 if the Maximum Floors is what appears in the municipality's zoning by-law.
+MAXHEIGHT,01_Numerical Input - Bylaw or Ordinance,Maximum Building Height (F),"Maximum building height in feet, as it appears in the zoning by-law for the highest density use."
+MXHT_SPEC,03_Text - Descriptive,Maximum Height Specification,Awaiting direction on selections from Jessie and Tim. Selections will be consistent for all _SPEC fields.
+MXHT_CALC,05_Formula - Estimates,"Maximum Height, Calculated (F)","If MAXFLRS is greater than 0, this value is MAXFLRS multiplied by 10, rounded down."
+MXHT_EFF,06_Formula - Final Result,"Maximum Height, Effective (F)","This value is MAXHEIGHT where this field is populated, otherwise it is MXHT_CALC."
+MXHT_ESVAL,06_Formula - Final Result,"Maximum Height, Estimation Flag",This value is 1 if Maximum Height is estimated and 0 if the Maximum Height is what appears in the municipality's zoning by-law.
+MXHT_NOTES,04_Text - Explanatory,Maximum Height Notes,
+MAXDU,01_Numerical Input - Bylaw or Ordinance,Maximum Dwelling Units (#),"Maximum dwelling units per lot, as it appears in the zoning by-law for the highest density use."
+MAXDU_SPEC,03_Text - Descriptive,Maximum Dwelling Units Specification,"'-999 - This dimensional regulation is referenced in the zoning code but the maximum (or minimum) value is specified with a formula. 
+0 - This dimensional regulation is referenced in the zoning code but a value is not defined.
+999 - This dimensional regulation is not referenced in the zoning code.
+Null - Unknown"
+MXDU_OVE,02_Numerical Input - Other Value,"Maximum Dwelling Units, Override (#)","A field to accommodate estimated values for MXDU in cases where the general estimation method did not apply. Estimation notes in MXDU_OVEN. This value will override all MXDU values, including MAXDU."
+MXDU_OVEN,04_Text - Explanatory,"Maximum Dwelling Units, Override Notes",
+MXDU_CALC1,05_Formula - Estimates,"Maximum Dwelling Units, Calc. 1 (#)","If LApDU is greater than 0, this value is MINLOTSIZE divided by LApDU, rounded down."
+SFpDU,05_Formula - Estimates,Minimum Square Feet per Dwelling Unit,"This value is currently 1,000. This value is used to calculate MXDU_EST2."
+MXDU_CALC2,05_Formula - Estimates,"Maximum Dwelling Units, Calc. 2 (#)","If MINLOTSIZE, FAR, and SFpDU are all greater than 0, this value is the estimated maximum building square footage (MINLOTSIZE * FAR) divided by the estimated SFpDU, rounded down."
+MXDU_CALC3,05_Formula - Estimates,"Maximum Dwelling Units, Calc. 3 (#)","If MINLOTSIZE, PCTLOTCOV, and MXFL_EFF are all greater than 0, this value is the estimated maximum building square footage (MINLOTSIZE * PCTLOTCOV * MXFL_EFF) divided by the estimated SFpDU, rounded down."
+MXDU_EFF,06_Formula - Final Result,"Maximum Dwelling Units, Effective (#)","This value is MXDU_OVE where this field is populated, then MAXDU, then MXDU_CALC1, then MXDU_CALC2, then MXDU_CALC3."
+MXDU_ESVAL,06_Formula - Final Result,"Maximum Dwelling Units, Estimation Flag",This value is 1 if Maximum Dwelling Units is estimated and 0 if the Maximum Dwelling Units is what appears in the municipality's zoning by-law.
+MXDU_NOTES,04_Text - Explanatory,Maximum Dwelling Units Notes,
+DUpAC,01_Numerical Input - Bylaw or Ordinance,Maximum Dwelling Units per Acre (#),"Maximum dwelling units per acre, as it appears in the zoning by-law for the highest density use."
+DUpAC_SPEC,03_Text - Descriptive,Dwelling Units per Acre Specification,"'-999 - This dimensional regulation is referenced in the zoning code but the maximum (or minimum) value is specified with a formula. 
+0 - This dimensional regulation is referenced in the zoning code but a value is not defined.
+999 - This dimensional regulation is not referenced in the zoning code.
+Null - Unknown"
+DUpAC_OVE,02_Numerical Input - Other Value,"Maximum Dwelling Units per Acre, Override (#)",A field to accommodate estimated values for DUpAC in cases where the general estimation method did not apply. Estimation notes in DUpAC_OVEN.
+DUpAC_OVEN,04_Text - Explanatory,"Maximum Dwelling Units per Acre, Override Notes",
+DUpAC_CALC1,05_Formula - Estimates,"Maximum Dwelling Units per Acre, Calc. 1 (#)","If MAXDU and MINLOTSIZE are both greater than 0, this value is the maximum number of dwelling units on a lot multiplied by the square footage of an acre (MAXDU*43560), divided by the minimum lot size (MINLOTSIZE), and rounded down. "
+DUpAC_CALC2,05_Formula - Estimates,"Maximum Dwelling Units per Acre, Calc. 2 (#)","If FAR and SFpDU are both greater than 0, this value is the maximum FAR multiplied by the square footage of an acre (FAR*43560), divided by the square footage of a dwelling unit (SFpDU)."
+DUpAC_CALC3,05_Formula - Estimates,"Maximum Dwelling Units per Acre, Calc. 3 (#)","If MXDU_EFF and MNLS_EFF are both greater than 0, this value is the maximum number of dwelling units on a lot multiplied by the square footage of an acre (MXDU_EFF*43560), divided by the minimum lot size (MNLS_EFF), and rounded down."
+DUpAC_CALC,05_Formula - Estimates,"Maximum Dwelling Units per Acre, Final Calc.","This value is DUpAC_CALC1 if this value is greater than 0, then DUpAC_CALC2, then DUpAC_CALC3."
+DUpAC_EFF,06_Formula - Final Result,"Maximum Dwelling Units per Acre, Effective (#)","If residential uses are allowed in the zone, this value is DUpAC_OVE where this field is populated, then DUpAC, then DUpAC_CALC1, then DUpAC_CALC2."
+DUpAC_ESVAL,06_Formula - Final Result,"Maximum Dwelling Units per Acre, Estimation Flag",This value is 1 if Maximum Dwelling Units per Acre is estimated and 0 if the Maximum Dwelling Units per Acre is what appears in the municipality's zoning by-law.
+DUpAC_NOTES,04_Text - Explanatory,Maximum Dwelling Units per Acre Notes,
+FAR,01_Numerical Input - Bylaw or Ordinance,Floor-Area Ratio,"Maximum Floor-Area Ratio, as it appears in the zoning by-law for the highest density use."
+FAR_SPEC,03_Text - Descriptive,FAR Specification,"'-999 - This dimensional regulation is referenced in the zoning code but the maximum (or minimum) value is specified with a formula. 
+0 - This dimensional regulation is referenced in the zoning code but a value is not defined.
+999 - This dimensional regulation is not referenced in the zoning code.
+Null - Unknown"
+FAR_OVE,02_Numerical Input - Other Value,"FAR, Override",A field to accommodate estimated values for FAR in cases where the general estimation method did not apply. 
+FAR_OVEN,04_Text - Explanatory,FAR Override Notes,
+FAR_CALC,05_Formula - Estimates,"FAR, Calc. 1","If PLC_EFF and MXFL_EFF are both greater than 0, this value is the maximum lot coverage multiplied by the maximum number of building floors (PLC_EFF * MXFL_EFF), rounded down.
+"
+FAR_EFF,06_Formula - Final Result,"FAR, Effective","If non-residential uses are allowed in the zone, this value is FAR_OVE where this field is populated, then FAR, then FAR_CALC1.
+"
+FAR_ESVAL,06_Formula - Final Result,FAR Estimation Flag,This value is 1 if FAR is estimated and 0 if the FAR is what appears in the municipality's zoning by-law.
+FAR_NOTES,04_Text - Explanatory,FAR Notes,
+CREATEDDATE,07_Metadata,Record Created Date,
+CREATEDBY,07_Metadata,Record Created By,
+EDITDATE,07_Metadata,Record Edited Date,
+EDITEDBY,07_Metadata,Record Edited By,
+SPATIALREC,07_Metadata,Date Spatial Data Received,

@@ -1,0 +1,9 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+*.Rproj
+
+# Large shapefiles from MAPC
+MAPC files/Base Districts/
+MAPC files/Overlay Districts/

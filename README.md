@@ -1,8 +1,8 @@
-# Open Zoning Feed Specifation Project.
+# Open Zoning Feed Specification Project.
 
 The ultimate goal of this project is to develop a data standard for 
 zoning codes so that zoning data can be easily digitized in a machine-
-readable format to allow for multi-jurisdictional analysis and integration
+readable format to allow for multi-jurisdictional analysis and ingestion/integration
 into third-party applications.
 
 ## Precedents and related work

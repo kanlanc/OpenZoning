@@ -1,9 +1,23 @@
 # Open Zoning Feed Specification Project.
 
-The ultimate goal of this project is to develop a data standard for 
+The purpose of this project is to develop a data standard for 
 zoning codes so that zoning data can be easily digitized in a machine-
 readable format to allow for multi-jurisdictional analysis and ingestion/integration
 into third-party applications.
+
+## Mission and vision
+
+Open Zoning’s mission is *to empower the nation with the knowledge of zoning*.
+
+towards the vision of
+
+* a zoning system heavily influenced by and that works directly for the 
+communities it most impacts;
+* a new class of developers with diverse development value systems that enable
+new, community-centered design potentials in the (re)filling of American urban 
+areas; and
+* integrated transportation and housing development at the city, state, and 
+national scales
 
 ## Precedents and related work
 
@@ -17,7 +31,7 @@ The Metropolitan Area Planning Council ([MAPC](https://www.mapc.org/))
 has assembled an open-source [zoning atlas](https://zoningatlas.mapc.org/) 
 for the Boston Metropolitan Area. We are using their data to test our initial 
 hypotheses about the most flexible and efficient data formats and data 
-governance models.
+governance models. Our initial visualization of MAPC zones is [here](https://urban-stack.github.io/OpenZoning/MAPC-files/MAPC-map_leaflet.html).
 
 ## Potential research questions
 
@@ -27,8 +41,8 @@ requiring [communities served by MBTA](https://www.mass.gov/info-details/multi-f
 multifamily housing within one half-mile of a transit stop. The law specifies
 the minimum number of multifamily units each community must allow, based on 
 its type of MBTA service and its existing number of housing units. Our data 
-allow us to analyse how much the resulting changes could increase housing 
-supply and regional accessibility.
+allow us to analyse how much the changes resulting from this and similar laws 
+could increase housing supply and regional spatial accessibility.
 
 2. *Small-scale housing:* This dataset would allow for the development of an
 interactive web-based application that would allow developers to identify 

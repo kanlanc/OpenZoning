@@ -10,3 +10,6 @@ see here.
 Actually, the shapefiles for the overlay districts are not too big to just keep 
 on GitHub, it's just the base district file that's too big as the moment. Carole
 didn't see any need to treat them differently though.
+
+There is also a script to create leaflet maps from the data (code/make-mapc-map.R), 
+and the resulting leaflet map is in this folder.

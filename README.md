@@ -7,7 +7,7 @@ into third-party applications.
 
 ## Mission and vision
 
-Open Zoning’s mission is *to empower the nation with the knowledge of zoning*.
+Open Zoning’s mission is _to empower the nation with the knowledge of zoning_.
 
 towards the vision of
 

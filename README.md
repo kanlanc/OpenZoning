@@ -43,7 +43,8 @@ zones is [here](https://urban-stack.github.io/OpenZoning/MAPC-files/MAPC-map_lea
 
 Mark Schwabacher of Georgia Tech's Center for Spatial Planning Analytics
 and Visualizatoin ([CSPAV](https://cspav.gatech.edu/)) has created an interactive
-zoning atlas for Atlanta (one municipality). The tool allows users to interactively explore a 
+zoning atlas for [Atlanta](https://sites.gatech.edu/atlzoningexplorer/atl-zoning-code-explorer/)
+(one municipality). The tool allows users to interactively explore a 
 map, search for locations where specific uses are permitted, and export data
 on dimensional requirements for use-specified zones. It does not allow users to 
 download geospatial data with zoning attributes attached.

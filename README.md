@@ -24,14 +24,14 @@ national scales
 [Sara Bronin](https://aap.cornell.edu/people/sara-bronin) is 
 leading an effort to assemble a 
 [national zoning atlas](https://www.zoningatlas.org/). The have completed 
-a zoning atlas of [Connecticut](https://www.zoningatlas.org/connecticut) with 
-an interactive website that allows users to filter zoning districts based on 
-permitted residential uses, minimum lot sizes, and occupancy restrictions. The 
-Connecticut atlas does not have data availble for download. Other projects 
-affliated with the National Zoning Atlas are underway in California, Hawaii, New 
-Hampshire, Montana, New York, and Ohio. Our goal is to create a tool that can 
-easily convert the data the National Zoning Atlas is collecting to the data 
-standard that we are developing. 
+a zoning atlas of [Connecticut](https://www.zoningatlas.org/connecticut) 
+(including 178 municipalities) with an interactive website that allows users 
+to filter zoning districts based on permitted residential uses, minimum lot 
+sizes, and occupancy restrictions. The Connecticut atlas does not have data 
+availble for download. Other projects affliated with the National Zoning Atlas 
+are underway in California, Hawaii, New Hampshire, Montana, New York, and Ohio. 
+Our goal is to create a tool that can easily convert the data the National 
+Zoning Atlas is collecting to the data standard that we are developing. 
 
 The Metropolitan Area Planning Council ([MAPC](https://www.mapc.org/))
 has assembled an open-source [zoning atlas](https://zoningatlas.mapc.org/) 

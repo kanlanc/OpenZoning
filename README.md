@@ -23,15 +23,30 @@ national scales
 
 [Sara Bronin](https://aap.cornell.edu/people/sara-bronin) is 
 leading an effort to assemble a 
-[national zoning atlas](https://www.zoningatlas.org/). Our goal
-is to create a tool that can easily convert the data she and her collaborators 
-are collecting in to the data standard that we are developing.
+[national zoning atlas](https://www.zoningatlas.org/). The have completed 
+a zoning atlas of [Connecticut](https://www.zoningatlas.org/connecticut) with 
+an interactive website that allows users to filter zoning districts based on 
+permitted residential uses, minimum lot sizes, and occupancy restrictions. The 
+Connecticut atlas does not have data availble for download. Other projects 
+affliated with the National Zoning Atlas are underway in California, Hawaii, New 
+Hampshire, Montana, New York, and Ohio. Our goal is to create a tool that can 
+easily convert the data the National Zoning Atlas is collecting to the data 
+standard that we are developing. 
 
 The Metropolitan Area Planning Council ([MAPC](https://www.mapc.org/))
 has assembled an open-source [zoning atlas](https://zoningatlas.mapc.org/) 
-for the Boston Metropolitan Area. We are using their data to test our initial 
-hypotheses about the most flexible and efficient data formats and data 
-governance models. Our initial visualization of MAPC zones is [here](https://urban-stack.github.io/OpenZoning/MAPC-files/MAPC-map_leaflet.html).
+for the Boston Metropolitan Area, inlcuding 101 municipalities. Their data is freely 
+available for download as shapefiles including zoning attributes. We are using 
+their data to test our initial hypotheses about the most flexible and efficient 
+data formats and data governance models. Our initial visualization of MAPC 
+zones is [here](https://urban-stack.github.io/OpenZoning/MAPC-files/MAPC-map_leaflet.html).
+
+Mark Schwabacher of Georgia Tech's Center for Spatial Planning Analytics
+and Visualizatoin ([CSPAV](https://cspav.gatech.edu/)) has created an interactive
+zoning atlas for Atlanta (one municipality). The tool allows users to interactively explore a 
+map, search for locations where specific uses are permitted, and export data
+on dimensional requirements for use-specified zones. It does not allow users to 
+download geospatial data with zoning attributes attached.
 
 ## Potential research questions
 

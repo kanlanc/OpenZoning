@@ -1,51 +1,65 @@
 {
-	"district": "STE-CNTY-CTY-DSTRCT-A", 
+	"district": "MA-WorcCo-Worc-RL-7-MFD_low", 
 		"constraints": {
 			"bulk": {
 				"base0":{ //a.k.a ground
+					"height": 0, //in case "base0" starts below grade
 					"setback":{ //in feet
-						"front":20,
-						"rear":30,
-						"side":5,
+						"front":20, // 
+						"rear":20,
+						"side":10,
 					},
-					"coverage":40 //max percent lot coverage
+					"frontage": {"min": 65, "max": 140}, //in linear feet: does the user need the ability to define this as a per linear feet vs. percentage?
 				},
-				"base1":{
-					"height":20,
-					"setback":{
-						"rear":{:10, "relative": true} //setbacks are relative to previous value by default
-					},
-					"dimensions":{ //feet & sq feet
-						"width":30,
-						"depth":65,
-						"area":1750
-					}
-				},
-				"base2":{
-					"height":{:35, "relative": false}, //heights are absolute (to ground) by default
-					"plane":{ //in degrees, relative to previous setback
-						"side":45
-					},
-					"coverage":30 //roof area coverage(?)
-				},
-				"max":{ //could also be base3
-					"height":50
+				"max":{ //absolute max
+					"height": 50,
 				}
 			},
-			"FAR":{
-				"residential":0.35,
-				"commercial":0.2,
-				"total":0.4
+			"storyUse": { //user adds as many alternate-use stories as exists, we pre-define floor use types and accompanying characteristics
+				//key paradigm: ability to define allowable story uses and their impacts on occupiable area...?
+				"inhabitable": 3, //number of stories allowed
+				"partially": {
+					:1, 
+					"use": {:"garage", "definition": "A structure, building or part of a building in which to park a car or cars."}, //do we let them self-define or de we define?
+					"story": "ground",
+					"height": {
+						"min": 10,
+						"max": "NA",
+					} ,
+					"maxInhabitable": ".5", 
+					"replacesHabitableStory": 0
+				},
+				"uninhabitable": {
+					:1, 
+					"use": {:"attic", "definition": "The space between the ceiling beams of the top habitable story and the roof rafters."}, //do we let them self-define or de we define?
+					"story": "top", 
+					"height": {
+						"min": "NA",
+						"min": "NA",
+					"replacesHabitableStory": 0
+				},
 			},
-			"minumumLotSize": 10000, //in square feet
+			"FAR":{
+				"residential":null,
+				"commercial":null,
+				"total":null,
+				"additional": "..."
+			},
+			"LotSize": {
+				"minimum": {:7000, //in square feet -- sometimes this is expressed as 'per du'
+					"additional1": {:2000, "definitionPer": "unit"}, //we pre-define options for "definitionPer"
+					"additional2": {:500, "definitionPer": "..."}
+				},
+				"maximum": "..."
+			}, 
 			"units":{
-				"max":{:4, "unitsPerAcre": 2},
-				"minimumSize":750,
-				"retailSize":500
+				"max":{:null, "unitsPerAcre": null},
+				"addlFrontagePerDu": 5,
+				"retailSize":null,
 			},
 			"parking":{
-				"minimum":2,
-				"perUnit":1.5
+				"minimum":null,
+				"perUnit":2
 			}
 		}
 	

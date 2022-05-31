@@ -1,0 +1,52 @@
+{
+	"district": "STE-CNTY-CTY-DSTRCT-A", 
+		"constraints": {
+			"bulk": {
+				"base0":{ //a.k.a ground
+					"setback":{ //in feet
+						"front":20,
+						"rear":30,
+						"side":5,
+					},
+					"coverage":40 //max percent lot coverage
+				},
+				"base1":{
+					"height":20,
+					"setback":{
+						"rear":{:10, "relative": true} //setbacks are relative to previous value by default
+					},
+					"dimensions":{ //feet & sq feet
+						"width":30,
+						"depth":65,
+						"area":1750
+					}
+				},
+				"base2":{
+					"height":{:35, "relative": false}, //heights are absolute (to ground) by default
+					"plane":{ //in degrees, relative to previous setback
+						"side":45
+					},
+					"coverage":30 //roof area coverage(?)
+				},
+				"max":{ //could also be base3
+					"height":50
+				}
+			},
+			"FAR":{
+				"residential":0.35,
+				"commercial":0.2,
+				"total":0.4
+			},
+			"minumumLotSize": 10000, //in square feet
+			"units":{
+				"max":{:4, "unitsPerAcre": 2},
+				"minimumSize":750,
+				"retailSize":500
+			},
+			"parking":{
+				"minimum":2,
+				"perUnit":1.5
+			}
+		}
+	
+}

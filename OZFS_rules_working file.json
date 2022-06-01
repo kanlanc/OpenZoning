@@ -21,7 +21,7 @@
 				"max": 4,
 				"ground": { //alt: 1
 					"height": {"min": 10,	"max": "NA"},
-					"exemptFloorArea": {
+					"exemptFloorArea": { //same as accessory?
 						"use": "garage"
 						"dimensions": {.5, "minimum"}
 					}

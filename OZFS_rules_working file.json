@@ -9,35 +9,29 @@
 						"rear":20,
 						"side":10,
 					},
-					"frontage": {"min": 65, "max": 140}, //in linear feet: does the user need the ability to define this as a per linear feet vs. percentage?
+					"frontage": {"min": 65, "max": 140, //in linear feet: does the user need the ability to define this as a per linear feet vs. percentage?
+						"add1": {:5, "definitionPer": "unit"}, //we pre-define options for "definitionPer"
 				},
 				"max":{ //absolute max
 					"height": 50,
 				}
 			},
-			"storyUse": { //user adds as many alternate-use stories as exists, we pre-define floor use types and accompanying characteristics
+			"floors": { //user adds as many alternate-use stories as exists, we pre-define floor use types and accompanying characteristics
 				//key paradigm: ability to define allowable story uses and their impacts on occupiable area...?
-				"inhabitable": 3, //number of stories allowed
-				"partially": {
-					:1, 
-					"use": {:"garage", "definition": "A structure, building or part of a building in which to park a car or cars."}, //do we let them self-define or de we define?
-					"story": "ground",
-					"height": {
-						"min": 10,
-						"max": "NA",
-					} ,
-					"maxInhabitable": ".5", 
-					"replacesHabitableStory": 0
-				},
-				"uninhabitable": {
-					:1, 
-					"use": {:"attic", "definition": "The space between the ceiling beams of the top habitable story and the roof rafters."}, //do we let them self-define or de we define?
-					"story": "top", 
-					"height": {
-						"min": "NA",
-						"min": "NA",
-					"replacesHabitableStory": 0
-				},
+				"max": 4,
+				"ground": { //alt: 1
+					"height": {"min": 10,	"max": "NA"},
+					"exemptFloorArea": {
+						"use": "garage"
+						"dimensions": {.5, "minimum"}
+					}
+				}
+				4: {
+					"exemptFloorArea": {
+						"use": "attic"
+						"dimensions": {1.0, "minimum"}
+					}
+				}
 			},
 			"FAR":{
 				"residential":null,
@@ -47,14 +41,13 @@
 			},
 			"LotSize": {
 				"minimum": {:7000, //in square feet -- sometimes this is expressed as 'per du'
-					"additional1": {:2000, "definitionPer": "unit"}, //we pre-define options for "definitionPer"
-					"additional2": {:500, "definitionPer": "..."}
+					"add1": {:2000, "definitionPer": "unit"}, //we pre-define options for "definitionPer"
+					"add2": {:500, "definitionPer": "..."}
 				},
 				"maximum": "..."
 			}, 
 			"units":{
 				"max":{:null, "unitsPerAcre": null},
-				"addlFrontagePerDu": 5,
 				"retailSize":null,
 			},
 			"parking":{

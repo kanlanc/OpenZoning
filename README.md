@@ -5,10 +5,15 @@ zoning codes so that zoning data can be easily digitized in a machine-
 readable format to allow for multi-jurisdictional analysis and ingestion/integration
 into third-party applications.
 
-#### Rant
+### \#Rant
 Zoning as it currently exists in the U.S. is _ridiculous_...
 Answering basic questions about what can be built, current structures' compliance, and overall impacts of existing and proposed changes to zoning are impossible to answer accurately without detailed legal analyses.
 
+### Contents
+1. [Mission, vision, goals](#mission-vision-goals)
+2. [Anticipated OZFS Components](#anticipated-ozfs-components)
+3. [Precedents and related work](#precedents-and-related-work)
+4. [Potential research questions](#potential-research-questions)
 
 ## Mission, vision, goals
 - Allow _non-experts_ and _"machines"_ to know & understand **what can be built** on a property (properties)

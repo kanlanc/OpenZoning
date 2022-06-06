@@ -16,7 +16,7 @@ Answering basic questions about what can be built, current structures' complianc
 4. [Potential research questions](#potential-research-questions)
 
 ## Mission, vision, goals
-- Allow _non-experts_ and _"machines"_ to know & understand **what can be built** on a property (properties)
+- Allow _non-experts_ and _"machines"_ to know & understand **what can be built** on a property or in a region
 - Able to store zoning regulations as written, without interpretation (i.e. don't store an FAR value if there isn't one in the code)
 - A data architecture flexible enough to accommodate most types of zoning regulations & regimes
 - Versioning systems for both the data standard and zoning codes that allow for iteration, improvement, maintenance
@@ -42,6 +42,9 @@ Stored in `GeoJSON` or other open/accessible GIS format
 Non-tabular data structure, enabling flexible definition & storage of zoning regs.
 Zoning map accesses via a lookup key(s) of municipality + district (e.g. `MA-Suff-BOS-SPA-ZR4B` (not an actual district!))
 Stored in `JSON` or equivalent
+
+### Translation service
+Script(s) for converting from other zoning data standards (see [below](#regionalstate-wide-zoning-atlases))
 
 ### UI/UX
 Simplified/standardized UI for entering and defining zoning constraints
@@ -73,8 +76,6 @@ to filter zoning districts based on permitted residential uses, minimum lot
 sizes, and occupancy restrictions. The Connecticut atlas does not have data
 available for download. Other projects affiliated with the National Zoning Atlas
 are underway in California, Hawaii, New Hampshire, Montana, New York, and Ohio.
-Our goal is to create a tool that can easily convert the data the National
-Zoning Atlas is collecting to the data standard that we are developing.
 
 The Metropolitan Area Planning Council ([MAPC](https://www.mapc.org/))
 has assembled an open-source [zoning atlas](https://zoningatlas.mapc.org/)
@@ -90,11 +91,11 @@ zones is [here](https://urban-stack.github.io/OpenZoning/MAPC-files/MAPC-map_lea
 - [Atlanta](https://sites.gatech.edu/atlzoningexplorer/atl-zoning-code-explorer/) from Mark Schwabacher of Georgia Tech's Center for Spatial Planning Analytics and Visualization ([CSPAV](https://cspav.gatech.edu/)). The tool allows users to interactively explore a map, search for locations where specific uses are permitted, and export data on dimensional requirements for use-specified zones. It does not allow users to download geospatial data with zoning attributes attached.
 
 ### Data Standard Precedents
-- GTFS - created by Google (with/for TriMet) to enable transit trip planning. Now owned/managed by MobilityData.org
-- GBFS
-- MDS - created by Ellis Associates for LA DOT. OMF was created to manage it
-- CDS - Curb data standard - created by OMF working group (OMF's first non-MDS effort)
-- OpenLR - common standard for positioning along curb
+- [GTFS](https://gtfs.org/) - created by Google (with/for TriMet) to enable transit trip planning. Now owned/managed by [MobilityData](https://mobilitydata.org/)
+- [GBFS](https://gbfs.mobilitydata.org/)
+- [MDS](https://www.openmobilityfoundation.org/about-mds/) - created by Ellis Associates for LA DOT. OMF was created to manage it
+- [CDS](https://www.openmobilityfoundation.org/about-cds/) - Curb data specification - created by OMF working group (OMF's first non-MDS effort)
+- [OpenLR](http://www.openlr.org/) - common standard for positioning along curb (from TomTom?)
 
 ### UI/UX Precedents
 - [StreetMix](https://streetmix.net/)

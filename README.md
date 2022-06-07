@@ -67,7 +67,7 @@ E.g.
 - Parking requirements with max build out
 
 ## The Future with OZFS
-We hypothesize that wide-scale adoption of the OZFS will lead to many valuable real-world outcomes:
+We hypothesize that wide-scale adoption of the OZFS will lead to radical new possibilities for land use policy and the built environment:
 - Enabling wide-scale upzoning
 - Automating ADU siting & approval
 - Supporting affordable housing development

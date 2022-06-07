@@ -66,6 +66,16 @@ E.g.
 - FAR/floor area based on other regulations
 - Parking requirements with max build out
 
+## The Future with OZFS
+We hypothesize that wide-scale adoption of the OZFS will lead to many valuable real-world outcomes:
+- Enabling wide-scale upzoning
+- Automating ADU siting & approval
+- Supporting affordable housing development
+- Facilitating improved community engagement/scenario planning
+- Lowering development costs overall
+- Empowering small developers/individual property owners
+- Lining up policy goals with actual zoning regulations
+
 ## Precedents and related work
 ### Regional/State-wide Zoning Atlases
 [Sara Bronin](https://aap.cornell.edu/people/sara-bronin) is leading an effort to assemble a

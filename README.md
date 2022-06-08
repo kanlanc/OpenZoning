@@ -130,4 +130,6 @@ parcels for small-scale housing developments (1-4 units).
 1. Affordable housing developer (trying to repeat a structure/model in the region)
 2. Community meeting with real-time scenario planning (alternative: in-person AR experience) that generates "zoning" on-the-fly
 3. Modular ADU fabricator that wants to start building _on top_ of existing structures
-4. ?
+4. City Planners scenario testing for the purposes of implementing a new policy or program
+5. Commercial interests in housing capacity for their workforce
+6. Software developers looking to develop the next generation of land use and real estate applications

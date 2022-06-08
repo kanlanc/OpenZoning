@@ -1,41 +1,30 @@
 # Open Zoning Feed Specification Project.
 
-The purpose of this project is to develop a data standard for
-zoning codes so that zoning data can be easily digitized in a machine-
-readable format to allow for multi-jurisdictional analysis and ingestion/integration
-into third-party applications.
+The purpose of this project is to develop a data standard for zoning codes, enabling simplified and streamlined access to **zoning data** so that everyone from _non-experts_ to _"machines"_ can know & understand **what can be built**
 
-### \#Rant
+### The Problem (\#Rant)
 Zoning as it currently exists in the U.S. is _ridiculous_...
-Answering basic questions about what can be built, current structures' compliance, and overall impacts of existing and proposed changes to zoning are impossible to answer accurately without detailed legal analyses.
+Basic questions are impossible to answer accurately without detailed legal analyses. Such as: what's possible on a site, existing structures' compliance, and the overall impacts of existing and proposed changes to zoning
 
 ### Contents
 1. [Mission, vision, goals](#mission-vision-goals)
 2. [Anticipated OZFS Components](#anticipated-ozfs-components)
+3. [The Future with OZFS](#the-future-with-ozfs)
 3. [Precedents and related work](#precedents-and-related-work)
 4. [Potential research questions](#potential-research-questions)
 
 ## Mission, vision, goals
-- Allow _non-experts_ and _"machines"_ to know & understand **what can be built** on a property or in a region
 - Able to store zoning regulations as written, without interpretation (i.e. don't store an FAR value if there isn't one in the code)
 - A data architecture flexible enough to accommodate most types of zoning regulations & regimes
 - Versioning systems for both the data standard and zoning codes that allow for iteration, improvement, maintenance
 - Planning and issue tracking systems for short- through long-term planning
 - Governance and practices that ensure continued access and relevance, so that OZFS avoids becoming orphaned or stale
 
-### Old
-> Open Zoning’s mission is _to empower the nation with the knowledge of zoning_.
-> towards the vision of
->
-> * a zoning system heavily influenced by and that works directly for the communities it most impacts;
-> * a new class of developers with diverse development value systems that enable new, community-centered design potentials in the (re)filling of American urban areas; and
-> * integrated transportation and housing development at the city, state, and national scales
-
 ## Anticipated OZFS Components
-
+**v0.1**
 ### Geospatial structure
 Expectation is for multiple GIS layers to be uploaded (e.g. base + overlay districts)
-Those will be merge into a single zoning layer that _atomizes_ each polygon into a single zoning district (or combination of districts)
+Those will be merged into a single zoning layer that _atomizes_ each polygon into a single zoning district (or combination of districts)
 Stored in `GeoJSON` or other open/accessible GIS format
 
 ### (Zoning) Data structure & rules engine
@@ -44,10 +33,12 @@ Zoning map accesses via a lookup key(s) of municipality + district (e.g. `MA-Suf
 Stored in `JSON` or equivalent
 
 ### Translation service
-Script(s) for converting from other zoning data standards (see [below](#regionalstate-wide-zoning-atlases))
+1. Script(s) for converting from other zoning data standards (see [below](#regionalstate-wide-zoning-atlases))
+2. Script(s) to perform zoning analysis research (e.g. how many (additional) triplexes are possible within a mile of Downtown?)
 
 ### UI/UX
 Simplified/standardized UI for entering and defining zoning constraints
+(v0.1 to include mockup _only_)
 
 ### _Future_
 
@@ -55,26 +46,37 @@ Simplified/standardized UI for entering and defining zoning constraints
 Perhaps based on [PlaceCode](https://www.principle.us/placecode)
 
 #### Existing built environment dataset(s)
-To enable:
+A new dataset or connections to existing sources (e.g. OSM, [Regrid](https://regrid.com/buildings)) for use cases including:
 - zoning additions and modifications to current structures on a parcel
 - zoning regulations based on relations to adjacent lots/buildings
-Potential sources: OSM, [Regrid](https://regrid.com/buildings)
+
 
 #### _Interpreted_ Zoning Rules
-E.g.
+Data storage mechanism able to capture data points not directly from the zoning code. E.g.:
 - Realizable units based on lot characteristics
 - FAR/floor area based on other regulations
 - Parking requirements with max build out
 
 ## The Future with OZFS
 We hypothesize that wide-scale adoption of the OZFS will lead to radical new possibilities for land use policy and the built environment:
-- Enabling wide-scale upzoning
+- Enabling wide-scale upzoning of all types
 - Automating ADU siting & approval
 - Supporting affordable housing development
 - Facilitating improved community engagement/scenario planning
 - Lowering development costs overall
 - Empowering small developers/individual property owners
 - Lining up policy goals with actual zoning regulations
+- Enabling ecosystems of software & services engaging with the _potential_ built environment
+
+### Potential future personas
+The following are visions/case studies of the future that imagine & inform the goals & possibilities for OZFS
+1. Affordable housing developer targeting sites for their existing model of 5-story buildings in the Boston region
+2. Community meeting with real-time scenario planning that generates zoning text on-the-fly
+3. Modular ADU fabricator targeting properties for its new 2-story ADU
+4. City planner testing multiple scenarios to accomplish the mayor's new policy goal of 10% more units over the next decade
+5. Multinational company deciding where to locate their new assembly facility based on _potential_ workforce housing capacity in the region
+6. AR software developer looking to develop ...?
+7. Institutional real estate developer/holder selecting properties for its new East Coast "Missing Middle" REIT
 
 ## Precedents and related work
 ### Regional/State-wide Zoning Atlases
@@ -125,11 +127,3 @@ could increase housing supply and regional spatial accessibility.
 2. *Small-scale housing:* This dataset would allow for the development of an
 interactive web-based application that would allow developers to identify
 parcels for small-scale housing developments (1-4 units).
-
-### Potential future personas
-1. Affordable housing developer (trying to repeat a structure/model in the region)
-2. Community meeting with real-time scenario planning (alternative: in-person AR experience) that generates "zoning" on-the-fly
-3. Modular ADU fabricator that wants to start building _on top_ of existing structures
-4. City Planners scenario testing for the purposes of implementing a new policy or program
-5. Commercial interests in housing capacity for their workforce
-6. Software developers looking to develop the next generation of land use and real estate applications

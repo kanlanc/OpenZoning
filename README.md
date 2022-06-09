@@ -22,23 +22,23 @@ Basic questions are impossible to answer accurately without detailed legal analy
 
 ## Anticipated OZFS Components
 **v0.1**
-### Geospatial structure
+### [Geospatial structure](/geo-standard)
 Expectation is for multiple GIS layers to be uploaded (e.g. base + overlay districts)
 Those will be merged into a single zoning layer that _atomizes_ each polygon into a single zoning district (or combination of districts)
 Stored in `GeoJSON` or other open/accessible GIS format
 
-### (Zoning) Data structure & rules engine
+### (Zoning) [Data structure](/data-standard) & rules engine
 Non-tabular data structure, enabling flexible definition & storage of zoning regs.
 Zoning map accesses via a lookup key(s) of municipality + district (e.g. `MA-Suff-BOS-SPA-ZR4B` (not an actual district!))
 Stored in `JSON` or equivalent
 
-### Translation service
+### [Translation service](/code/translation-scripts)
 1. Script(s) for converting from other zoning data standards (see [below](#regionalstate-wide-zoning-atlases))
 2. Script(s) to perform zoning analysis research (e.g. how many (additional) triplexes are possible within a mile of Downtown?)
 
 ### UI/UX
 Simplified/standardized UI for entering and defining zoning constraints
-(v0.1 to include mockup _only_)
+(v0.1 to include [mockup](/images/ui-ux-mockups) _only_)
 
 ### _Future_
 

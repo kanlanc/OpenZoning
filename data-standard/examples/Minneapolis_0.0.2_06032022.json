@@ -1,0 +1,119 @@
+{
+	"district": "MN-HennepinCo-Minneapolis-BFI3-3 fam",
+		"constraints": {
+			"bulk": {
+				"base0":{ //a.k.a ground
+					"height": 0, //in case "base0" starts below grade
+					"setback":{ //in feet
+						"front":20, //
+						"rear": 5,
+						"side": {
+							"interior": {:5,
+								"add1": {:2,
+									"definitionPer": {:"height",
+										"unitIncrease": 10,
+										"exempt": "max height", //amount of height up to that the add doesn't come into play
+									}
+								},
+								"add2": {:1,
+									"definitionPer": {:"lotWidth",
+										"unitIncrease": 10,
+										"exempt": 50,//amount of lot width up to that the add doesn't come into play
+									}
+								}
+							},
+							"corner": {:8,
+								"add1": {:2,
+									"definitionPer": {:"height",
+										"unitIncrease": 10,
+										"exempt": "max height",
+									}
+								}
+							}
+						}
+					},
+					"frontage": {"min": null, "max": null, //in linear feet: does the user need the ability to define this as a per linear feet vs. percentage?
+						//"add1": {:5, "definitionPer": "unit"}, //we pre-define options for "definitionPer"
+				},
+				"max":{ //absolute max
+					"height": {:42,
+						"bySpecialPermit": 52 //an option we include in our template
+				}
+			},
+			"floors": { //user adds as many alternate-use stories as exists, we pre-define floor use types and accompanying characteristics
+				//key paradigm: ability to define allowable story uses and their impacts on occupiable area...?
+				"max": {:3,
+					"bySpecialPermit": 4
+				},
+				"any": {
+					"height": {"min": 14,	"max": "NA"},
+					"exemptFloorArea": null,
+					"floorAreaMultiplier": 2
+				},
+				"basement": {
+					"height": {"min": null,	"max": null},
+					"exemptFloorArea": {:0.5, "maximum"},
+					"upperBoundFromGround": {"min": -3.5, "max": 3.5} //a specific basement option we allow
+				},
+				"top_addition": {
+					"height": {"min": null,	"max": null},
+					"exemptFloorArea": null,
+					"plane":{ //i.e. roof: in degrees, relative to previous setback. match is binary: 1 means to match existing roof slopes, 0 means not required and thus the angle takes precedent
+						"primary": {
+							"match": 1,
+							"minSlope": 22.5,
+							"maxSlope": null,
+							"maxAdditionalHeight": 5
+						}
+					}
+				}
+			},
+			"FAR":{
+				"residential": {:0.7,
+					//"addLimit": 1, //for when there's a limit on the number of "add"s(Minn. calls them "premiums") that can be applied
+					"add1": {:0.1,
+						"definitionPer": {:"unit",
+							"exempt": 1,
+							"min": 1
+						},
+						"condition": "affordable housing",
+					},
+					"add2": {:0.1,
+						"defintionPer": "building",
+						"condition": "certified environmentally sustainable"
+					}
+				},
+				"commercial":null,
+				"total":null,
+				"floorArea": {
+					"min": 2500, //sf
+					"max": null
+				}
+			},
+			"Lot": {
+				"area" : {
+					"minimum": {:7000, //in square feet -- sometimes this is expressed as 'per du'
+					"maximum1": {:18000, "percent": 60,
+						"add1": {:2000, "definitionPer": "unit"}, //we pre-define options for "definitionPer"
+					}
+				},
+				"dimensions": {
+					"width": {
+						"minimum": 40,
+						"maximum": null
+					}
+
+				}
+
+			},
+			"units":{
+				"max":{:null, "unitsPerAcre": null},
+				"retailSize":null,
+			},
+			"parking":{
+				"minimum":null,
+				"perUnit":2
+			}
+		}
+
+}

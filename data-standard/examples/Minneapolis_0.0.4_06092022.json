@@ -1,0 +1,268 @@
+{
+	"district": {:"MN-HennepinCo-Minneapolis-BFI3", //-all bulks/uses",
+		"constraints": { //it seems more logical to me to do constraints per "bucket". Thoughts?
+			"variants": {
+				"variantClass1":{ //variants that have no limits on how many can be applied
+					"VC1_1": {:"affordable housing", "constraintClass": "FAR"},
+					"VC1_2": {:"tall adjacent buildings", "constraintClass": "height"},
+					"VC1_3": {:"extra floor 1", "constraintClass": {:"height", :"floor"}},
+					"VC1_4": {:"setback increase per height", "constraintClass": "setback"}, //not clear what this means, what the directionality is...
+					"VC1_5": {:"floor area multiplier per floor height", "constraintClass": "FAR"},
+					"VC1_6": {:"height increase per special permit", "constraintClass": "height"},
+					"VC1_7": {:"basement", "constraintClass": "height"},
+					"VC1_8": {:"top addition", "constraintClass": {:"height", :"floorArea"},
+					"VC1_9": {:"attic", "constraintClass": "height"},
+				},
+				},
+				"variantClass2":{ //variants that have a limit on how many can be applied to each ordinance
+					"VC2_1": "affordable housing",
+					"VC2_2": "environmental sustainability",
+					"VC2_3": "enclosed parking",
+				},
+			},
+			//is there a structure logic correlated to our constraint buckets?
+			"bulk": {//spatial constraints determine bulk
+				"all": {
+					"base0":{//always refers to the ground level
+						"height": {:0, //this value should be default
+							"VC1_7": {
+								"min": -3.5,
+								"max": 3.5,
+							},
+						// "frontage": { //how is frontage defined here?
+						//	"min": null, //if these are 0, then define. If undefined, then don't need to show them
+						//	"max": null, //in linear feet by default. There should be a percentage option as well (or the opposite)
+						},
+						"setback":{ //in feet
+							//"two unit": 1, "three unit": 1,
+							"front":20,
+							"rear": 5,
+							"side": {
+								"interior": {:5,
+									"VC1_4": {"delta":2}
+									},
+								},
+								// 	"VC1_5": {
+								// 		"delta":1,
+								// 	}
+								// },
+								"corner": {:8, //not sure which edge this refers to. Does corner need its own type?
+									"VC1_4": {"delta":2}
+									}
+								}
+							}
+						},
+					},
+					"baseMax":{ //is this a correct interpretation of previous? that the max height increases by 10 feet?
+						"height": {
+							"VC1_4": {"delta": 10, "driver": 1},
+					}
+				},
+				"bulk1": {:"single unit",
+					"variantsClass2": {
+						"max": null, //what is this?
+						"eligibleList": {:"VC2_1", :"VC2_2"} //not sure why these need to be specified here
+					},
+					"baseMax":{ //absolute max
+						"height": {:28,
+							"VC2_1": {
+								"delta": 7,
+								"note": "Found in table 'Table 552-7 Other Maximum Height Requirements by Use' of the City of Minneapolis zoning, which states..."
+							}
+						}
+					}
+				},
+				"bulk2": {:"two unit",
+					"variantsClass2": {
+						"max": null,
+						"eligibleList": {:"VC2_1", :"VC2_2"}
+					},
+					"baseMax":{ //absolute max
+						"height": {:28,
+							"VC1_2": {
+								"delta": 7,
+								"note": "Found in table 'Table 552-7 Other Maximum Height Requirements by Use' of the City of Minneapolis zoning, which states..."
+							}
+						}
+					}
+				},
+				"bulk3": {:"three unit",
+					"variantsClass2": {
+						"max": null,
+						"eligibleList": {:"VC2_1", :"VC2_2", :"VC2_3"}
+					},
+					"baseMax":{ //absolute max
+						"height": {:42, "min": 30, //this should be defined
+								"VC1_6": {
+									"delta": 10,
+								"note": "Found in table 'Table 552-7 Other Maximum Height Requirements by Use' of the City of Minneapolis zoning, which states..."
+								}
+							}
+						}
+					}
+				},
+				"bulk4": {:"multifamily",
+					"premiums": {
+						"max": null,
+						"eligibleList": {:"VC2_1", :"VC2_2", :"VC2_3"}
+					}
+				},
+					// "heightRoof": {:47,
+					// 		"delta": {:10,
+					// 			"condition": "neighboring buildings",
+					// 			"note": "Found in table 'Table 552-7 Other Maximum Height Requirements by Use' of the City of Minneapolis zoning, which states..."
+					// 		}
+					// 	},
+					// }
+				}
+			},
+			"floors": { //??: what's the intextricable link/heirarchy between floor and FAR? floor area contributes to FAR, more broadly, what's the inextricable link between constraints & buckets?
+				//we're still partitioning floors by bulk
+				//changing floor area contribution to FAR & number of floors
+				//constraints: floor height, occupied area, # of the floor
+				"all": {
+					"numberOfFloors":{
+						"VC1_7": {
+							"add": 1
+						},
+						"VC1_7": {
+							"add": 1
+						},
+						"VC1_7": {
+							"add": 1
+						}
+					},
+				"floor0": {
+					"occupiedArea": {"max": 1,
+						"VC1_7": {:0.5, //got to be able to differentiate between optionality
+							"driver": 1
+						},
+					},
+					"floorAreaContribution": {"max": 1,
+						"VC1_7": 0
+					}
+				},
+				"floorMax": {
+					"occupiedArea": {"max":1,
+						"VC1_9": {:0.0,
+							"driver": 1
+						},
+					},
+					"floorAreaContribution": {"max": 1,
+						"VC1_9": {:0,
+						},
+					}
+				},
+				"allOther": {
+					"floorHeight": {"max": {:14, "inclusive": 0},
+						"VC1_5": {:14, "driver":1}
+					},
+					"floorAreaContribution": {:1,
+						"VC1_5": 2,
+					},
+				},
+				"single unit": {
+					"numberOfFloors":{
+						"max": 2,
+					}
+				},
+				"two unit": {
+					"numberOfFloors":{
+						"max": 2,
+					}
+				},
+				"three unit": {
+					"numberOfFloors":{
+						"max": 3,
+					}
+				},
+			},
+			"FAR":{
+				"override": { //the ability to record override values per special clauses in the ordinance (similar to one of MAPC's fields): Table 552-4, Minneapolis Code
+					"min": null, //overrides are per-overlay in Minneapolis, but could be per-bulk/use
+					"max": null
+				},
+				// "adds": { //adds are defined/conditional per bulk, i.e. limited per bulk & possibly # of adds per bulk
+				// 	"add1": {:0.1,
+				// 		"condition": "affordable housing",
+				// 		"applicableBulks": {
+				// 			"one unit": 1, "two unit": 1, "three unit": 1,
+				// 		},
+				// 		"definitionPer": {:"unit",
+				// 			"exempt": 1,
+				// 			"min": 1
+				// 		},
+				// 	},
+				// 	"add2": {:null,
+				// 		"condition": "certified environmentally sustainable",
+				// 		"applicableBulks": {
+				// 			"one unit": 1, "two unit": 1, "three unit": 1,
+				// 		},
+				// 		"defintionPer": "building",
+				// 	},
+				// },
+				// "premiums": {//premiums are defined/conditional per district, i.e. limited per district & possibly # of premiums per district
+				// 	"maxPremiums": 1,
+				// 	"premium1": {:0.3, //FAR value add of premiums is bulk-dependent, therefore
+				// 		"condition": "enclosed parking",
+				// 		"defintionPer": "building",
+				// 	},
+				// 	"premium2": {:0.5, //FAR value add of premiums is bulk-dependent, therefore
+				// 		"condition": "parkAdjacency",
+				// 		"defintionPer": "floor",
+				// 	},
+				},
+				"single unit": { //"addLimit": 1, //for when there's a limit on the number of "add"s(Minn. calls them "premiums") that can be applied
+					"residential": 0.5,
+					"commercial":null,
+					"total":null,
+					"floorArea": { //where should we record this? within each unit type (i.e. single unit) or as an overarching constraint (similar to how 'adds' are recorded)?
+						"min": 2500, //sf
+						"max": null
+					}
+				},
+				"two unit": {
+					"residential": 0.6,
+					"commercial":null,
+					"total":null,
+					"floorArea": { //where should we record this? within each unit type (i.e. single unit) or as an overarching constraint (similar to how 'adds' are recorded)?
+						"min": 2500, //sf
+						"max": null
+					}
+				},
+				"three unit": {
+					"residential": 0.7,
+					"commercial":null,
+					"total":null,
+					"floorArea": {
+						"min": 2500, //sf
+						"max": null
+					}
+				},
+
+			},
+			"Lot": {
+				"area" : {
+					"minimum": {:7000, //in square feet -- sometimes this is expressed as 'per du'
+					"maximum1": {:18000, "percent": 60,
+					// 	"add1": {:2000, "definitionPer": "unit"}, //we pre-define options for "definitionPer"
+					// }
+				},
+				"dimensions": {
+					"width": {
+						"minimum": 40,
+						"maximum": null,
+						"VC1_5": {
+							"delta":10, "driver": 1, "startAt": 50
+						}
+					}
+				}
+				,
+			},
+			"parking":{
+				"minimum":null,
+				"perUnit":2
+			}
+		}
+
+}

@@ -106,7 +106,7 @@ Any exterior wall of a Building.
 The measurement of building height by stories, where eachfull story above average ground level is counted as 1 story.
 For buildings with a pitched roofs, habitable space is allowed withinthe pitch and is not considered a full story.
 #### Building Mass:
-See Main Building Mass.
+See [Main Building Mass](#main-building-mass).
 #### Building Type:
 A classification or kind of structure characterized and differentiatedby its massing, composition, use, features, and placement on a lot.
 #### Caliper:
@@ -147,7 +147,7 @@ All civic and institutional uses, definitions, andstandards may be found in Arti
 #### Clearance:
 The height above the sidewalk or other surface, to the bottom edgeof an object or building component.
 #### Clear Height:
-The vertical distance between the underside of an overhangingbuilding element and the horizontal surface below, free fromobstruction.
+The vertical distance between the underside of an overhanging building element and the horizontal surface below, free fromobstruction.
 #### Close:
 A thoroughfare that permits free passage of pedestrians andbicycles but is open to vehicles at only one end, distinct from acul-de-sac which permits no through passage.
 #### Commercial:
@@ -170,7 +170,7 @@ This distance is determined by measuring the radius of a circle thatapproximates
 #### Depth:
 The perpendicular, horizontal distance from the primary facade of abuilding into the lot.
 #### Depth, Lot:
-See Lot Depth.
+See [Lot Depth](#lot-depth).
 #### Desire Line:
 An instinctual trajectory one prefers to walk from origin todestination.
 #### Detached:
@@ -193,7 +193,7 @@ Driveways include farm roads and cart paths.
 #### Dwelling Unit:
 A single unit providing complete, independent, living facilitiescontaining 1 or more rooms arranged for use by no more than 4unrelated individuals living together as a single housekeeping unitwith cooking, living, sanitary, and sleeping facilities.
 #### Dwelling Unit, Accessory:
-See Accessory Dwelling Unit.
+See [Accessory Dwelling Unit](accessory-dwelling-unit).
 #### Easement:
 A liberty, privilege, or advantage without profit, which a person(s)may have in the lands of another person(s).
 #### Eave:
@@ -211,7 +211,7 @@ The height from the average ground level to the surface of the firstfull floor, 
 #### Fully Enclose(d):
 To fill the space between structural supports with walls or windows.
 #### Element:
-See Building Element.
+See [Building Element](building-element).
 #### Encroach:
 To break the plane of a vertical or horizontal regulatory limit with astructural element, so that it extends into a Setback, above a heightlimit, or over the sidewalk of a public right-of-way.
 #### Encroachment:
@@ -231,7 +231,7 @@ The lowest floor of a building that is not considered a basement.
 #### First Floor Elevation
 The height from the average ground level to the surface of the firstfull floor, measured at the primary front facade of the building.
 #### Flat Roof:
-see Roof, Flat.
+see [Roof](#roof), Flat.
 #### Floor Area, Gross:
 The sum area of all floors or accessible levels of a building asmeasured to the perimeter of the exterior faces of the walls with nodeduction for corridors, stairs, closets, thickness of walls, columnsor other features.
 #### Floor Area, Net:
@@ -247,8 +247,8 @@ A condition in which a building is required to be parallel orperpendicular with 
 #### Front Setback:
 The distance from the front lot line to the point where any structuremay be constructed.
 #### Frontage:
-The land that lies adjacent to a thoroughfare, right-of-way,easement, civic space, or waterbody, or the space between abuilding.
-Building facades that face onto primary and secondaryfrontages define the public realm and are therefore more regulatedthan the buildings oriented toward side and rear lot lines.
+The land that lies adjacent to a thoroughfare, right-of-way, easement, civic space, or waterbody, or the space between a building.
+Building facades that face onto primary and secondaryfrontages define the public realm and are therefore more regulated than the buildings oriented toward side and rear lot lines.
 #### Frontage Line:
 A lot line bordering a thoroughfare, right-of-way, easement, civicspace, or waterbody.
 #### Frontage Line, Primary:
@@ -264,14 +264,14 @@ The setback required along a secondary frontage.
 #### Frontage Zone:
 The area between the front lot line of a property and the first 20ft of a primary building.
 The frontage zone applies along both theprimary and secondary frontages, and does not apply to alleys.
-Inthe case that a lot is undeveloped, the frontage zone is the area between the front lot line of a property and 30 ft into the site.
+In the case that a lot is undeveloped, the frontage zone is the area between the front lot line of a property and 30 ft into the site.
 #### Furnishing Zone:
 An area of space that allows for the placement of furniture without impeding the 4 ft of clear width required for pedestrian movement.
 #### Game Courts:
 Includes tennis, pickleball, and basketball courts.
 #### Carriage House:
 An enclosed area integral to a primary building or accessory building that provides space for parking or storage of vehicles.
-Notsynonymous with the parking garage building type.
+Not synonymous with the parking garage building type.
 #### Carriage House Doors:
 Lifting, sliding, or swinging doors that open into an interior spaceused for vehicular parking, storage, retail sales, fabrication, or other uses.
 #### Garden Structures:
@@ -293,7 +293,7 @@ See Absolute Height.
 #### Improvements:
 Any man-made alteration of land, a lot, a building or a structure.
 #### Industrial:
-The processing or manufacturing of materials, and activitiesassociated with this work.
+The processing or manufacturing of materials, and activities associated with this work.
 All industrial uses, definitions, andstandards may be found in Article 4 Use Standards.
 #### Informal Building:
 Informal buildings are light-impact, temporary, or small buildings,that are typically not connected to utilities and oftentimes don’thave a permanent foundation.
@@ -310,7 +310,7 @@ Landscaping includes areas of arranged plant materials.
 #### Large Animals:
 Large domestic animals including cows, sheep, pigs, and horsesraised for home use or for profit.
 #### Length:
-In a three-dimensional measurement system, length is a horizontalmeasurement, distinct and longer than width.
+In a three-dimensional measurement system, length is a horizontal measurement, distinct and longer than width.
 #### Light Source:
 The lamp and all refractive, reflective, and translucent lighttransmitting parts of an outdoor light fixture.
 #### Liner Building:
@@ -359,10 +359,10 @@ see Diagram 2 Lot Width & Depth
 #### Lumens:
 The amount of light energy generated by a light source.
 #### Main Building Mass:
-The volume of a primary or accessory building as defined bythe dimensional standards for building type and onto whichcomponents and roofs may attach.
+The volume of a primary or accessory building as defined bythe dimensional standards for building type and onto which components and roofs may attach.
 #### Master Plan:
-A development plan and supporting illustrations and documentsproviding a framework for future development of a site.
-A MasterPlan provides guidance to the applicant and Town regardingapplicable permitting and decision making processes.
+A development plan and supporting illustrations and documents providing a framework for future development of a site.
+A Master Plan provides guidance to the applicant and Town regarding applicable permitting and decision making processes.
 #### Mechanical Equipment:
 Equipment, devices, and accessories used for water supply,drainage, heating, ventilating, air conditioning, including elevatorshafts, heating and cooling units, utility cabinets, and other visiblestructures that are located on or near a building or structure.
 #### Natural Materials:
@@ -373,10 +373,10 @@ All natural resources uses, definitions,and standards may be found in Article 4 
 #### Neighborhood Type:
 A neighborhood that has certain characteristics in terms of Districtarrangement and intensity.
 #### Nonconformity:
-An existing use, structure, lot, site characteristics or sign that, atthe time of its legal establishment, was in compliance with thezoning regulations, but after the adoption date of this Code hasbeen made wholly or partially nonconforming.
+An existing use, structure, lot, site characteristics or sign that, atthe time of its legal establishment, was in compliance with thezoning regulations, but after the adoption date of this Code has been made wholly or partially nonconforming.
 #### Office:
 The transaction of general business, including administrative,professional, and clerical activities, but excluding retail.
-All officeuses, definitions, and standards may be found in Article 4 UseStandards.
+All office uses, definitions, and standards may be found in Article 4 UseStandards.
 #### On-Site Civic Space:
 Civic space owned, maintained, and administered by a privateentity, provided on the same lot as a building or on a lot associatedwith a building group, for the purpose of adding publicly accessibleamenity space to a development project.
 #### Opening:
@@ -390,9 +390,9 @@ The outdoor exhibition or presentation of products and merchandiseavailable for 
 #### Outdoor Storage:
 The storage of merchandise or material in boxes, crates, on palletsor other kinds of shipping containers; and, garden supplies,building supplies, materials, plants, vehicles and other similarequipment, inventory, merchandise, or supplies not normallybrought indoors overnight.
 #### Parcel:
-See lot.
+See [lot](#lot).
 #### Parking Lot:
-An uncovered area used or designed for the off-street parking of 2or more motor vehicles, excluding a driveway.
+An uncovered area used or designed for the off-street parking of 2 or more motor vehicles, excluding a driveway.
 #### Parkshed:
 The pedestrian catchment area associated with a particular civicspace type.
 #### Patio:
@@ -426,12 +426,13 @@ A condition on the eave of a roof, where the rake extends horizontally downward 
 #### Nonconforming Conditions:
 Any use, structure, building lot, site characteristics, or sign thatwas lawfully established prior to the adoption of this Ordinanceand has been made nonconforming in result of the adoption of this Ordinance or subsequent amendments, may continue so long asthe nonconformity remains otherwise lawful and complies with this section.
 #### Primary Building:
-See Building, Primary.
+See [Building, Primary](building-primary).
 #### Primary Entrance:
 The main point of access for pedestrians into a building, upperstory use, or first floor tenant space.
 #### Primary Frontage:
-See Frontage, PrimaryPrimary Front Lot Line:
-See Lot Line, Primary Front.
+See [Frontage, Primary](frontage-primary) 
+#### Primary Front Lot Line:
+See [Lot Line, Primary Front](#lot-line-primary-front).
 #### Primary Front Setback:
 See Setback, Primary Front.
 #### Primary Ridge Beam:
@@ -502,19 +503,23 @@ Service uses include any enterprise that provides work performedin an expert man
 The typical service business provides intangibleproducts.
 Auto-oriented service uses are listed under a separateuse category.
 All service uses, definitions, and standards may befound in Article 4 Use Standards.
-#### DIAGRAM 3 SETBACKSPRIMARY FRONT SETBACK SECONDARY FRONT SETBACKSIDE SETBACK REAR SETBACK
+#### DIAGRAM 3 SETBACKS PRIMARY FRONT SETBACK SECONDARY FRONT SETBACKSIDE SETBACK REAR SETBACK
 #### Setback:
 The horizontal distance required between the closest exterior wallof a building or parking and a specified element, such as a lot line,easement, or waterbody, measured perpendicularly.
 This area mustbe maintained clear of permanent structures with the exception ofallowed encroachments.
 #### Setback, Primary Front:
-The distance from a primary lot line bordering a primarythoroughfare maintained clear from buildings with the exception ofencroachments.
-#### see Diagram 3 Setbacks Setback, Secondary Front:
-The distance from a secondary lot line, bordering a secondarythoroughfare, maintained clear from buildings with the exception ofencroachments.
-#### see Diagram 3 Setbacks Setback, Side:
+The distance from a primary lot line bordering a primarythoroughfare maintained clear from buildings with the exception of encroachments.
+see Diagram 3 Setbacks 
+#### Setback, Secondary Front:
+The distance from a secondary lot line, bordering a secondarythoroughfare, maintained clear from buildings with the exception of encroachments.
+see Diagram 3 Setbacks
+#### Setback, Side:
 The distance from a side lot line, maintained clear from buildingswith the exception of encroachments.
-#### see Diagram 3 Setbacks Setback, Rear:
+see Diagram 3 Setbacks
+#### Setback, Rear:
 The distance from a rear lot line, maintained clear from buildingswith the exception of encroachments.
-#### see Diagram 3 SetbacksShade Tree:
+see Diagram 3 Setbacks
+#### Shade Tree:
 Any tree grown specifically for its shade, specifically large treeswith spreading canopies.
 Species can include oaks, maples, ashes,lindens, sycamores, and elms.
 #### Shopfront:
@@ -620,12 +625,16 @@ In a three-dimensional measurement system, width is a horizontalmeasurement, dis
 A group of wind turbines in the same location used to produceelectricity.
 #### Fenestration:
 The arrangement, proportioning, and design of openings on everyexterior wall of a building, including windows and doors butexcluding entrances and doors for parking, loading, and service facilities.
-If a Carriage House door is more than 50% glass, it iscounted as a window and door.
-#### see Diagram 4 Fenestration Fenestration, Ground Story The percentage of openings present on a building’s ground floor.
-#### see Diagram 4 Fenestration Fenestration, Ground Story The percentage of openings on the upper stories, each consideredindependently.
-#### see Diagram 4 Fenestration
+If a Carriage House door is more than 50% glass, it is counted as a window and door.
+see Diagram 4 Fenestration 
+#### Fenestration, Ground Story 
+The percentage of openings present on a building’s ground floor.
+see Diagram 4 Fenestration
+#### Fenestration, Ground Story (2)
+The percentage of openings on the upper stories, each considered independently.
+see Diagram 4 Fenestration
 #### Worker:
-Workers include all people engaged in labor and who are eitherfull-time, part-time, temporary, contract, or self-employed.
+Workers include all people engaged in labor and who are either full-time, part-time, temporary, contract, or self-employed.
 #### Yard:
 A privately-owned area that is adjacent to a building and oftentimes described in relation to the building, such as front yard, sideyard, or rear yard.
 #### Zoning Permit:

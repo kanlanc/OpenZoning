@@ -1,5 +1,6 @@
 Eventual goal of having all project planning & material in this folder.
-##[Project Management Central doc](https://docs.google.com/document/d/1udB_CSLNZoDyq_w0sh8Y4JoSCOIQjkshG5vGUT31l3g/edit)
+
+[project management central doc](https://docs.google.com/document/d/1udB_CSLNZoDyq_w0sh8Y4JoSCOIQjkshG5vGUT31l3g/edit)
 
 ## Agendas & Meeting Notes
 - 6/8 Weekly Meeting ([Agenda](https://docs.google.com/document/d/1KKOFqAFaNK6nEyo_3oCTcg5n8wr5LlalLgjev_pQlvE/edit?usp=sharing))

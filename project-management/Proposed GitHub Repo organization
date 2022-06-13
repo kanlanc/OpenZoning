@@ -9,7 +9,9 @@ front page “buckets” & nesting
     - graphic aids for understanding
 - geospatial standard
 - translation code (should we have one of these each under the two “standard” buckets?)
-- Project background
+- UI/UX
+- back-end (this is just a placeholder to remind me that a big component of this will be data storage)
+- project background
 - references
     - info. on precedent org.s
         - MAPC-files
@@ -18,3 +20,7 @@ front page “buckets” & nesting
 - project management
 
 I'm not sure where a folder like "images" is best located
+
+general suggestions
+- adding product labels to our issues
+    - e.g. rules-standard, geo-standard, UI/UX

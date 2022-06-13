@@ -1,8 +1,0 @@
-{
-"type": "FeatureCollection",
-"name": "Planning_Zoning_Overlay",
-"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
-"features": [
-{ "type": "Feature", "id": 1, "properties": { "OBJECTID": 1, "SYMBOL_NAM": "Nicollet Mall", "GLOBALID": "6d035b06-2b85-4887-b4fa-22d81418b2ad", "Shape__Area": 308918.0859375, "Shape__Length": 3910.4602398176298 }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -93.277036512705806, 44.972318382632402 ], [ -93.270288809364303, 44.980240191608502 ], [ -93.268782834994497, 44.982025763935702 ], [ -93.267531856401206, 44.981491341510399 ], [ -93.269010053964095, 44.979695885584697 ], [ -93.275604960164003, 44.971724640730102 ], [ -93.277036512705806, 44.972318382632402 ] ] ] } }
-]
-}

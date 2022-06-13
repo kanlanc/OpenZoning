@@ -1,20 +1,21 @@
 # Open Zoning Feed Specification Project.
 
-The purpose of this project is to develop a data standard for zoning codes, enabling simplified and streamlined access to **zoning data** so that everyone from _non-experts_ to _"machines"_ can know & understand **what can be built**
+The purpose of this project is to develop a web-based data standard for zoning codes, enabling simplified and streamlined access to **zoning data** so that everyone from _non-experts_ to _"machines"_ can know & understand **what can be built**
 
 ### The Problem (\#Rant)
 Zoning as it currently exists in the U.S. is _ridiculous_...
-Basic questions are impossible to answer accurately without detailed legal analyses. Such as: what's possible on a site, existing structures' compliance, and the overall impacts of existing and proposed changes to zoning
+Basic questions are impossible to answer accurately without detailed legal analyses. Such as: what can a site be used for, what can be built on a site, existing structures' compliance, and the overall impacts of existing and proposed changes to zoning
 
 ### Contents
 1. [Mission, vision, goals](#mission-vision-goals)
 2. [Anticipated OZFS Components](#anticipated-ozfs-components)
 3. [The Future with OZFS](#the-future-with-ozfs)
-3. [Precedents and related work](#precedents-and-related-work)
-4. [Potential research questions](#potential-research-questions)
+4. [Precedents and related work](#precedents-and-related-work)
+5. [Potential research questions](#potential-research-questions)
 
 ## Mission, vision, goals
-- Able to store zoning regulations as written, without interpretation (i.e. don't store an FAR value if there isn't one in the code)
+- The existence of a single source of machine-readable, accurate, and openly-available zoning data
+- The ability to store all zoning regulations as written, without interpretation (i.e. don't store an FAR value if there isn't one in the code)
 - A data architecture flexible enough to accommodate most types of zoning regulations & regimes
 - Versioning systems for both the data standard and zoning codes that allow for iteration, improvement, maintenance
 - Planning and issue tracking systems for short- through long-term planning

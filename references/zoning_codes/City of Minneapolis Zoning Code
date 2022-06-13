@@ -1,6 +1,6 @@
 City of Minneapolis Zoning Code link: https://library.municode.com/mn/minneapolis/codes/code_of_ordinances?nodeId=MICOOR_TIT20ZOCO
 
-**notes**
+notes
 
 base structure of the Minneapolis Zoning code
 
@@ -11,5 +11,5 @@ base structure of the Minneapolis Zoning code
 3) overlay districts: control built form
 
 OZFS functionality implications
-- ***constraints (e.g. FAR) are a function of bulk type** - test this further
+- constraints (e.g. FAR) are a function of bulk type** - test this further
 - variances to spatially resolved constraints based on bulk type & # of units

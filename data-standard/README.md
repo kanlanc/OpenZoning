@@ -8,16 +8,16 @@ Testing/working files to go in [Examples folder](/examples)
 ## Constraint Structure
 Stored in hierarchy of:
 
-- lot
-  - structure
-    - floor
+- [lot](glossary.md#lot)
+  - [structure](glossary.md#structure)
+    - [floor](glossary.md#floor)
 
 Repeatable structures within above:
-- bulk (option)
-- base
-  - height
-  - setback
-  - plane
+- [bulk](glossary.md#bulk) (option)
+- [base](glossary.md#base)
+  - [height](glossary.md#height)
+  - [setback](glossary.md#setback)
+  - [plane](glossary.md#plane)
 
   
 ## constraints & modifiers
@@ -28,10 +28,10 @@ Repeatable structures within above:
 
 #### Dimensions:
 in ft / sq ft
-- width
-- depth
-- area
-- frontage
+- [width](glossary.md#width)
+- [depth](glossary.md#depth)
+- [area](glossary.md#area)
+- [frontage](glossary.md#frontage)
 
 #### Counts:
 - min
@@ -54,9 +54,9 @@ when used as a _suffix_, defines or applies to the top-most floor, height, etc.
 ### corner
 
 ## other constraints
-- FAR / Floor Area
+- [FAR](glossary.md#FAR) / [Floor Area](glossary.md#floor-area)
 - Parking
-- Units
+- [Units](glossary.md#units)
 - Use types
   - Use groups
     - Uses

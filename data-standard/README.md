@@ -15,7 +15,7 @@ Stored in hierarchy of:
 Repeatable structures within above:
 - [mass](glossary.md#building-mass) (option) (i.e. bulk)
 - [base](glossary.md#base)
-  - [height](glossary.md#building height)
+  - [height](glossary.md#building-height)
   - [setback](glossary.md#setback)
   - plane
 

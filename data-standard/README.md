@@ -30,7 +30,7 @@ Repeatable structures within above:
 in ft / sq ft
 - [width](glossary.md#width)
 - [depth](glossary.md#depth)
-- [lot area](glossary.md#lot-area)
+- area
 - [frontage](glossary.md#frontage)
 
 #### Counts:
@@ -38,8 +38,8 @@ in ft / sq ft
 - max
 - numberOf
 - per
-  - Acre
-  - DU (dwelling unit)
+  - [Acre](glossary.md#acre)
+  - [DU (dwelling unit)](glossary.md#dwelling-unit)
   - Lot
 
 

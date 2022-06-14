@@ -1,30 +1,29 @@
 # OZFS Data Standard
 _Will go here_
-TODO: Link to definitions in the [Glossary](glossary.md) where possible. E.g. [Lot Area](glossary.md#lot-area)
 
 Testing/working files to go in [Examples folder](/examples)
 
 
-## Constraint Structure
+## Constraint Classifying Structure
 Stored in hierarchy of:
 
 - [lot](glossary.md#lot)
   - [structure](glossary.md#structure)
     - [story](glossary.md#story) (i.e. floor)
 
-Repeatable structures within above:
-- [mass](glossary.md#building-mass) (option) (i.e. bulk)
+Structures and their constraints are nested within the above hierarchy:
+- [bulk](glossary.md#building-mass) (option) (i.e. mass)
 - [base](glossary.md#base)
   - [height](glossary.md#building-height)
   - [setback](glossary.md#setback)
   - plane
 
   
-## constraints & modifiers
+## Constraints & Modifiers
 #### Edges:
-- front
-- rear
-- side
+- [front](glossary.md#frontage) (lot line)
+- [rear](glossary.md#lot-line-rear) (lot line)
+- [side](glossary.md#lot-line-side) (lot line)
 
 #### Dimensions:
 in ft / sq ft
@@ -43,7 +42,7 @@ in ft / sq ft
   - Lot
 
 
-## special definitions
+## Special Definitions
 
 ### roof
 TBD

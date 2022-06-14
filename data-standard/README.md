@@ -37,7 +37,7 @@ in ft / sq ft
 - max
 - numberOf
 - per
-  - [Acre](glossary.md#acre)
+  - [Acre]
   - [DU (dwelling unit)](glossary.md#dwelling-unit)
   - Lot
 

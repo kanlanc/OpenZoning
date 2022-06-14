@@ -10,14 +10,14 @@ Stored in hierarchy of:
 
 - [lot](glossary.md#lot)
   - [structure](glossary.md#structure)
-    - [floor](glossary.md#floor)
+    - [story](glossary.md#story) (i.e. floor)
 
 Repeatable structures within above:
-- [bulk](glossary.md#bulk) (option)
+- [mass](glossary.md#building-mass) (option) (i.e. bulk)
 - [base](glossary.md#base)
-  - [height](glossary.md#height)
+  - [height](glossary.md#building height)
   - [setback](glossary.md#setback)
-  - [plane](glossary.md#plane)
+  - plane
 
   
 ## constraints & modifiers
@@ -30,7 +30,7 @@ Repeatable structures within above:
 in ft / sq ft
 - [width](glossary.md#width)
 - [depth](glossary.md#depth)
-- [area](glossary.md#area)
+- [lot area](glossary.md#lot-area)
 - [frontage](glossary.md#frontage)
 
 #### Counts:

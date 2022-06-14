@@ -5,7 +5,7 @@ Testing/working files to go in [Examples folder](/examples)
 
 
 ## Constraint Classifying Structure
-Stored in hierarchy of:
+Stored in a hierarchy of:
 
 - [lot](glossary.md#lot)
   - [structure](glossary.md#structure)

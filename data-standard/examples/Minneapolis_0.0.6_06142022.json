@@ -1,0 +1,370 @@
+//This should have a new version # 0.0.6
+{
+	"subdistrict": "MN-HennepinCo-Minneapolis-BFI3", //-all bulks/uses
+	"last_updated": "20220614 20:13:17",
+  "author": "OZFS Team",
+	"constraints": {
+		"lot":
+			{
+				"lotCoverage": { //should this be on a "base"
+					"max": 0.6
+				}
+				"structures": [
+					{
+						"structureNum":1
+						"structureName":"Primary",
+						"structureBulkOptions": [
+							{
+								"structureBulkNum":1,
+								"structureBulkName":"single-family",
+								"basePlanes": [
+									{
+										"base0":"ground",
+										"height":0,
+										"setbacks": {
+											"front":20,
+											"rear":5,
+											"side": {
+												"interior": [5, "V1_1"],
+												"corner": [8, "V1_2"],
+											},
+										""
+
+								},
+								"stories": {
+									"max":2.5,
+									"floors": [
+										{
+											"floorNum":1,
+											"floorName":"ground",
+											"maxHeight":14,
+											"minHeight":9, //is this somewhere?
+											"maxGround":3.5,
+											"minGround":-3.5
+										},
+										{
+											"floorNum":0,
+											"floorName":"basement",
+											"maxHeight":12, //is there any limit?
+										},
+										{
+											"floorNum":"Max",
+											"floorName":"attic" //could also be "penthouse", etc.
+										},
+									],
+								"roof":"TBD" //structure TBD
+								},
+								"FAR": {
+									"residential":0.5
+								}
+							},
+							{
+								"structureBulkNum":2,
+								"structureBulkName":"two-family",
+								"FAR": {
+									"residential":0.6
+								}
+							},
+							{
+								"structureBulkNum":3,
+								"structureBulkName":"three-family",
+								"FAR": {
+									"residential":0.7
+								}
+							},
+							{
+								"structureBulkNum":4,
+								"structureBulkName":"multi-family",
+								"FAR": {
+									"residential":1.4
+								},
+								"minimumLotDimensions": {
+									"area": { //not sure if this area is for the lot or building!!
+										"minimum": 5000, //in square feet -- sometimes this is expressed as 'per du'
+										"maximum": 18000,
+									},
+									"width": {
+										"minimum": 40,
+									}
+								}
+							},
+						],
+					},
+					{
+						"structureNum":2
+						"structureName":"Accessory"
+						"structureBulkOptions": [ //the below is made up
+							{
+								"structureBulkNum":1,
+								"structureBulkName":"ADU"
+								"setback": {
+									"front":20,
+									"side":5
+								}
+							},
+							{
+								"structureBulkNum":2,
+								"structureBulkName":"garage",
+								"bases": {
+									"base0": {
+										"height":0,
+									}
+								}
+								"dimensions": {
+									"front":20,
+									"side":5
+								}
+							},
+						],
+					},
+				],
+			},
+
+
+// have not reviewed much of the below
+	"variants": [
+		{
+			"variant1": { //variants that have no limits on how many can be applied
+					"V1_1": "setback increase per lot width",
+					"V1_2": {
+						"name":"setback increase per height",
+						"var1":"setback",
+						"var1Values": [10, 12, 14, 15],
+						"var2":"height",
+						"var2Values": [[42, 52.99],[53, 63.99],[64, 64.99],[75, 2000]],
+					},
+					"V1_3": "tall adjacent buildings",
+					"V1_4": "basement",
+					"V1_5": "floor area multiplier per floor height",
+					"V1_6": "affordable housing",
+					"V1_7": "environmental sustainability" //not coded
+				},
+			"variant2": { //variants that have a limit on how many can be applied to each ordinance
+				"V2_1": "enclosed parking" //as this deals with parking, I haven't encoded it fully yet
+			},
+			},
+		],
+		"bulk": { // the "1" is for primary structure. I haven't started considering multiple structures yet.
+			"allUses": [
+				{
+					"base0": { //always refers to the ground level
+						"height": {:0, //by default
+							"V1_4": {:[-3.5, 3.5], //brackets denote a range of values
+								"valueType": "absolute",
+								"role": "allowingConstraint"
+							},
+						},
+					},
+					"baseMax":{
+						"height": {
+							"V1_2": {
+								"value1": [42, 52.99],
+								"value2": [53, 63.99],
+								"value3": [64, 64.99],
+								"value4": [75, "infinity"],
+								"valueType": "absolute", //the three value types are either: 1) absolute (i.e. stands on its own), 2) delta (is added or subtracted)
+								//to another
+								"role": "triggeringConstraint",
+							},
+						},
+					},
+						"frontage": null,
+					}
+				},
+				"useCombo1": {:["one family", "two family", "three family"],
+					"minSetback":{ //in feet
+						"front":20,
+						"rear": 5,
+						"side": {
+							"interior": {: 5,
+								"V1_1": {
+									"value1": 6,
+									"value2": 7,
+									"value3": 8,
+									"valueType": "absolute",
+									"role": "resolvedConstraint"
+								},
+							},
+							"corner": {
+								"base": 8,
+								"V1_2": {
+									"base": [10, 12, 14, 15],
+									"height": [[42, 52.99],[53, 63.99],[64, 64.99],[75, 2000]], //using 2000 instead of 'infinity'
+									"value1": 10,
+									"value2": 12,
+									"value3": 14,
+									"value4": 15,
+									"valueType": "absolute",
+									"role": "resolvedConstraint"
+								},
+							}
+						}
+					},
+				},
+				"useCombo1": {:["one family", "two family"],
+					"base2":{
+						"height": {:28,
+							"qualifier": "walls",
+							"V1_3": {:35,
+								"valueType": "absolute",
+								"role": "resolvedConstraint",
+								"note": "if 50% of the buildings within 100’ of the subject site exceed the maximum height"
+							}
+						},
+					},
+					"baseMax":{
+						"height": {:33,
+							"qualifier": "roof",
+							"V1_3": {:40,
+								"valueType": "absolute",
+								"role": "resolvedConstraint",
+								"note": "if 50% of the buildings within 100’ of the subject site exceed the maximum height"
+							}
+						},
+					}
+				},
+				"three family": {
+					"baseMax":{
+						"height": 42,
+					}
+				},
+				"allOtherUses": {
+					"baseMax":{
+						"height": 42,
+					}
+				},
+			},
+			"floorsStoriesAndUnits": { //units will have categories: 1) standard, 2) affordable, 3) environmentally sustainable, 4)etc...
+				"allUses": {
+					"stories": {//"stories" verbage comes from the PlaceCode glossary on GitHub
+						"basement": {
+							"floorAreaContribution": {:1.0, //floor area contribution is recorded as a decimal percentage of the entire gross floor footprint,
+								//with 1.0 = the entire floor footprint counts towards FAR resolution
+								"V1_4": {:0.0,
+									"valueType": "absolute",
+									"role": "resolvedConstraint"
+								}
+							}
+						},
+						"attic": {: null},
+						"allOther": {
+							"storyHeight": {
+								"V1_5": {:[14, "infinity"],
+									"valueType": "absolute",
+									"role": "triggeringConstraint",
+							},
+							"floorAreaContribution": {:1.0,
+								"V1_5": {:2.0,
+									"valueType": "multiplier",
+									"role": "resolvedConstraint",
+								}
+							},
+						},
+					}
+				},
+				"useList": {:["single family", "two family", "three family"],
+					"units": {
+						"V_6": {:1,
+							"valueType": "delta",
+							"startAt": 1,
+							"catagory": "affordableHousing",
+							"role": "allowingConstraint",
+						}
+					},
+					"floors": {
+						"grossFloorArea": {"min": 2500}//taking gross floor area definition from PlaceCode
+					}
+				},
+				"single family": {
+					"numberOfStories":{
+						"max": 2.5,
+					},
+				},
+				"two family": {
+					"numberOfStories":{
+						"max": 2.5,
+					}
+				},
+				"three family": {
+					"numberOfStories":{
+						"max": 3,
+					}
+				},
+				"allOtherUses": {
+					"numberOfStories":{
+						"max": 3,
+					}
+				},
+			},
+			"FAR":{
+				"override": { //the ability to record override values per special clauses in the ordinance (similar to one of MAPC's fields): Table 552-4, Minneapolis Code
+					"min": null, //overrides are per-overlay in Minneapolis, but could be per-bulk/use
+					"max": null
+				},
+				"useCombo1": {:["single family", "two family", "three family"],
+					"residential": {
+						"V1_6": {:0.1,
+							"valueType": "delta",
+							"role": "resolvedConstraint",
+						}
+					}
+				},
+				"single family": { //"addLimit": 1, //for when there's a limit on the number of "add"s(Minn. calls them "premiums") that can be applied
+					"residential": 0.5,
+					"commercial":null,
+					"total":null,
+					}
+				},
+				"two family": {
+					"residential": 0.6,
+					"commercial":null,
+					"total":null,
+					}
+				},
+				"three family": {
+					"residential": 0.7,
+					"commercial":null,
+					"total":null,
+					}
+				},
+				"allOther": {
+					"residential": 1.4,
+					"commercial":null,
+					"total":null,
+				},
+			},
+			"Lot": {
+				"allUses":{
+					"area": {
+						"lotCoverage": {
+							"max": 0.6
+						}
+					},
+					"dimensions": {
+						"width": {
+							"VC1_1": {
+								"value1": [50, 59.99],
+								"value2": [60, 69.99],
+								"value4": [70, "infinity"],
+								"valueType": "absolute",
+								"role": "triggeringConstraint",
+							}
+						}
+					}
+				},
+				"four family plus"
+					"area" : {
+						"minimum": 5000, //in square feet -- sometimes this is expressed as 'per du'
+						"maximum": 18000,
+					},
+					"dimensions": {
+						"width": {
+							"minimum": 40,
+							"maximum": null,
+						}
+					}
+				}
+			},
+		}
+	}
+}

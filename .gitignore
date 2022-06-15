@@ -8,3 +8,7 @@
 MAPC-files/Base Districts/
 MAPC-files/Overlay Districts/
 MAPC-files/~$PC Zoning Atlas Technical Appendix notes.docx
+*.lock
+*.gpkg-shm
+*.gpkg-wal
+*.qmd

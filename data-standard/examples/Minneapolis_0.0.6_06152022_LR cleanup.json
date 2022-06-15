@@ -1,0 +1,193 @@
+//This should have a new version # 0.0.6
+{
+	"subdistrict": "MN-HennepinCo-Minneapolis-BFI3", //-all bulks/uses
+	"last_updated": "20220614 20:13:17",
+	"author": "OZFS Team",
+	"constraints": {
+		"lot":{
+			"lotCoverage": { //should this be on a "base" --> LR: i think it works to assume it's at ground level.
+				"max": 0.6
+			},
+			"structures": [//an array of structures: primary, accessory, (others)
+				{
+					"structureNum": 1,
+		 			"structureName":"Primary",
+					"structureBulkOptions": [//an array of bulk options: single-family, two-family, three-family, etc...
+						{
+							"structureBulkNum": 1,
+							"structureBulkName":"single-family",
+							"basePlanes":[//the phrase "Planes" threw me off here because of the planes nomenclature for roof planes, fyi
+								{
+									"base0":"ground",
+									"height":0,
+									"setbacks": {
+										"front":20,
+										"rear":5,
+										"side": {
+											"interior": [5, "V1_1"],
+											"corner": [8, "V1_2"],
+										},
+									},
+								}
+								{
+									"baseMax":"topOfWall",
+									"height": [28, "V1_X"]
+								}
+							],
+							"stories": {
+								"max":2.5,
+								"floors": [
+									{
+										"floorNum": [1, 2],
+										"floorName":"ground",
+										"maxHeight":14, //LR: this isn't necessarily true; you can build a floor taller than 14', it just contributes x2 to the floor area
+										"minHeight":9, //is this somewhere?--> LR:not that I found, I'll check some more
+										"maxGround":3.5,
+										"minGround":-3.5
+									},
+									{
+										"floorNum":0,
+										"floorName":"basement",
+										"maxHeight":12, //is there any limit? --> LR: not that I know of
+										"inhabitable": "yes", //let's discuss these last two variables together. I think we need a way to capture a floor's contribution 
+										//to FAR calculations
+										"floorAreaContribution": [1, "V1_Y"]
+									},
+									{
+										"floorNum":"Max",
+										"floorName":"attic", //could also be "penthouse", etc.
+										"inhabitable": "no",
+										"floorAreaContribution": [0]
+									},
+								],
+								"roof":{//if needed, e.g. like in Minneapolis' case, if the top of the roof is captured differently than max building height
+									"maxHeight": [33, "V1_X"]
+								}
+							},
+							"FAR": {
+								"residential":[0.5, "V1_Z"]
+							},
+						},
+						{
+							"structureBulkNum":2,
+							"structureBulkName":"two-family",
+							"FAR": {
+								"residential":[0.6, "V1_Z"]
+							}
+						},
+						{
+							"structureBulkNum":3,
+							"structureBulkName":"three-family",
+							"basePlanes":[//the phrase "Planes" threw me off here because of the planes nomenclature for roof planes, fyi
+								{
+									"baseMax":"topOfStructure",
+									"height": [42, "V1_X"]
+								}
+							],
+							"stories": {
+								"max":3,
+							},
+							"FAR": {
+								"residential":[0.7, "V1_Z"]
+							}
+						},
+						{
+							"structureBulkNum":4,
+							"structureBulkName":"multi-family",
+							"basePlanes":[//the phrase "Planes" threw me off here because of the planes nomenclature for roof planes, fyi
+								{
+									"baseMax":"topOfStructure",
+									"height": [42, "V1_X"]
+								}
+							],
+							"stories": {
+								"max":3,
+							},
+							"FAR": {
+								"residential":1.4
+							},
+							"minimumLotDimensions": {
+								"lotArea": { //not sure if this area is for the lot or building!!
+									"minimum": 5000, //in square feet -- sometimes this is expressed as 'per du'
+									"maximum": 18000,
+								},
+								"lotWidth": {
+									"minimum": 40,
+								}
+							}
+						},
+					],
+				}
+				{
+					"structureNum":2,
+					"structureName":"Accessory",
+					"structureBulkOptions": [ //the below is made up
+						{
+							"structureBulkNum":1,
+							"structureBulkName":"ADU",
+							"setback": {
+								"front":20,
+								"side":5
+							}
+						},
+						{
+							"structureBulkNum":2,
+							"structureBulkName":"garage",
+							"bases": {
+								"base0": {
+									"height":0,
+								}
+							},
+							"dimensions": {
+								"front":20,
+								"side":5
+							}
+						},
+					],
+				},
+			],
+			"variants": [
+				{
+					"variant1": { //variants that have no limits on how many can be applied
+							"V1_1": "setback increase per lot width",
+							"V1_2": {
+								"name":"setback increase per height",
+								"var1":"setback",
+								"var1Values": [10, 12, 14, 15],
+								"var2":"height",
+								"var2Values": [[42, 52.99],[53, 63.99],[64, 64.99],[75, 2000]],
+							},
+							"V1_2": {
+								"name":"setback increase per height",
+								"variables":[["setback"],["height"]],
+								"varValues": [[[10, 12, 14, 15]], [[[42, 52.99],[53, 63.99],[64, 64.99],[75, 2000]]]],
+							},
+							"V1_3": "tall adjacent buildings",
+							"V1_4": "basement",
+							"V1_5": "floor area multiplier per floor height",
+							"V1_6": "affordable housing",
+							"V1_7": "environmental sustainability" //not coded
+						},
+					"variant2": { //variants that have a limit on how many can be applied to each ordinance
+						"V2_1": "enclosed parking" //as this deals with parking, I haven't encoded it fully yet
+					},
+				},
+			],
+		},
+	}
+}
+			"Lot": {
+				"allUses":{
+					"dimensions": {
+						"width": {
+							"VC1_1": {
+								"value1": [50, 59.99],
+								"value2": [60, 69.99],
+								"value4": [70, "infinity"],
+								"valueType": "absolute",
+								"role": "triggeringConstraint",
+							}
+						}
+					}
+				},
+

@@ -1,0 +1,18 @@
+{
+  "$id": "https://raw.githubusercontent.com/openmobilityfoundation/mobility-data-specification/main/schema/templates/common.json",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Common schema definitions for MDS",
+  "definitions": {
+    "area_type": {
+      "$id": "#/definitions/area_type",
+      "type": "string",
+      "description": "The type of a service area",
+      "enum": [
+        "unrestricted",
+        "restricted",
+        "preferred_pick_up",
+        "preferred_drop_off"
+      ]
+    },
+  }
+}

@@ -1,5 +1,5 @@
 # OZFS Geospatial Standard
-https://datatracker.ietf.org/doc/html/rfc7946#section-3.2
+the GeoJson format: https://datatracker.ietf.org/doc/html/rfc7946
 
 Decision from Carole + Paul discussion on points vs. polygons will go here 
 

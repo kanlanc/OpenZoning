@@ -1,1 +1,1 @@
-[Google doc: links between constraint values in our Minneapolis json files and the correspond sections in the Minneapolis code.] (https://docs.google.com/document/d/1eg7NzxIhRXsRLy2C81EbEgwT1gi_I8LALCq7a_bVp3s/edit?usp=sharing)
+(Google doc: links between constraint values in our Minneapolis json files and the correspond sections in the Minneapolis code.)[https://docs.google.com/document/d/1eg7NzxIhRXsRLy2C81EbEgwT1gi_I8LALCq7a_bVp3s/edit?usp=sharing]

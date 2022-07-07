@@ -31,11 +31,11 @@
 											"corner": [8, "V1_2"],
 										},
 									},
-								}
+								},
 								{
 									"base1":"topOfWall",
 									"height": [28, "V1_X"]
-								}
+								},
 								{
 									"baseMax": "topOfRoof",
 									"height": [33, "V1_X"]
@@ -43,12 +43,12 @@
 							],
 							"stories": {
 								"max":2.5, //what is a half story? and where should we hold its defintion?
-								"floors": [ //we should change this name to match the PlaceCode defintions 
+								"floors": [ //we should change this name to match the PlaceCode defintions
 									{
 										"floorNum": 1,
 										"floorName":"ground",
 										"maxHeight":14,
-										"minHeight":9, 
+										"minHeight":9,
 										"maxFloorStart":3.5,
 										"minFloorStart":-3.5
 									},
@@ -56,13 +56,13 @@
 										"floorNum": 2,
 										"floorName":"two",
 										"maxHeight":14,
-										"minHeight":9, 
+										"minHeight":9,
 									},
 									{
 										"floorNum":0,
 										"floorName":"basement",
-										"maxHeight":12, 
-										"inhabitable": "yes", //let's discuss these last two variables together. I think we need a way to capture a floor's contribution 
+										"maxHeight":12,
+										"inhabitable": "yes", //let's discuss these last two variables together. I think we need a way to capture a floor's contribution
 										//to FAR calculations
 										"floorAreaContribution": [1, "V1_Y"]
 									},
@@ -84,7 +84,7 @@
 							"stories": {
 								"max":2.5,
 								"floors": "^", //?: do we need an indicator for when the value for an optional variable (e.g. floors) is the same as the previous bulk. For required
-								//variables (e.g. "base0": "ground" constraints), this can be assumed.  
+								//variables (e.g. "base0": "ground" constraints), this can be assumed.
 							},
 							"FAR": {
 								"residential":[0.6, "V1_Z"]
@@ -101,7 +101,7 @@
 							],
 							"stories": {
 								"max":3,
-								"floors": "^", 
+								"floors": "^",
 							},
 							"FAR": {
 								"residential":[0.7, "V1_Z"]
@@ -139,4 +139,3 @@
 		},
 	}
 }
-

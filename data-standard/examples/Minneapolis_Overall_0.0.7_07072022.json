@@ -1,0 +1,162 @@
+{
+	"district": {
+		"identifier": "MN-HennepinCo-Minneapolis-Overall", //-all bulks/uses
+		"name": "Minneapolis (Super) Definition File",
+		"base": 1, //binary denoting base vs. overlay
+	},
+	"last_updated": "20220707",
+	"author": "OZFS Team",
+	//notes: this base district contains all constraints that are "generally" listed, i.e. within the following sections of Minneapolis's code:
+	//	- chapter 535: Regulations of General Applicability
+	//	- chapter 536: Specific Development Standards
+	//	- chapter 537: Accessory Uses & Structures
+
+	"permittedUses": {
+			"permitted": ["single-family", "two-family", "three-family"], //this should include "All" allowed in Minneapolis???
+			"conditional": [],
+		}
+	"constraints": {
+		"lot":{
+			"structures": [//an array of structures: primary, accessory, (others)
+				{
+					"structureNum":2,
+					"structureName":"Accessory",
+					"structureBulkOptions": [
+						{
+							"structureBulkNum":1,
+							"structureBulkName":"ADU",
+							"contributesToFloorArea":0
+							"usesAllowedIn": [
+								{
+									"uses": ["single-family", "two-family"],
+									"allowedNumberOfBulks": 1,
+								}
+							],
+							"placementAllowed": ["internal", "attached", "detached"], //not sure this is necessary
+							"internal": { //options here are internal, attached (?), external //PS my inclination is that these should be nested further
+								"stories": {
+									"max":1,
+									"floorArea": {
+										"maximum": [800, ["V1_before 2015", "max. = floor area of the first floor of the primary structure"]],
+									},
+								},
+							},
+							"attached": { //options here are internal, attached (?), external
+								"basePlanes":[//the phrase "Planes" threw me off here because of the planes nomenclature for roof planes, fyi
+									{
+										"base0":"ground",
+										"height":0,
+										"setbacks": {
+											"all": 3, //PS is this from the lot line or the other structures?
+										}
+									}
+									{
+										"baseMax":"topOfRoof",
+										"height": 21
+									}
+								],
+								"stories": {
+									"floorArea": {
+										"maximum": [800, ["V1_before 2015", "max. = floor area of the first floor of the primary structure"]],
+									},
+								},
+							},
+							"detached": { //options here are internal, attached (?), external
+								"basePlanes":[//the phrase "Planes" threw me off here because of the planes nomenclature for roof planes, fyi
+									{
+										"base0":"ground",
+										"height":0,
+										"setbacks": {
+											"all": 3,
+											"fromPrimaryStructure": 20
+										}
+									}
+									{
+										"baseMax":"topOfRoof",
+										"height": 21
+									}
+								],
+								"stories": {
+									"floorArea": {
+										"minimum": 300,
+										"maximum": [1300, [0.16, "of lot area", "maximum of 1600sqft"]],
+									},
+									"floors": [ //we should change this name to match the PlaceCode defintions
+										{
+											"floorNum": 0,
+											"floorName":"ground",
+											"footprint": {
+												"maximum": [676, [0.1, "of lot area", "maximum of 1000sqft"]]
+											}
+										}
+									],
+								},
+							}
+						},
+						{
+							"structureBulkNum":2,
+							"structureBulkName":"garage",
+							"contributesToFloorArea":0
+							"usesAllowedIn": [
+								{
+									"uses": ["single-family", "two-family", "three-family"],
+									"allowedNumberOfBulks": 1,
+								}
+							],
+							"internal": {
+								//didn't see anywhere in the code where it said this is allowed, need to check again
+							},
+							"attached": {
+								"basePlanes":[
+									{
+										"base0":"ground",
+										"height":0,
+										"setbacks": {
+											"front": [15, "if garage door faces front lot line"], //LR: I need to go back through the code and clarify this
+											"allOthers": [3, [0, "when garage doors face the lot line"]],
+										},
+										"width": {
+											"front": {
+												"max": [0.6, "of front length of structure"] //"constraints[lot][structures][1][structureBulkOptions]["]
+											}
+										}
+									}
+								],
+							},
+							"detached": {
+								"basePlanes":[//the phrase "Planes" threw me off here because of the planes nomenclature for roof planes, fyi
+									{
+										"base0":"ground",
+										"height":0,
+										"setbacks": {
+											"all": [3, [0, "when garage doors face the lot line"]],
+											"fromPrimaryStructure": 20
+										},
+									}
+									{
+										"base1":"topOfWall",
+										"height": {
+											"default": 10,
+										},
+									}
+									{
+										"baseMax":"topOfRoof",
+										"height": {//chapter 537.50. - Maximum height.
+											"default": 13,
+											"other": [16, 20] //variances allow these values
+										}
+									}
+								],
+								"stories": {
+									"floorArea": {
+										"maximum": [676, [0.1, "lot area", "maximum of 1000sqft"]],
+									},
+								},
+							}
+						}
+					],
+				},
+			],
+		},
+	}
+}

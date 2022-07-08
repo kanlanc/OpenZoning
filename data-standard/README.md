@@ -1,4 +1,6 @@
 # OZFS Data Standard
+A portion of OZFS's work is establishing a minimum viable set of "core" constraints needed to bulk on any given lot across America. The work-in-progress list of these constraints are captured within an airtable titled [OZFS meta-data](https://airtable.com/invite/l?inviteId=invIE9Rq8BJxoRZe9&inviteToken=c24d20d82c00f933e02ca4d7f9b78088b2eaefcef049f3691df85eb48f858fbc&utm_medium=email&utm_source=product_team&utm_content=transactional-alerts). 
+
 _Will go here_
 
 Testing/working files to go in [Examples folder](/examples)

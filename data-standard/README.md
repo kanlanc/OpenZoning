@@ -1,7 +1,7 @@
 # OZFS Data Standard
 A portion of OZFS's work is establishing a minimum viable set of "core" constraints that are necessary to bulking on any given lot across America. Our work-in-progress list of these constraints are captured within an Airtable titled [OZFS schema](https://airtable.com/invite/l?inviteId=invIE9Rq8BJxoRZe9&inviteToken=c24d20d82c00f933e02ca4d7f9b78088b2eaefcef049f3691df85eb48f858fbc&utm_medium=email&utm_source=product_team&utm_content=transactional-alerts). 
 
-Within this table, each constraints is catagorized into a core component of the zoning concept (titled "core zoning concept component"). OpenZoning considers these components to be the core devices through which modern society has used zoning to conceptualize and abstract the tangible resource of land as discrete containers for buildings. These discrete containers are called lots, a discrete area of land plus its volume of air above and earth beneath, and are the base unit of zoning. When applied to the lot, modern society's conceptualization of land is executed through a set of components meant to control the realization of building on these lots. They are:
+Within this table, each constraint is catagorized into a core component of the modern-day zoning concept (the bucket is titled "core zoning concept component"). OpenZoning considers these components to be the core devices through which modern society has used zoning to conceptualize and abstract the tangible resource of land as discrete containers for buildings. These containers are called lots, a discrete area of land plus its volume of air above and earth beneath, and are the base units of zoning. When applied to the lot, modern society's conceptualization of land is executed through a set of components meant to control the realization of building on these lots. They are:
 
 - buildable area limits
 - height limits 
@@ -12,7 +12,7 @@ Within this table, each constraints is catagorized into a core component of the 
 - number of units limits
 - types of floor use
 
-This list is a work in progress, and correclty identifying these components is essential in creating a standard machine-readable format that can accomodate the wide swathe of zoning codes that exist across America, and across the world. 
+This list is a work in progress, and correclty identifying these components is essential to OpenZoning's goal of creating a standard machine-readable format that can accomodate the wide swathe of zoning codes that exist across America, and across the world. 
 
 _Will go here_
 

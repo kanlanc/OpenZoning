@@ -9,7 +9,7 @@ Within this table, each constraints is catagorized into a core component of the 
 - number of structures
 - types of structures
 - relationship between structures
-- # of units limits
+- number of units limits
 - types of floor use
 
 This list is a work in progress, and correclty identifying these components is essential in creating a standard machine-readable format that can accomodate the wide swathe of zoning codes that exist across America, and across the world. 

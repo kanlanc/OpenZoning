@@ -1,6 +1,6 @@
-# Open Zoning Feed Specification Project.
+# Open Zoning Feed Specification Project
 
-Open Zoning's mission is to make public zoning data universally accessible. 
+### Open Zoning's mission is to make public zoning data universally accessible. 
 
 We're doing this by applying the model of a revolutionary national precedent in the transit space, the General Transit Feed Specification (GTFS), to the zoning space by developing the _Open Zoning Feed Specification_, a web-based data standard for zoning code that simplifies and streamlines access to **zoning data** so that everyone from _non-experts_ to _"machines"_ can know & understand **what can be built**. 
 

@@ -35,10 +35,8 @@ A _feed specification_ is a pre-defined set of files for digitally storing infor
 <summary>OZFS meta-schema and schema files</summary>
 <br>
 Underpinning our schema files is a standard data structure known as the Open Zoning meta-schema. We're currently crafting our meta-schema off of the great work that has been done at Mobility Data, embodied in their 
-
   [Mobility Data Standard (MDS) meta-schema](http://json-schema.org/draft-06/schema#)
-
-  . 
+. 
 
 Our schema files fall into one of two catagories: 1) for capturing the zoning regulations of a municipality's zoning code, and: 2) for capturing the geospatial information for a municipality's districts and proximity zones. A critical challenge of this project and its research contribution in this field is our work designing the standard data structures for schemas of both file catagories that enable us to meet the criteria we've outlined in the "Product Criteria" section above. 
 </details>

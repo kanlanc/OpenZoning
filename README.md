@@ -38,7 +38,7 @@ A _feed specification_ is a pre-defined set of files for digitally storing infor
 </details>
 
 <details>
-<summary>OZFS meta-schema and schema files</summary>
+<summary>some backgroun: OZFS meta-schema and schema files</summary>
 <br>
 Underpinning our schema files is a standard data structure known as the Open Zoning meta-schema. We're currently crafting our meta-schema off of the great work that has been done at Mobility Data, embodied in their 
   
@@ -51,9 +51,9 @@ Our schema files fall into one of two catagories: 1) for capturing the zoning re
 
 ## v0.1
 ### [Geospatial structure](/geo-standard) overview
-Expectation is for multiple GIS layers to be uploaded (e.g. base + overlay districts)
-Those will be merged into a single zoning layer that _atomizes_ each polygon into a single zoning district (or combination of districts)
-All data stored within `GeoJSON` or other open/accessible GIS formats. 
+The expectation is for the district GIS layers for a given municipality (e.g. base, overlay, buffer) to be uploaded to our database.
+For a given lot, these layers will be sifted throught using our Zoning Rules Engine and constraints for that lot will be resolved. 
+All data is stored within the `GeoJSON` format or another open/accessible GIS formats. 
 
 ### (Zoning) [Data structure](/data-standard) overview & rules engine
 A non-tabular data structure enabling flexible definition & storage of zoning regulations.

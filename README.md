@@ -7,7 +7,7 @@ We're doing this by applying the model of a revolutionary national precedent in 
 <details>
 <summary>the Google Maps of zoning</summary>
 <br>
-If you use an app like Google maps to move around a city on public transit, than the GTSF fuels your urban living. In the same way, we're working everyday at OZFS to fuel your dream of owning a home in the ciy, of your small business developing the housing that communities are demanding, and your community's fight for the quality of life and equitable housing that your city promised. Every day we work, we get closer and closer to achieving this goal. 
+If you use an app like Google maps to move around a city on public transit, than the GTSF fuels your urban living. In the same way, we're working everyday at OZFS to fuel your dream of owning a home in the ciy, of your small business developing the housing that communities are demanding, and your community's fight for the quality of life and equitable housing that your city promised. Every day we work, we get closer and closer to helping you achieve these goals. 
 </details>
 
 ### The Problem (\#Rant)

@@ -102,9 +102,9 @@ The following are visions/case studies of the future that imagine & inform the g
 7. Institutional real estate developer/holder selecting properties for its new East Coast "Missing Middle" REIT
 
 <details>
-<summary>Precedents and related work</summary>
+<summary style="font-size: 40px">Precedents and related work</summary>
 <br>
-<details>
+</details>
 
 ## Precedents and related work
 ### Regional/State-wide Zoning Atlases

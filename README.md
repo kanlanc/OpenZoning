@@ -41,7 +41,7 @@ Our schema files fall into one of two catagories: 1) for capturing the zoning re
 
 
 **v0.1**
-## [Geospatial structure](/geo-standard) overview
+#### [Geospatial structure](/geo-standard) overview
 Expectation is for multiple GIS layers to be uploaded (e.g. base + overlay districts)
 Those will be merged into a single zoning layer that _atomizes_ each polygon into a single zoning district (or combination of districts)
 All data stored within `GeoJSON` or other open/accessible GIS formats. 

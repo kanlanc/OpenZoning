@@ -70,23 +70,34 @@ All data stored in within json files.
 (v0.1 to include [mockup](/images/ui-ux-mockups) _only_)
 
 ### _Future_ Functionality Components of OZFS
-
-#### Automated Zoning Code creation
+<details>
+<summary>automated zoning code creation</summary>
+<br>
 Perhaps based on [PlaceCode](https://www.principle.us/placecode)
-
-#### Existing built environment dataset(s)
-A new dataset or connections to existing sources (e.g. OSM, [Regrid](https://regrid.com/buildings)) for use cases including:
+</details> 
+  
+<details>
+<summary>existing built environment dataset(s)</summary>
+<br>
+A new dataset or connections to existing sources (e.g. OSM, Regrid) for use cases including:
 - zoning additions and modifications to current structures on a parcel
 - zoning regulations based on relations to adjacent lots/buildings
+  
+[Regrid link](https://regrid.com/buildings)
 
+</details> 
 
-#### _Interpreted_ Zoning Rules
+<details>
+<summary>interpreted zoning rules</summary>
+<br>
 Data storage mechanism able to capture data points not directly from the zoning code. E.g.:
 - Realizable units based on lot characteristics
 - FAR/floor area based on other regulations
 - Parking requirements with max build out
+</details> 
 
-## Future Realities with OZFS
+## The Future with OZFS
+### Radical new possibilities
 We hypothesize that wide-scale adoption of the OZFS will lead to radical new possibilities for land use policy and the built environment:
 - Enabling wide-scale upzoning of all types
 - Automating ADU siting & approval
@@ -97,7 +108,9 @@ We hypothesize that wide-scale adoption of the OZFS will lead to radical new pos
 - Lining up policy goals with actual zoning regulations
 - Enabling ecosystems of software & services engaging with the _potential_ built environment
 
-### Potential future personas
+<details>
+<summary>potential future personas</summary>
+<br>
 The following are visions/case studies of the future that imagine & inform the goals & possibilities for OZFS
 1. Affordable housing developer targeting sites for their existing model of 5-story buildings in the Boston region
 2. Community meeting with real-time scenario planning that generates zoning text on-the-fly
@@ -106,11 +119,6 @@ The following are visions/case studies of the future that imagine & inform the g
 5. Multinational company deciding where to locate their new assembly facility based on _potential_ workforce housing capacity in the region
 6. AR software developer looking to develop ...?
 7. Institutional real estate developer/holder selecting properties for its new East Coast "Missing Middle" REIT
-
-<details>
-<summary style="font-size:120px">Precedents and related work</summary>
-<br>
-  ddddddd
 </details>
 
 ## Precedents and related work
@@ -135,7 +143,8 @@ zones is [here](https://urban-stack.github.io/OpenZoning/MAPC-files/MAPC-map_lea
 ### Individual City Interactive Zoning Maps
 - [New York City](https://zola.planning.nyc.gov/)
 - [Chicago](https://secondcityzoning.org/) from https://derekeder.com/
-- [Atlanta](https://sites.gatech.edu/atlzoningexplorer/atl-zoning-code-explorer/) from Mark Schwabacher of Georgia Tech's Center for Spatial Planning Analytics and Visualization ([CSPAV](https://cspav.gatech.edu/)). The tool allows users to interactively explore a map, search for locations where specific uses are permitted, and export data on dimensional requirements for use-specified zones. It does not allow users to download geospatial data with zoning attributes attached.
+- [Atlanta](https://sites.gatech.edu/atlzoningexplorer/atl-zoning-code-explorer/) from Mark Schwabacher of Georgia Tech's Center for Spatial Planning
+  Analytics and Visualization ([CSPAV](https://cspav.gatech.edu/)). The tool allows users to interactively explore a map, search for locations where specific uses are permitted, and export data on dimensional requirements for use-specified zones. It does not allow users to download geospatial data with zoning attributes attached.
 
 ### Data Standard Precedents
 - [GTFS](https://gtfs.org/) - created by Google (with/for TriMet) to enable transit trip planning. Now owned/managed by [MobilityData](https://mobilitydata.org/)

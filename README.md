@@ -1,6 +1,6 @@
 # Open Zoning Feed Specification Project.
 
-The purpose of this project is to make public zoning data universally accessible. We're doing this by applying the model of a revolutionary national precedent in the transit space, the General Transit Feed Specification (GTFS), to the zoning space. We're developing the _Open Zoning Feed Specification_, a web-based data standard for zoning code that simplifies and streamlines access to **zoning data** so that everyone from _non-experts_ to _"machines"_ can know & understand **what can be built**. 
+The purpose of this project is to make public zoning data universally accessible. We're doing this by applying the model of a revolutionary national precedent in the transit space, the General Transit Feed Specification (GTFS) to the zoning space by developing the _Open Zoning Feed Specification_, a web-based data standard for zoning code that simplifies and streamlines access to **zoning data** so that everyone from _non-experts_ to _"machines"_ can know & understand **what can be built**. 
 
 If you use an app like Google maps to get around the city on public transit, than the GTSF fuels your adventure. We're working everyday at OZFS to fuel your dream of owning a home in the ciy, of your small business developing the housing that communities are demanding, and your community's fight for the quality of life and equitable housing that your city promised . Every day we work, we get closer and closer to achieving this goal. 
 
@@ -34,7 +34,9 @@ A _feed specification_ is a pre-defined set of files for digitally storing infor
 <details>
 <summary>OZFS meta-schema and schema files</summary>
 <br>
-Underpinning our schema files is a standard data structure known as the Open Zoning meta-schema. We're currently crafting our meta-schema off of the great work that has been done at Mobility Data, embodied in their Mobility Data Standard (MDS) meta-schema (http://json-schema.org/draft-06/schema#). 
+Underpinning our schema files is a standard data structure known as the Open Zoning meta-schema. We're currently crafting our meta-schema off of the great work that has been done at Mobility Data, embodied in their 
+[Mobility Data Standard (MDS) meta-schema](http://json-schema.org/draft-06/schema#)
+. 
 
 Our schema files fall into one of two catagories: 1) for capturing the zoning regulations of a municipality's zoning code, and: 2) for capturing the geospatial information for a municipality's districts and proximity zones. A critical challenge of this project and its research contribution in this field is our work designing the standard data structures for schemas of both file catagories that enable us to meet the criteria we've outlined in the "Product Criteria" section above. 
 </details>

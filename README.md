@@ -1,6 +1,6 @@
 # Open Zoning Feed Specification Project.
 
-The purpose of this project is to make public zoning data universally accessible. We're doing this by applying the model of a revolutionary national precedent in the transit space, the General Transit Feed Specification (GTFS), to the zoning space. We're developing a web-based data standard for zoning code that simplifies and streamlines access to **zoning data** so that everyone from _non-experts_ to _"machines"_ can know & understand **what can be built**. 
+The purpose of this project is to make public zoning data universally accessible. We're doing this by applying the model of a revolutionary national precedent in the transit space, the General Transit Feed Specification (GTFS), to the zoning space. We're developing the _Open Zoning Feed Specification_, a web-based data standard for zoning code that simplifies and streamlines access to **zoning data** so that everyone from _non-experts_ to _"machines"_ can know & understand **what can be built**. 
 
 If you use an app like Google maps to get around the city on public transit, than the GTSF fuels your adventure. We're working everyday at OZFS to fuel your dream of owning a home in the ciy, of your small business developing the housing that communities are demanding, and your community's fight for the quality of life and equitable housing that your city promised . Every day we work, we get closer and closer to achieving this goal. 
 
@@ -15,7 +15,8 @@ Basic questions are impossible to answer accurately without detailed legal analy
 4. [Precedents and related work](#precedents-and-related-work)
 5. [Potential research questions](#potential-research-questions)
 
-## Mission, vision, goals
+## Product Criteria
+The OZFS Project is a Harvard lab-housed project with the soul (and experience) of a product startup. Our product criterion are:
 - The existence of a single source of machine-readable, accurate, and openly-available zoning data
 - The ability to store all zoning regulations as written, without interpretation (i.e. don't store an FAR value if there isn't one in the code)
 - A data architecture flexible enough to accommodate most types of zoning regulations & regimes
@@ -24,6 +25,14 @@ Basic questions are impossible to answer accurately without detailed legal analy
 - Governance and practices that ensure continued access and relevance, so that OZFS avoids becoming orphaned or stale
 
 ## Anticipated OZFS Components
+A _feed specification_ is a pre-defined set of files for digitally storing information on a particular instance of a topic. For OZFS, our topic is zoning codes and and our instances are individual municipalities' zoning codes. Each file within our feed specification defines the required data structure for recording the information for a specifice piece of a municipality's zoning code. The particular data structure within each of these files an example of a schema, creating what we call schema files. When packaged together, these schema files form the complete set of instructions for how to capture an entire municipality's zoning code according to the specific standared data structure that we are intentionally and methodically designing. The culmination of our work for a given municipality will be a packaged set of instructions for that municipality, the municipality's feed specification.
+
+Underpinning our schema files is this standard data structure, known as the Open Zoning meta-schema. We're currently crafting our meta-schema off of the great work that has been done at Mobility Data, embodied in their [Mobility Data Standard (MDS) meta-schema](http://json-schema.org/draft-06/schema#). 
+
+Our schema files fall into one of two catagories: 1) for capturing the zoning regulations of a municipality's zoning code, and: 2) for capturing the geospatial information for a municipality's districts and proximity zones. A critical challenge of this project and its research contribution in this field is our work designing the standard data structures for schemas of both file catagories that enable us to meet the criteria we've outlined in the "Product Criteria" section above. 
+
+Each catagory's data structure will facilitate the following functionality. 
+
 **v0.1**
 ### [Geospatial structure](/geo-standard)
 Expectation is for multiple GIS layers to be uploaded (e.g. base + overlay districts)
@@ -44,6 +53,7 @@ Simplified/standardized UI for entering and defining zoning constraints
 (v0.1 to include [mockup](/images/ui-ux-mockups) _only_)
 
 ### _Future_
+The OZFS
 
 #### Automated Zoning Code creation
 Perhaps based on [PlaceCode](https://www.principle.us/placecode)

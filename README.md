@@ -25,13 +25,20 @@ The OZFS Project is a Harvard lab-housed project with the soul (and experience) 
 - Governance and practices that ensure continued access and relevance, so that OZFS avoids becoming orphaned or stale
 
 ## Anticipated OZFS Components
+<details>
+<summary>What is a feed specification?</summary>
+<br>
 A _feed specification_ is a pre-defined set of files for digitally storing information on a particular instance of a topic. For OZFS, our topic is zoning codes and and our instances are individual municipalities' zoning codes. Each file within our feed specification defines the required data structure for recording the information for a specifice piece of a municipality's zoning code. The particular data structure within each of these files an example of a schema, creating what we call schema files. When packaged together, these schema files form the complete set of instructions for how to capture an entire municipality's zoning code according to the specific standared data structure that we are intentionally and methodically designing. The culmination of our work for a given municipality will be a packaged set of instructions for that municipality, the municipality's feed specification.
+</details>
 
-Underpinning our schema files is this standard data structure, known as the Open Zoning meta-schema. We're currently crafting our meta-schema off of the great work that has been done at Mobility Data, embodied in their [Mobility Data Standard (MDS) meta-schema](http://json-schema.org/draft-06/schema#). 
+<details>
+<summary>OZFS meta-schema and schema files</summary>
+<br>
+Underpinning our schema files is a standard data structure known as the Open Zoning meta-schema. We're currently crafting our meta-schema off of the great work that has been done at Mobility Data, embodied in their [Mobility Data Standard (MDS) meta-schema](http://json-schema.org/draft-06/schema#). 
 
 Our schema files fall into one of two catagories: 1) for capturing the zoning regulations of a municipality's zoning code, and: 2) for capturing the geospatial information for a municipality's districts and proximity zones. A critical challenge of this project and its research contribution in this field is our work designing the standard data structures for schemas of both file catagories that enable us to meet the criteria we've outlined in the "Product Criteria" section above. 
+</details>
 
-Each catagory's data structure will facilitate the following functionality. 
 
 **v0.1**
 ### [Geospatial structure](/geo-standard)

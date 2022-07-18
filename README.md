@@ -1,10 +1,14 @@
 # Open Zoning Feed Specification Project.
 
-The purpose of this project is to make public zoning data universally accessible. 
+Open Zoning's mission is to make public zoning data universally accessible. 
 
-We're doing this by applying the model of a revolutionary national precedent in the transit space, the General Transit Feed Specification (GTFS) to the zoning space by developing the _Open Zoning Feed Specification_, a web-based data standard for zoning code that simplifies and streamlines access to **zoning data** so that everyone from _non-experts_ to _"machines"_ can know & understand **what can be built**. 
+We're doing this by applying the model of a revolutionary national precedent in the transit space, the General Transit Feed Specification (GTFS), to the zoning space by developing the _Open Zoning Feed Specification_, a web-based data standard for zoning code that simplifies and streamlines access to **zoning data** so that everyone from _non-experts_ to _"machines"_ can know & understand **what can be built**. 
 
+<details>
+<summary>the Google Maps of zoning</summary>
+<br>
 If you use an app like Google maps to move around a city on public transit, than the GTSF fuels your urban living. In the same way, we're working everyday at OZFS to fuel your dream of owning a home in the ciy, of your small business developing the housing that communities are demanding, and your community's fight for the quality of life and equitable housing that your city promised. Every day we work, we get closer and closer to achieving this goal. 
+</details>
 
 ### The Problem (\#Rant)
 Zoning as it currently exists in the U.S. is _ridiculous_...

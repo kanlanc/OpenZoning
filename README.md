@@ -36,14 +36,14 @@ A _feed specification_ is a pre-defined set of files for digitally storing infor
 <br>
 Underpinning our schema files is a standard data structure known as the Open Zoning meta-schema. We're currently crafting our meta-schema off of the great work that has been done at Mobility Data, embodied in their 
   
-  [Mobility Data Standard (MDS) meta-schema](http://json-schema.org/draft-06/schema#)
+[Mobility Data Standard (MDS) meta-schema](http://json-schema.org/draft-06/schema#)
 . 
 
 Our schema files fall into one of two catagories: 1) for capturing the zoning regulations of a municipality's zoning code, and: 2) for capturing the geospatial information for a municipality's districts and proximity zones. A critical challenge of this project and its research contribution in this field is our work designing the standard data structures for schemas of both file catagories that enable us to meet the criteria we've outlined in the "Product Criteria" section above. 
 </details>
 
 
-## 0.1
+## v0.1
 ### [Geospatial structure](/geo-standard) overview
 Expectation is for multiple GIS layers to be uploaded (e.g. base + overlay districts)
 Those will be merged into a single zoning layer that _atomizes_ each polygon into a single zoning district (or combination of districts)
@@ -100,6 +100,11 @@ The following are visions/case studies of the future that imagine & inform the g
 5. Multinational company deciding where to locate their new assembly facility based on _potential_ workforce housing capacity in the region
 6. AR software developer looking to develop ...?
 7. Institutional real estate developer/holder selecting properties for its new East Coast "Missing Middle" REIT
+
+<details>
+<summary>What is a feed specification?</summary>
+<br>
+<details>
 
 ## Precedents and related work
 ### Regional/State-wide Zoning Atlases

@@ -9,7 +9,7 @@ Zoning as it currently exists in the U.S. is _ridiculous_...
 Basic questions are impossible to answer accurately without detailed legal analyses. Such as: What can a site be used for? What can be built on a site? Are existing structures code compliant? and; What are the impacts on housing outcomes of existing and proposed changes to zoning?
 
 ### Contents
-1. [Mission, vision, goals](#mission-vision-goals)
+1. [Product Criteria](#product-criteria)
 2. [Anticipated OZFS Components](#anticipated-ozfs-components)
 3. [The Future with OZFS](#the-future-with-ozfs)
 4. [Precedents and related work](#precedents-and-related-work)
@@ -41,27 +41,26 @@ Our schema files fall into one of two catagories: 1) for capturing the zoning re
 
 
 **v0.1**
-#### [Geospatial structure](/geo-standard) overview
+### [Geospatial structure](/geo-standard) overview
 Expectation is for multiple GIS layers to be uploaded (e.g. base + overlay districts)
 Those will be merged into a single zoning layer that _atomizes_ each polygon into a single zoning district (or combination of districts)
 All data stored within `GeoJSON` or other open/accessible GIS formats. 
 
-## (Zoning) [Data structure](/data-standard) overview & rules engine
+### (Zoning) [Data structure](/data-standard) overview & rules engine
 A non-tabular data structure enabling flexible definition & storage of zoning regulations.
 Access to zoning maps via a lookup key(s) for each district within a municipality (e.g. `MA-Suff-BOS-SPA-ZR4B` (not an actual district!))
 All data stored in within json files. 
 
-## [Translation service](/code/translation-scripts)
+### [Translation service](/code/translation-scripts)
 1. Script(s) for converting zoning data from other zoning data standards (see [below](#regionalstate-wide-zoning-atlases)) into our schema files
 2. Script(s) to perform zoning analysis research (e.g. How many (additional) triplexes are possible within a mile of downtown Minneapolis?)
 
-## UI/UX
+### UI/UX
 1. An elegant, intuitive, and interactive UI for entering and defining zoning constraints.
-2. An easy-to-understand graphical summary for the zoning code regulations for a given lot. 
+2. An easy-to-understand graphical summary of zoning regulations for a given lot. 
 (v0.1 to include [mockup](/images/ui-ux-mockups) _only_)
 
-### _Future_
-The OZFS
+### _Future_ Functionality Components of OZFS
 
 #### Automated Zoning Code creation
 Perhaps based on [PlaceCode](https://www.principle.us/placecode)

@@ -102,7 +102,7 @@ The following are visions/case studies of the future that imagine & inform the g
 7. Institutional real estate developer/holder selecting properties for its new East Coast "Missing Middle" REIT
 
 <details>
-<summary>What is a feed specification?</summary>
+<summary>Precedents and related work</summary>
 <br>
 <details>
 

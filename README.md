@@ -40,7 +40,7 @@ Our schema files fall into one of two catagories: 1) for capturing the zoning re
 </details>
 
 
-##0.1##
+## 0.1
 ### [Geospatial structure](/geo-standard) overview
 Expectation is for multiple GIS layers to be uploaded (e.g. base + overlay districts)
 Those will be merged into a single zoning layer that _atomizes_ each polygon into a single zoning district (or combination of districts)
@@ -77,7 +77,7 @@ Data storage mechanism able to capture data points not directly from the zoning 
 - FAR/floor area based on other regulations
 - Parking requirements with max build out
 
-## The Future with OZFS
+## Future Realities with OZFS
 We hypothesize that wide-scale adoption of the OZFS will lead to radical new possibilities for land use policy and the built environment:
 - Enabling wide-scale upzoning of all types
 - Automating ADU siting & approval

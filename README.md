@@ -34,29 +34,30 @@ A _feed specification_ is a pre-defined set of files for digitally storing infor
 <details>
 <summary>OZFS meta-schema and schema files</summary>
 <br>
-Underpinning our schema files is a standard data structure known as the Open Zoning meta-schema. We're currently crafting our meta-schema off of the great work that has been done at Mobility Data, embodied in their [Mobility Data Standard (MDS) meta-schema](http://json-schema.org/draft-06/schema#). 
+Underpinning our schema files is a standard data structure known as the Open Zoning meta-schema. We're currently crafting our meta-schema off of the great work that has been done at Mobility Data, embodied in their Mobility Data Standard (MDS) meta-schema (http://json-schema.org/draft-06/schema#). 
 
 Our schema files fall into one of two catagories: 1) for capturing the zoning regulations of a municipality's zoning code, and: 2) for capturing the geospatial information for a municipality's districts and proximity zones. A critical challenge of this project and its research contribution in this field is our work designing the standard data structures for schemas of both file catagories that enable us to meet the criteria we've outlined in the "Product Criteria" section above. 
 </details>
 
 
 **v0.1**
-### [Geospatial structure](/geo-standard)
+## [Geospatial structure](/geo-standard) overview
 Expectation is for multiple GIS layers to be uploaded (e.g. base + overlay districts)
 Those will be merged into a single zoning layer that _atomizes_ each polygon into a single zoning district (or combination of districts)
-Stored in `GeoJSON` or other open/accessible GIS format
+All data stored within `GeoJSON` or other open/accessible GIS formats. 
 
-### (Zoning) [Data structure](/data-standard) & rules engine
-Non-tabular data structure, enabling flexible definition & storage of zoning regs.
-Zoning map accesses via a lookup key(s) of municipality + district (e.g. `MA-Suff-BOS-SPA-ZR4B` (not an actual district!))
-Stored in `JSON` or equivalent
+## (Zoning) [Data structure](/data-standard) overview & rules engine
+A non-tabular data structure enabling flexible definition & storage of zoning regulations.
+Access to zoning maps via a lookup key(s) for each district within a municipality (e.g. `MA-Suff-BOS-SPA-ZR4B` (not an actual district!))
+All data stored in within json files. 
 
-### [Translation service](/code/translation-scripts)
-1. Script(s) for converting from other zoning data standards (see [below](#regionalstate-wide-zoning-atlases))
-2. Script(s) to perform zoning analysis research (e.g. how many (additional) triplexes are possible within a mile of Downtown?)
+## [Translation service](/code/translation-scripts)
+1. Script(s) for converting zoning data from other zoning data standards (see [below](#regionalstate-wide-zoning-atlases)) into our schema files
+2. Script(s) to perform zoning analysis research (e.g. How many (additional) triplexes are possible within a mile of downtown Minneapolis?)
 
-### UI/UX
-Simplified/standardized UI for entering and defining zoning constraints
+## UI/UX
+1. An elegant, intuitive, and interactive UI for entering and defining zoning constraints.
+2. An easy-to-understand graphical summary for the zoning code regulations for a given lot. 
 (v0.1 to include [mockup](/images/ui-ux-mockups) _only_)
 
 ### _Future_

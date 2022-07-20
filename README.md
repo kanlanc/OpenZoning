@@ -112,6 +112,7 @@ We hypothesize that wide-scale adoption of the OZFS will lead to radical new pos
 <summary>potential future personas</summary>
 <br>
 The following are visions/case studies of the future that imagine & inform the goals & possibilities for OZFS
+  
 1. Affordable housing developer targeting sites for their existing model of 5-story buildings in the Boston region
 2. Community meeting with real-time scenario planning that generates zoning text on-the-fly
 3. Modular ADU fabricator targeting properties for its new 2-story ADU

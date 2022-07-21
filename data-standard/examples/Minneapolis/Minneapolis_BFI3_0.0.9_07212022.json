@@ -1,0 +1,176 @@
+{
+	"district": {
+		"identifier": "MN-HennepinCo-Minneapolis-BFI3", //-all bulks/uses
+		"name": "BFI3 Interior 3 Built Form Overlay District",
+	},
+	"last_updated": "20220721",
+	"author": "OZFS Team",
+	//"usePermissions": {
+	//	"permitted": ["single-family", "two-family", "three-family"]
+	//}
+	// these fields needed for base districts, so yes, files for base vs. others will be slightly different
+	"constraints": [
+		{
+			"constraintsModule": ["height", "stories"],
+			"lot": {
+				"developmentOptionalities": [
+					{
+						"developmentType": "primary/accessory",
+				 		"primaryStructures": {
+							"bulkOptionalities": [
+								{
+									"bulks": ["single-family", "two-family"],
+									"height": {
+										"wall": {
+											"max": 28
+										},
+										"roof": {
+											"max": 33
+										}
+									},
+									"stories": {
+										"max": 2.5,
+									}
+								}
+								{
+									"bulks": ["three-family", "cluster"],
+									"height": {
+										"maximum": 42
+									},
+									"stories": {
+										"maximum": 3,
+									}
+								}
+							],
+						},	
+					}
+				]
+			}
+		}
+		{
+			"constraintsModule": "setbacks",
+			"lot": {
+				"developmentOptionalities": [
+					{
+						"developmentType": "primary/accessory",
+				 		"primaryStructures": {
+				 			"setbacks": {
+								"front": 20,
+								"rear": 5,
+								"side": { //the variances in values per height still need to be incorporated
+									"bulkOptionalities": [
+										{
+											"bulks": ["single-family", "two-family", "three-family"],
+											"interior": 5,
+											"corner": 8,
+										}
+										{
+											"bulks": "allOthers",
+											"interior": "...",
+											"corner": "...",
+										}
+									]
+								}
+							}
+						}	
+					}
+				]
+			}
+		}
+		{
+			"constraintsModule": "FAR",
+			"lot": {
+				"districtTypeGroups": [
+					{
+						"districtTypes": ["Residential", "Office Residential"],
+						"bulkOptionalities": [
+							{
+								"bulks": "single-family",
+								"FAR": {
+									"residential": 0.5
+								}
+							}
+							{
+								"bulks": "two-family",
+								"FAR": {
+									"residential": 0.6
+								}
+							}
+							{
+								"bulks": "three-family",
+								"FAR": {
+									"residential": 0.7
+								}
+							}
+							{
+								"bulks": "four-family",
+								"FAR": {
+									"residential": 1.4
+								}
+							}
+						]
+					}
+					{
+						"districtTypes": "allOthers",
+						"bulkOptionalities": [
+							{
+								"bulks": "single-family",
+								"FAR": {
+									"residential": 0.5
+								}
+							}
+							{
+								"bulks": "two-family",
+								"FAR": {
+									"residential": 0.6
+								}
+							}
+							{
+								"bulks": "three-family",
+								"FAR": {
+									"residential": 0.7
+								}
+							}
+							{
+								"bulks": "four-family",
+								"FAR": {
+									"residential": 1.6
+								}
+							}
+						]
+					}
+				]
+			}
+		}
+		{
+			"constraintsModule": ["lotArea", "lotWidth"],
+			"lot": {
+				"developmentOptionalities": [
+					{
+						"developmentType": "primary/accessory",
+			 			"bulkOptionalities": [
+							{
+								"bulks": "multi-family",
+								"lotArea": {
+									"minimum": 5000, //sqf
+									"maximum": 18000 //sqf
+								},
+								"lotWidth": { //this doesn't work -- lot width should be defined by lot boundary: side
+									"minimum": 40 //feet
+								}
+							}
+						]
+					}	
+				]
+			}
+		}
+		{
+			"constraintsModule": "lotCoverage",
+			"lot": {
+				"lotCoverage": {
+					"max": 0.6
+				},
+			}	
+		}
+	]
+}

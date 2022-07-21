@@ -1,0 +1,374 @@
+{
+	"district": {
+		"identifier": "MN-HennepinCo-Minneapolis-R2B", //-all bulks/uses
+		"name": "R2B Multiple-Family District",
+	},
+	"last_updated": "20220705",
+	"author": "OZFS Team",
+	//notes: this base district contains all constraints that are "generally" listed, i.e. within the following sections of Minneapolis's code: 
+	//	- chapter 535: Regulations of General Applicability
+	//	- chapter 536: Specific Development Standards
+	//	- chapter 537: Accessory Uses & Structures
+	//  - chapter 546: Residence Districts
+	//  	- article I. - General Provisions
+	//		- article V. - R2B Multiple-family District
+
+	"allowedUses": {
+		"permitted": ["single-family", "two-family", "three-family"], 
+		"conditional": [],
+		"accessoryStructuresPermissions": {
+			"bulkOptionalities": [
+				{
+					"bulks": ["single-family", "two-family"],
+					"allowedAccessoryStructures": {
+						"num": 1,
+						"types": "ADU, garage", //I need to check this for factuality
+					}
+				}
+			]
+		}
+	},
+	}
+	"constraints": [
+		{
+			"constraintsModule": ["floorArea", "floorWidth"],
+			"lot": {
+				"floorArea": {
+					"unit": {
+						"standard": {
+	 						"minimum": 500
+	 					},
+	 					"efficiency": {
+	 						"minimum": 350
+	 					}
+					}
+
+				},
+				"developmentOptionalities": [
+					{
+						"developmentType": "primary/accessory",
+						"primaryStructures": {
+							"bulkOptionalities": [
+								{
+									"bulks": ["single-family", "two-family", "three-family"],
+									"floorwidth": { //we should have a field for a municipality's defining which access width is measured for each muni.
+										"minimum": {
+											"value": 18, //feet
+											"applicableFloorArea": 0.8 //this is only applicable to 80% of any floor area
+										}
+									},
+								}
+							]
+						},
+						"accessoryStructures": {	
+							"ADbuklkOptionality": [
+								{
+									"ADbulk": "ADU",
+									"ADtypeOptionality": [
+										{
+											"ADtype": "detached",
+											"floorArea": {
+												// "minimum": 300, not sure where this came from atm
+												"maximum": [
+													{
+														"greaterOf": [
+															{
+																"maximum": 1300
+															}
+															{
+																"maximum": "16% of gross floor area of principal structure"
+															}
+														]
+													},
+													{
+														"maximum": 1600,
+													}
+												] 
+											}
+										},
+									]
+								}
+								{
+									"ADbulk": "garage",
+									"ADtypeOptionality": [
+										{
+											"ADtype": ["detached", "attached"],
+											"districtTypeGroups": [
+												{
+													"districts": ["Residential", "OR1"],
+													"bulkOptionality": [
+														{
+															"bulks": ["single-family", "two-family", "three-family"],
+															"floorArea": {
+																// "minimum": 300, not sure where this came from atm
+																"maximum": [
+																	{
+																		"greaterOf": [
+																			{
+																				"maximum": 676
+																			}
+																			{
+																				"maximum": "lotArea: 10%"
+																			}
+																		]
+																	},
+																	{
+																		"maximum": 1000,
+																	}
+																] 
+															}
+														},
+														{
+															"bulks": "all others",
+															"floorArea": {
+																"maximum": [
+																	{
+																		"greaterOf": [
+																			{
+																				"maximum": 676
+																			}
+																			{
+																				"maximum": "lotArea: 10%"
+																			}
+																		]
+																	},
+																] 
+															}
+														},
+													]
+												}
+												{
+													"districts": "all others",
+													"garageOptionality" : [
+														{
+															"garageType": {
+																"not": ["interior", "entirely below grade", "2+ stoires"]
+															},
+															"floorArea": {
+																"maximum": [
+																	{
+																		"greaterOf": [
+																			{
+																				"maximum": 676
+																			}
+																			{
+																				"maximum": "lotArea: 10%"
+																			}
+																		]
+																	},
+																] 
+															}
+														}
+													]
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"constraintsModule": ["lotArea", "lotWidth"],
+			"lot": {
+				"developmentOptionalities": [
+					{
+						"developmentType": "primary/accessory",
+			 			"bulkOptionalities": [
+							{
+								"bulks": "multi-family",
+								"lotArea": {
+									"minimum": 5000, //sqf
+									"maximum": 7500 //sqf
+								},
+								"lotWidth": {
+									//"interior": { I'm currently operating under the assumption that width implies side yard
+									"minimum": [15, [22, "driveway"]], //if principal entrance facing the interior lot line
+								}
+							}
+						]
+					}	
+				]
+			}
+		}
+		{
+			"constraintsModule": "footprint",
+			"lot": {
+				"developmentOptionalities": [
+					{
+						"developmentType": "primary/accessory",
+			 			"primaryStructures": {
+						
+						},
+						"accessoryStructures": {
+							"footprint": {
+								"maximum": {
+									"leastof" :[
+										{
+											"greaterOf": [
+												{
+													"maximum": 676
+												}
+												{
+													"maximum": "10% of the lot area"
+												}
+											]
+										},
+										{
+											"maximum": 1000,
+										}
+									]
+								}
+							},
+							"typeOptionality": [ //we can workshop this title
+								{
+									"types": ["internal", "attached"],
+									"floorArea": {
+										"maximum": [800, ["V1_before 2015", "max. = floor area of the first floor of the primary structure"]]
+									}
+								}
+							]
+						},
+					}	
+				]
+			}
+		}
+		{
+			"constraintsModule": ["height", "stories"],
+			"lot": {
+				"developmentOptionalities": [
+					{
+						"developmentType": "primary/accessory",
+			 			"primaryStructures": {
+						
+						},
+						"accessoryStructures": {
+							"typeOptionality": [ //we can workshop this title
+								{
+									"types": "internal",
+									"stories": {
+										"maximum": 1
+									}
+								}
+								{
+									"types": "attached",
+									"height": {
+										"wall": {
+											"maximum": 14
+										},
+										"roof": {
+											"maximum": 20
+										}
+									}
+								}
+								{
+									"types": "detached",
+									"districtTypeGroups": [
+										{
+											"districts": ["Residential", "OR1"],
+											"height": {
+												"wall": {
+													"maximum": [10, [14, "..."]]
+												},
+												"roof": {
+													"maximum": [10, [16, "..."], [20, "..."]]
+												}
+											}
+										}
+										{
+											"districts": "all others",
+											"bulkOptionality": [
+												{
+													"bulks": ["single-family", "two-family", "three-family"],
+													"height": {
+														"wall": {
+															"maximum": [10, [14, "..."]]
+														},
+														"roof": {
+															"maximum": [10, [16, "..."], [20, "..."]]
+														}
+													}
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+					}	
+				]
+			}
+		}
+		{
+			"constraintsModule": ["setbacks", "ADlotLocation"],
+			"lot": {
+				"developmentOptionalities": [
+					{
+						"developmentType": "primary/accessory",
+						"primaryStructures": {
+
+						},
+				 		"accessoryStructures": {
+				 			"ADlotLocation": {
+				 				"typeOptionality": [
+				 					{
+				 						"type": "attached",
+				 						"ADlotLocation": ["interior side yard", "rear yard"]
+				 					}
+				 					{
+				 						"type": "detached",
+				 						"ADlotLocation": "rear yard",
+				 					}
+				 				]
+				 			},
+				 			"bulkOptionality": [
+				 				{
+				 					"bulk": "ADU",
+				 					"setbacks": {
+					 					"rear": [3, [1, "located in greater of rear 40 feet or 20% of the lot AND setback:fromPrimaryStructure:min.:10 AND height:max: 16'"]], 
+					 					"side": {
+					 						"interior": [3, [1, "located in greater of rear 40 feet or 20% of the lot AND setback:fromPrimaryStructure: min.:10"]]
+					 					},
+					 				},
+				 					"typeOptionality": [
+				 						{
+				 							"type": "detached",
+				 							"setbacks": {
+				 								"fromAnotherStructure": {
+				 									"primaryResidentialStructure": 20,
+				 									"habitableDwelling": 6
+				 								}
+				 							},
+				 						}
+									]
+				 				}
+				 				{
+				 					"bulk": "garage",
+				 					"setbacks": {
+					 					"rear": [3, [0, "if garge doors face lot line"], [1, "located in greater of rear 40 feet or 20% of the lot AND setback:fromPrimaryStructure: min.:10 AND height:max: 16"]], 
+					 					"side": {
+					 						"interior": [3, [0, "if garage doors face lot line"], [1, "located in greater of rear 40 feet or 20% of the lot AND setback:fromPrimaryStructure: min.:10 AND height:max: 16"]]
+					 					},
+					 				},
+				 					"typeOptionality": [
+				 						{
+				 							"type": "detached",
+				 							"setbacks": {
+				 								"fromAnotherStructure": {
+				 									"habitableDwelling": 6
+				 								}
+				 							},			 							
+				 						}
+				 					]
+				 				}
+				 			],
+						}	
+					}
+				]
+			}
+		}
+	],
+}

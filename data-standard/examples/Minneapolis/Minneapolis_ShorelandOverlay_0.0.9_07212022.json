@@ -1,14 +1,10 @@
 {
 	"district": {
-		"identifier": "MN-HennepinCo-Minneapolis-R2B", //-all bulks/uses
-		"name": "R2B Multiple-Family District",
+		"identifier": "MN-HennepinCo-Minneapolis-Shoreland", //-all bulks/uses
+		"name": "SH Shoreland Overlay District",
 	},
 	"last_updated": "20220721",
 	"author": "OZFS Team",
-	"usePermissions": {
-		"permitted": ["single-family", "two-family", "three-family", "intentional community", "Community residential facility, 0-16 people"],
-		"conditional": ["cluster development"]
-	},
 	"constraints": [
 		{
 			"constraintsModule": ["height", "stories"],

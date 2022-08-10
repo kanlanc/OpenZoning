@@ -1,0 +1,83 @@
+{
+	"$id": "...",
+  	"$schema": "http://json-schema.org/draft-06/schema#",
+  	"title": "Common definitions for OZFS",
+  	"definitions": {
+		"developmentOptionality": {
+			"$id": "#/definitions/...",
+			"type": "array",
+			"description": "this module establishes a heirarchy level for development options",
+			"items": {
+				"type": "object",
+				"enum": ["developmentType", "primaryStructures", "accessoryStructures"],
+		},
+		"developmentType": {
+			"$id": "#/definitions/...",
+			"type": "object",
+			"description": "module establishing the type of development that the ensuing nested constraints apply to",
+			"properties": {
+				"primary/accessory": {
+					"$id": "#/definitions/developmentOptionality/primaryStructures",
+					"$ref": "#/definitions/primaryBulkOptionality"
+				},
+				"ADbulkOptionality": {
+					"$id": "#/definitions/developmentOptionality/primaryStructures",
+					"$ref": "#/definitions/primaryBulkOptionality"
+				}
+			}
+		},
+		"primaryStructures": {
+			"$id": "#/definitions/...",
+			"type": "object"
+		},
+		"accessoryStructures": {
+			"$id": "#/definitions/...",
+			"type": "object"
+		},
+		"ADbulkOptionality": {
+			"$id": "#/definitions/...",
+			"type": "object"
+		},
+		"ADbulks": {
+			"$id": "#/definitions/...",
+			"type": "object"
+		},
+		"ADtypeOptionality": {
+			"$id": "#/definitions/...",
+			"type": "object"
+		},
+		"ADtypes": {
+			"$id": "#/definitions/...",
+			"type": "object"
+		},
+		"ADsubTypeOptionality": {
+			"$id": "#/definitions/...",
+			"type": "object"
+		},
+		"ADsubTypes": {
+			"$id": "#/definitions/...",
+			"type": "object"
+		},
+		"primaryBulkOptionality": {
+			"$id": "#/definitions/...",
+			"type": "object"
+		},
+		"primaryBulks": {
+			"$id": "#/definitions/...",
+			"type": "object"
+		},
+		"districtTypeGroups": {
+			"$id": "#/definitions/...",
+			"type": "object"
+		},
+		"districtTypes": {
+			"$id": "#/definitions/...",
+			"type": "object"
+		},
+		"unitOptionality": {
+			"$id": "#/definitions/...",
+			"type": "object"
+		},
+
+	}
+}

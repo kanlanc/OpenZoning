@@ -1,0 +1,41 @@
+{
+  	"$schema": "http://json-schema.org/draft-06/schema#",
+  	"title": "Common definitions for OZFS",
+  	"definitions": {
+		"developmentOptionality": {
+			"$id": "#/definitions/...",
+			"type": "array",
+			"description": "this module establishes a heirarchy level for development options",
+			"items": {
+				"type": "object",
+				"enum": ["developmentType", "primaryStructures", "accessoryStructures"],
+		},
+		"developmentType": {
+			"$id": "#/definitions/...",
+			"type": "object",
+			"description": "module establishing the type of development that the ensuing nested constraints apply to",
+			"properties": {
+				"primaryAccessory": {
+					"$id": "#/definitions/developmentOptionality/primaryAccessory",
+					"$ref": "#/definitions/devTypeSchema"
+				},
+				"other": {
+					"$id": "#/definitions/developmentOptionality/other",
+					"$ref": "#/definitions/devTypeSchema"
+				}
+			}
+		},
+		"primaryStructures": {
+			"$id": "#/definitions/primaryStructures",
+			"type": "object"
+		},
+		"accessoryStructures": {
+			"$id": "#/definitions/accessoryStructures",
+			"type": "object"
+		},
+		"devTypeSchema": {
+			"$id": "#/definitions/devTypeSchema",
+			"type": "object"
+		},
+	}
+}

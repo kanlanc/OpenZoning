@@ -5,10 +5,9 @@
 	},
 	"last_updated": "20220721",
 	"author": "OZFS Team",
-	//"usePermissions": {
-	//	"permitted": ["single-family", "two-family", "three-family"]
-	//}
-	// these fields needed for base districts, so yes, files for base vs. others will be slightly different
+	"usePermissions": {
+		"permitted": ["single-family", "two-family", "three-family"]
+	}
 	"constraints": [
 		{
 			"constraintsModule": ["height", "stories"],

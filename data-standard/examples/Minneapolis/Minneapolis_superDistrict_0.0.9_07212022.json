@@ -71,17 +71,20 @@
 												// "minimum": 300, not sure where this came from atm
 												"maximum": [
 													{
-														"greaterOf": [
-															{
-																"maximum": 1300
-															}
-															{
-																"maximum": "16% of gross floor area of principal structure"
-															}
-														]
-													},
-													{
-														"maximum": 1600,
+														"lesserOf: 
+														{
+															"greaterOf": [
+																{
+																	"maximum": 1300
+																}
+																{
+																	"maximum": "16% of gross floor area of principal structure"
+																}
+															]
+														},
+														{
+															"maximum": 1600,
+														}
 													}
 												] 
 											}

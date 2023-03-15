@@ -71,7 +71,7 @@
 												// "minimum": 300, not sure where this came from atm
 												"maximum": [
 													{
-														"lesserOf: 
+														"lesserOf": 
 														{
 															"greaterOf": [
 																{

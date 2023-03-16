@@ -1,0 +1,98 @@
+{
+    "$id": "",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "OZFS, allowed developments schema",
+    "description": "",
+    "type": "object",
+    "definitions": {
+    },
+    "properties":{
+        "allowedDevelopments": {
+            "type": "object",
+            "properties": {
+                "primary/accessory": {
+                    "type": "object",
+                    "properties": { //this list is muni-dependent and these need to be specified in the meta-schema for each muni
+                        "permittedPrimary": {
+                            "type": "array",
+                            "enum": [
+                                "single-family",
+                                "two-family",
+                                "three-family",
+                                "four-family",
+                                "multi-family"
+                            ]
+                        },
+                        "conditionalPrimary": {
+                            "type": "array",
+                            "enum": [
+                                "single-family",
+                                "two-family",
+                                "three-family",
+                                "four-family",
+                                "multi-family"
+                            ]
+                        },
+                        "byVariancePrimary": {
+                            "type": "array",
+                            "enum": [
+                                "single-family",
+                                "two-family",
+                                "three-family",
+                                "four-family",
+                                "multi-family"
+                            ]
+                        }
+                        // "accessoryStructures": {
+                        //     "type": "object",
+                        //     "properties": {
+                        //         "allowedNumberADs": {
+                        //             "type": "number"
+                        //             //"exclusiveMinimum": 0
+                        //         },
+                        //         "allowedTypesADs": {
+                        //             "type": "array",
+                        //             "enum": [
+                        //                 "ADU", "garage"
+                        //             ]
+                        //             //"exclusiveMinimum": 0
+                        //         }
+                        //     }
+                        // }
+                    }
+                },
+                "specialDevelopmentTypes": {
+                    "type": "object",
+                    "properties": {
+                        "properties": { //this list is muni-dependent and these need to be specified in the meta-schema for each muni
+                            "permitted": {
+                                "type": "array",
+                                "enum": [
+                                    "cluster development",
+                                    "intentional community",
+                                    "community residential facility, 0-16 people"
+                                ]
+                            },
+                            "conditional": {
+                                "type": "array",
+                                "enum": [
+                                    "cluster development",
+                                    "intentional community",
+                                    "community residential facility, 0-16 people"
+                                ]
+                            },
+                            "byVariance": {
+                                "type": "array",
+                                "enum": [
+                                    "cluster development",
+                                    "intentional community",
+                                    "community residential facility, 0-16 people"
+                                ]
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

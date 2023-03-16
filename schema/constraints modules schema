@@ -1,0 +1,345 @@
+{
+    "$id": "",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "",
+    "type": "object",
+    "definitions": {
+        "maximum": {
+            "type": "number"
+            //"exclusiveMinimum": 0
+        },
+        "minimum": {
+            "type": "number"
+        },
+        "heightValue": {
+            "type": "object",
+            "properties": {
+                "value": {
+                    "type": "number"
+                },
+                "wall": {
+                    "type": "object",
+                    "properties": {
+                        "maximum": {
+                            "$ref": ""
+                            //"exclusiveMinimum": 0
+                        },
+                        "minimum": {
+                            "$ref": ""
+                        }
+                    }
+                },
+                "roof": {
+                    "type": "object",
+                    "properties": {
+                        "maximum": {
+                            "$ref": ""
+                            //"exclusiveMinimum": 0
+                        },
+                        "minimum": {
+                            "$ref": ""
+                        }
+                    }
+                }
+            }
+        },
+        "FARvalue": {
+            "type": "object",
+            "properties": {
+                "residential": {
+                    "type": "number"
+                },
+                "commercial": {
+                    "type": "number"
+                }
+            }
+        },
+        "floorAreaValue": {
+            "type": "object",
+            "properties": {
+                "minimum": {
+                    "type": "number"
+                },
+                "maximum": {
+                    "type": "number"
+                },
+                "totalFloorArea": {
+                    "type": "number"
+                }
+            }
+        },
+        "floorWidthValue": {
+            "type": "object",
+            "properties": {
+                "minimum": {
+                    "type": "object",
+                    "properties": {
+                        "value": {
+                            "type": "number",
+                            //"exclusiveMinimum": 0
+                        },
+                        "applicableFloorArea": {
+                            "type": "number"
+                            //"exclusiveMaximum": 1,
+                            //"exclusiveMinimum": 1
+                        }
+                    }
+                }
+            }
+        },
+        "lotAreaValue": {
+            "type": "object",
+            "properties": {
+                "maximum" : {
+                    "$ref": "#/definitions/maximum"
+                },
+                "minimum" : {
+                    "$ref": "#/definitions/minimum"
+                }
+            }
+        },
+        "lotWidthValue": {
+            "type": "object",
+            "properties": {
+                "minimum" : {
+                    "$ref": "#/definitions/minimum"
+                }
+            } 
+        },
+        "footprintValue": {
+            "type": "object",
+            "properties": {
+                "maximum" : {
+                    "$ref": "#/definitions/maximum"
+                }
+            } 
+        },
+        "storiesValue": {
+            "type": "object",
+            "properties": {
+                "maximum" : {
+                    "$ref": "#/definitions/maximum"
+                }
+            } 
+        },
+        "storyFloors": { //value...?
+            "type": "array", //should this be array instead of object?
+            "items": {
+                "type": "object",
+                "properties": {
+                    "storyType" : {
+                        "type": "string",
+                        "enum": [ //this list is muni-dependent and these need to be specified in the meta-schema for each muni
+                            "(blank)"
+                        ]
+                    },
+                    "storyHeight" : {
+                        "type": "object",
+                        "properties": {
+                            "maximum" : {
+                                "$ref": "#/definitions/maximum"
+                            }
+                        } 
+                    },
+                    "storiesContribution" : {
+                        "type": "number"
+                        //"exclusiveMaximum": 1
+                    },
+                    "floorAreaContribution" : {
+                        "type": "object",
+                        "properties": {
+                            "floorAreaContributionValue": {
+                                "type": "number",
+                                "maximum": 1,
+                                "minimum": 1
+                            },
+                            "floorPerimeter": {
+                                "type": "object",
+                                "properties": {
+                                    "floorPerimeterValue": {
+                                        "type": "number",
+                                        "maximum": 1
+                                        //"exclusiveMinimum": 0
+                                    },
+                                    "floorElevation": {
+                                        "type": "object",
+                                        "properties": {
+                                            "floorAreaContributionValue": {
+                                                "type": "number",
+                                                "maximum": 1,
+                                                "minimum": 0
+                                            },
+                                            "maximum" : {
+                                                "$ref": "#/definitions/maximum"
+                                            },
+                                            "minimum" : {
+                                                "$ref": "#/definitions/maximum"
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "floorElevation": {
+                                "type": "object",
+                                "properties": {
+                                    "maximum": {
+                                        "type": "number",
+                                        "maximum": 1
+                                    },
+                                    "minimum": {
+                                        "type": "number",
+                                        //"exclusiveMinimum": 0
+                                    },
+                                    "floorPerimeter": {
+                                        "type": "object",
+                                        "properties": {
+                                            "floorAreaContributionValue": {
+                                                "type": "number",
+                                                "maximum": 1,
+                                                "minimum": 0
+                                            },
+                                            "maximum" : {
+                                                "$ref": "#/definitions/maximum"
+                                            },
+                                            "minimum" : {
+                                                "$ref": "#/definitions/maximum"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        } 
+                    }
+                },
+                "required": ["storyType"] 
+            }
+        },
+        "setbacksValue": {
+            "type": "object",
+            "properties":{
+                "front": {
+                    "type": "number"
+                },
+                "rear": {
+                    "type": "number"
+                },
+                "sideInterior": {
+                    "type": "number"
+                },
+                "sideCorner": {
+                    "type": "number"
+                },
+                "fromAnotherStructure": {
+                    "type": "object",
+                    "properties": {
+                        "primaryResidentialStructure": {
+                            "type": "number"
+                        },
+                        "habitableDwelling": {
+                            "type": "number"
+                        }
+                    }
+                }
+            },
+            "required": ["front", "rear"]
+        },
+        "lotCoverageValue": {
+            "type": "object",
+            "properties": {
+                "maximum" : {
+                    "$ref": "#/definitions/maximum"
+                }
+            }
+        },
+        "allowedDevelopments": {
+            "type": "object",
+            "properties": {
+                "primary/accessory": {
+                    "type": "object",
+                    "properties": { //this list is muni-dependent and these need to be specified in the meta-schema for each muni
+                        "permittedPrimary": {
+                            "type": "array",
+                            "enum": [
+                                "single-family",
+                                "two-family",
+                                "three-family",
+                                "four-family",
+                                "multi-family"
+                            ]
+                        },
+                        "conditionalPrimary": {
+                            "type": "array",
+                            "enum": [
+                                "single-family",
+                                "two-family",
+                                "three-family",
+                                "four-family",
+                                "multi-family"
+                            ]
+                        },
+                        "byVariancePrimary": {
+                            "type": "array",
+                            "enum": [
+                                "single-family",
+                                "two-family",
+                                "three-family",
+                                "four-family",
+                                "multi-family"
+                            ]
+                        }
+                        // "accessoryStructures": {
+                        //     "type": "object",
+                        //     "properties": {
+                        //         "allowedNumberADs": {
+                        //             "type": "number"
+                        //             //"exclusiveMinimum": 0
+                        //         },
+                        //         "allowedTypesADs": {
+                        //             "type": "array",
+                        //             "enum": [
+                        //                 "ADU", "garage"
+                        //             ]
+                        //             //"exclusiveMinimum": 0
+                        //         }
+                        //     }
+                        // }
+                    }
+                },
+                "specialDevelopmentTypes": {
+                    "type": "object",
+                    "properties": {
+                        "properties": { //this list is muni-dependent and these need to be specified in the meta-schema for each muni
+                            "permitted": {
+                                "type": "array",
+                                "enum": [
+                                    "cluster development",
+                                    "intentional community",
+                                    "community residential facility, 0-16 people"
+                                ]
+                            },
+                            "conditional": {
+                                "type": "array",
+                                "enum": [
+                                    "cluster development",
+                                    "intentional community",
+                                    "community residential facility, 0-16 people"
+                                ]
+                            },
+                            "byVariance": {
+                                "type": "array",
+                                "enum": [
+                                    "cluster development",
+                                    "intentional community",
+                                    "community residential facility, 0-16 people"
+                                ]
+                            }
+                        }
+                    }
+                },
+            }
+        },
+    },
+    "properties": {
+
+    }
+}

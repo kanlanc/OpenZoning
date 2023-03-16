@@ -1,0 +1,266 @@
+"$id": "",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "OZFS, zoning districts json file schema",
+    "description": "",
+    "type": "object",
+    "definitions": {
+        "optionality": {
+            "type": "object",
+            "properties":{
+                "developmentOptionality": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "developmentType": {
+                                "type": "array",
+                                "enum": [
+                                    "primary/accesssory",
+                                    "clusterDevelopment"
+                                ],
+                                "uniqueItems": true  
+                            },
+                            "primaryStructures": {
+                                "type": "object",
+                                "properties": {
+                                    "height": {
+                                        "$ref": "#/definitions/height"
+                                    },
+                                    "bulkOptionality": {
+                                        "$ref": "#/definitions/optionality/properties/bulkOptionality"
+                                    },
+                                    "districts_districtTypes": {
+                                        "$ref": "#/definitions/optionality/properties/districts_districtTypes"
+                                    },
+                                }
+                            }
+                        },
+                        "required": ["type"]
+                    }
+                },
+                "bulkOptionality": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "bulks": {
+                                "type": "array",
+                                "enum": [ //this list is muni-dependent and these need to be specified in the meta-schema for each muni
+                                    "single-family",
+                                    "two-family",
+                                    "three-family",
+                                    "four-family",
+                                    "multi-family"
+                                ],
+                                "minItems": 1
+                            },
+                            "districts_districtTypes": {
+                                "$ref": "#/definitions/optionality/properties/districts_districtTypes"
+                            },
+                            "height": {
+                                "$ref": "#/definitions/height"
+                            }
+                            // "developmentOptionality": {
+                            //     "$ref": "#/definitions/developmentOptionality"
+                            // }
+                        }
+                    }
+                },
+                "districts_districtTypes": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "district/districtType": {
+                                "type": "array",
+                                "enum": [ //this list is muni-dependent and these need to be specified in the meta-schema for each muni
+                                    "..."
+                                ],
+                                "minItems": 1
+                            },
+                            "bulkOptionality": {
+                                "$ref": "#/definitions/optionality/properties/bulkOptionality"
+                            },
+                            "height": {
+                                "$ref": "#/definitions/height"
+                            }
+                            // "developmentOptionality": {
+                            //     "$ref": "#/definitions/developmentOptionality"
+                            // }
+                        }
+                    }
+                }
+            },
+            "minItems": 1
+        },
+        "maximum": {
+            "type": "number"
+            //"exclusiveMinimum": 0
+        },
+        "minimum": {
+            "type": "number"
+        },
+        "height": {
+            "type": "object",
+            "properties": {
+                "heightValue": {
+                    "type": "number"
+                },
+                "wall": {
+                    "type": "object",
+                    "properties": {
+                        "maximum": {
+                            "$ref": "#/definitions/maximum"
+                            //"exclusiveMinimum": 0
+                        },
+                        "minimum": {
+                            "$ref": "#/definitions/minimum"
+                        }
+                    }
+                },
+                "roof": {
+                    "type": "object",
+                    "properties": {
+                        "maximum": {
+                            "$ref": ""
+                            //"exclusiveMinimum": 0
+                        },
+                        "minimum": {
+                            "$ref": ""
+                        }
+                    }
+                },
+                "optionality": {
+                    "$ref": "#/definitions/optionality"
+                }
+            }
+        },
+    },
+    "properties":{
+        "district": {
+            "type": "object",
+            "properties": {
+                "identifier": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "identifier",
+                "name"
+            ]
+        },
+        "last_updated": {
+            "type": "string"
+        },
+        "author": {
+            "type": "string"
+        },
+        "allowedDevelopments": {
+            "type": "object",
+            "properties": {
+                "primary/accessory": {
+                    "type": "object",
+                    "properties": { //this list is muni-dependent and these need to be specified in the meta-schema for each muni
+                        "permittedPrimary": {
+                            "type": "array",
+                            "enum": [
+                                "single-family",
+                                "two-family",
+                                "three-family",
+                                "four-family",
+                                "multi-family"
+                            ]
+                        },
+                        "conditionalPrimary": {
+                            "type": "array",
+                            "enum": [
+                                "single-family",
+                                "two-family",
+                                "three-family",
+                                "four-family",
+                                "multi-family"
+                            ]
+                        },
+                        "byVariancePrimary": {
+                            "type": "array",
+                            "enum": [
+                                "single-family",
+                                "two-family",
+                                "three-family",
+                                "four-family",
+                                "multi-family"
+                            ]
+                        }
+                    }
+                },
+                "specialDevelopmentTypes": {
+                    "type": "object",
+                    "properties": {
+                        "properties": { //this list is muni-dependent and these need to be specified in the meta-schema for each muni
+                            "permitted": {
+                                "type": "array",
+                                "enum": [
+                                    "cluster development",
+                                    "intentional community",
+                                    "community residential facility, 0-16 people"
+                                ]
+                            },
+                            "conditional": {
+                                "type": "array",
+                                "enum": [
+                                    "cluster development",
+                                    "intentional community",
+                                    "community residential facility, 0-16 people"
+                                ]
+                            },
+                            "byVariance": {
+                                "type": "array",
+                                "enum": [
+                                    "cluster development",
+                                    "intentional community",
+                                    "community residential facility, 0-16 people"
+                                ]
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "constraints": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "constraintModules": {
+                        "type": "array",
+                        "enum": [
+                            "height",
+                            "stories",
+                            "setback"
+                        ]   
+                    },
+                    "lot": {
+                        "type": "object",
+                        "properties": {
+                            "optionality": {
+                                "$ref": "#/definitions/optionality"
+                            },
+                            "height": {
+                                "$ref": "#/definitions/height"
+                            },
+                            "stories": {
+                                "$ref": "#/definitions/stories"
+                            },
+                            "setbacks": {
+                                "$ref": "#/definitions/setbacks"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

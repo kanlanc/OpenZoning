@@ -9,9 +9,9 @@
 	//	- chapter 535: Regulations of General Applicability
 	//	- chapter 536: Specific Development Standards
 	//	- chapter 537: Accessory Uses & Structures
-	//  - chapter 546: Residence Districts
-	//  	- article I. - General Provisions
-	//		- article V. - R2B Multiple-family District
+	//  	- chapter 546: Residence Districts
+	//  		- article I. - General Provisions
+	//			- article V. - R2B Multiple-family District
 
 	"allowedUses": {
 		"permitted": ["single-family", "two-family", "three-family"], 

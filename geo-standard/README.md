@@ -1,5 +1,5 @@
 # OZFS Geospatial Standard
-Testing/working files to go in [Minneapolis folder](/source-gis/minneapolis)
+Testing/working files to go in [Minneapolis folder](./source-gis/minneapolis)
 
 ### Rationale for approach
 To 1) best utilize existing GIS files from jurisdictions, 2) reduce the complexity of maintaining geospatial layers, and 3) avoid the need for a "zoning rules engine" or other mechanism/intelligence for specifying order of operations.

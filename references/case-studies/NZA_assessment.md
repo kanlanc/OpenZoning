@@ -1,0 +1,35 @@
+### High-level findings about NZA from Evan's Data & Discussion
+4/25/2023
+- Single row of data for each "district"
+	- Any future data field would need to be added as an additional column, no matter if it only applied to 1% of districts
+	- No ability to have a "sub-field", e.g. separate a max wall height from an overall/roof height
+	- NOTE: Some of this may be solved with database back-end vs. Google Sheet.
+- No ability to order/priortize districts/layers
+	- Potential for mismatch between layers, e.g. `R3` + `BFI2`, former says a 4+ family home is `Allowed`, but FAR & Stories in latter don't actually allow it.
+- Data is replicated across 1-4 family for built form data
+	- E.g. Max Height, max stories, FAR in certain instances are the same across housing typologies 
+	- I.e. because built form data is not regulated according to 1-4-family homes, the data must be duplicated when entered, and there's no true "source"
+- Data is replicated across districts
+  - e.g. for ADUs, hence the need for "superdistricts"
+- "Blanks" for data that isn't applied, as opposed to `NULL` values
+	- `BfC50` (Core 50 Built-form overlay) doesn't have a max height, unlike all other built forms
+	- Parking requirements entered as `0`, but technically should be `NULL`
+	- new NZA interface may facilitates this distinction (between zero, null, blank)
+- How does ADU get applied??? Why isn't it captured?
+	- Does it actually apply to ALL zoning districts? *Most* districts, actually
+	- Supposedly there's a version with ADUs somewhere...
+- Overly-specific fields:
+	- Affordable Housing (AH) is blank for all of Minnesota
+	- Senior Housing is similarly not applicable in Minnesota
+	- `4+-Family Connection to Sewer and/or Water Required`
+	- `4+-Family Connection or Proximity to Public Transit Required`
+- Missing fields/constraints:
+	- Setback (Front/side/rear)
+		- Yard (similar to setback)
+		- NOTE: Some of these are in latest (2.0) version of NZA, though data wasn't captured by Evan's team in that format
+	- LotArea (max)
+	- LotWidth (min)
+		- Evan had specific discussions
+	- FloorPlate (max)
+- No way to capture a "Half" (0.5) story?
+	- It's a roof/attic space within a pitched roof (there are specific angle limitations)

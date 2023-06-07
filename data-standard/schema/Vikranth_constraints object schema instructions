@@ -1,0 +1,55 @@
+*all of the below fits into the "constraints" array (an array of objects) in each district's file   
+note: some of the notes that come along with any property may be confusing. Message me with qeustions and refer to "Minneapolis_superDistrict_0.0.9_07212022.json" file.
+I abstracted the notes from studying the structure of that file.
+    "constraintsModule": 
+        type: array
+        required: yes
+        enum:[(every constraint is a possible value)]
+    "lot":
+        type: object
+        properties:
+            (any constraint module),
+                note: a constraint module can theoretically live within any object within the "lot" object
+            "districtTypeGroups": 
+                type: array of objects
+                object properties:
+                    "districts":
+                        type: array
+                        enum: [any district identified in the 'municipality required info.json' file]
+                        note: the "districtTypeGroups" property can exist within any property (after that property's required sub-properties) EXCEPT in development optionality
+            "developmentOptionality":
+                type: array of objects
+                objects properties:
+                    "developmentType":
+                        enum: [primary/accessory]
+                    "primaryStructures":
+                        type: object
+                        properties:
+                            "bulkOptionality":
+                                type: array of objects
+                                object properties:
+                                    "bulks":
+                                        type: array
+                                        enum: [single-family, two-family, three-family. multi-family]
+                                    (any constraint module)
+                    "accessoryStructures"
+                        type: object
+                        properties:
+                            "ADbulkOptionality":
+                                type: array of objects
+                                object properties:
+                                    "ADbulks":
+                                        type: array
+                                        enum: [ADU, garage]
+                                        properties:
+                            "ADtypeOptionality":
+                                type: array of objects
+                                object properties:
+                                    "ADtype":
+                                        type: array
+                                        enum: [interior, attached, detached, ]
+                                    (any constraint module)
+                                note: the "ADtypeOptionality" property can exist within any property within the "accessoryStructures" property
+                            "bulkOptionality":
+                                *see "bulkOptionality" definition above within the "primaryStructures" property under "DevelopmentOptionality"
+                                note: the "bulkOptionality" property can exist within any property within the "accessoryStructures" property

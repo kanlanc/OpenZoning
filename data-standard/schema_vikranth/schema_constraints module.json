@@ -22,11 +22,11 @@
           "type": "object",
           "properties": {
             "maximum": {
-              "$ref": "#",
+              "$ref": "#/definitions/maximum",
               "$comment": "exclusiveMinimum: 0"
             },
             "minimum": {
-              "$ref": ""
+              "$ref": "#/definitions/minimum"
             }
           }
         },
@@ -34,11 +34,11 @@
           "type": "object",
           "properties": {
             "maximum": {
-              "$ref": "",
+              "$ref": "#/definitions/maximum",
               "$comment": "exclusiveMinimum: 0"
             },
             "minimum": {
-              "$ref": ""
+              "$ref": "#/definitions/minimum"
             }
           }
         }
@@ -59,10 +59,10 @@
       "type": "object",
       "properties": {
         "minimum": {
-          "type": "number"
+          "$ref": "#/definitions/minimum"
         },
         "maximum": {
-          "type": "number"
+          "$ref": "#/definitions/maximum"
         },
         "totalFloorArea": {
           "type": "number"
@@ -86,7 +86,164 @@
           }
         }
       }
+    },
+    "lotArea": {
+      "type": "object",
+      "properties": {
+        "minimum": {
+          "$ref": "#/definitions/minimum"
+        },
+        "maximum": {
+          "$ref": "#/definitions/maximum"
+        }
+      }
+    },
+    "lotWidth": {
+      "type": "object",
+      "properties": {
+        "minimum": {
+          "$ref": "#/definitions/minimum"
+        }
+      }
+    },
+    "footprint": {
+      "type": "object",
+      "properties": {
+        "maximum": {
+          "$ref": "#/definitions/maximum"
+        }
+      }
+    },
+    "stories": {
+      "type": "object",
+      "properties": {
+        "maximum": {
+          "$ref": "#/definitions/maximum"
+        }
+      }
+    },
+    "storyFloors": {
+      "type": "object",
+      "properties": {
+        "storyHeight": {
+          "type": "object",
+          "properties": {
+            "maximum": {
+              "$ref": "#/definitions/maximum"
+            }
+          }
+        },
+        "storyType": {
+          "type": "string"
+        },
+        "storiesContribution": {
+          "type": "number"
+        },
+        "floorAreaContribution": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "type": "number"
+            },
+            "floorElev": {
+              "type": "object",
+              "properties": {
+                "minimum": {
+                  "$ref": "#/definitions/minimum"
+                },
+                "maximum": {
+                  "$ref": "#/definitions/maximum"
+                },
+                "floorPerimeter": {
+                  "type": "object",
+                  "properties": {
+                    "floorArea": {
+                      "type": "number"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "setbacks": {
+      "type": "object",
+      "properties": {
+        "front": {
+          "type": "number"
+        },
+        "rear": {
+          "type": "number"
+        },
+        "sideInterior": {
+          "type": "number"
+        },
+        "sideCorner": {
+          "type": "number"
+        },
+        "fromAnotherStructure": {
+          "type": "object",
+          "properties": {
+            "primaryResidentialStructure": {
+              "type": "number"
+            },
+            "habitableDwelling": {
+              "type": "number"
+            }
+          }
+        }
+      }
+    },
+    "lotCoverage": {
+      "type": "object",
+      "properties": {
+        "maximum": {
+          "$ref": "#/definitions/maximum"
+        }
+      }
+    },
+    "allowedUses": {
+      "type": "object",
+      "properties": {
+        "permitted": {
+          "type": "boolean"
+        },
+        "conditional": {
+          "type": "boolean"
+        },
+        "accessoryStructures": {
+          "type": "object",
+          "properties": {
+            "allowedNumADs": {
+              "type": "boolean"
+            },
+            "allowedTypesADs": {
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    },
+    "district": {
+      "type": "object",
+      "properties": {
+        "identifier": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
     }
   },
-  "properties": {}
+  "properties": {
+    "maximum": {
+      "$ref": "#/definitions/maximum"
+    },
+    "minimum": {
+      "$ref": "#/definitions/minimum"
+    }
+  }
 }

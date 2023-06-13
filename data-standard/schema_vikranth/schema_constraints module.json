@@ -1,0 +1,92 @@
+{
+  "$id": "",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "",
+  "type": "object",
+  "definitions": {
+    "maximum": {
+      "type": "number",
+      "$comment": "exclusiveMinimum: 0"
+    },
+    "minimum": {
+      "type": "number"
+    },
+    "height": {
+      "$comment": "Renamed this to height instead of heightValue",
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "number"
+        },
+        "wall": {
+          "type": "object",
+          "properties": {
+            "maximum": {
+              "$ref": "#",
+              "$comment": "exclusiveMinimum: 0"
+            },
+            "minimum": {
+              "$ref": ""
+            }
+          }
+        },
+        "roof": {
+          "type": "object",
+          "properties": {
+            "maximum": {
+              "$ref": "",
+              "$comment": "exclusiveMinimum: 0"
+            },
+            "minimum": {
+              "$ref": ""
+            }
+          }
+        }
+      }
+    },
+    "FAR": {
+      "type": "object",
+      "properties": {
+        "residential": {
+          "type": "number"
+        },
+        "commercial": {
+          "type": "number"
+        }
+      }
+    },
+    "floorArea": {
+      "type": "object",
+      "properties": {
+        "minimum": {
+          "type": "number"
+        },
+        "maximum": {
+          "type": "number"
+        },
+        "totalFloorArea": {
+          "type": "number"
+        }
+      }
+    },
+    "floorWidth": {
+      "type": "object",
+      "properties": {
+        "minimum": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "type": "number",
+              "$comment": "exclusiveMinimum: 0"
+            },
+            "applicableFloorArea": {
+              "type": "number",
+              "$comment": "exclusiveMinimum: 1, exclusiveMaximum: 1"
+            }
+          }
+        }
+      }
+    }
+  },
+  "properties": {}
+}

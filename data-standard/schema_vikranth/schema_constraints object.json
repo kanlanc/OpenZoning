@@ -1,0 +1,152 @@
+{
+  "$id": "https://github.com/urban-stack/OpenZoning/blob/main/data-standard/definitons.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$comment": "MDS's meta-schema: http://json-schema.org/draft-06/schema#",
+  "title": "Common schema definitions for OZFS",
+  "definitions": {
+    "structureNum": {
+      "$id": "#/definitions/structureNum",
+      "$comment": "can it be anything other than an object? I don't think so. ",
+      "type": "integer",
+      "description": "..."
+    },
+    "structureName": {
+      "$id": "#/definitions/structureNum",
+      "$comment": "can it be anything other than an object? I don't think so. ",
+      "type": "string",
+      "description": "...",
+      "enum": ["primary", "accessory"],
+      "uniqueItems": true
+    },
+    "structureBulkOptions": {
+      "$id": "#/definitions/structureBulkOptions",
+      "$comment": "can it be anything other than an object? I don't think so. ",
+      "type": "object",
+      "description": "...",
+      "properties": {
+        "structureBulkNum": {
+          "$id": "#/definitions/structureBulkOptions/structureBulkNum",
+          "$ref": "#/definitions/structureBulkNum"
+        },
+        "structureBulkName": {
+          "$id": "#/definitions/structureBulkOptions/structureBulkName",
+          "$ref": "#/definitions/structureBulkName"
+        },
+        "basePlanes": {
+          "$id": "#/definitions/structureBulkOptions/basePlanes",
+          "$ref": "#/definitions/basePlanes"
+        },
+        "stories": {
+          "$id": "#/definitions/structureBulkOptions/stories",
+          "$ref": "#/definitions/stories"
+        },
+        "FAR": {
+          "$id": "#/definitions/structureBulkOptions/FAR",
+          "$ref": "#/definitions/FAR"
+        }
+      }
+    },
+    "structures": {
+      "$id": "#/definitions/structures",
+      "$comment": "can it be anything other than an object? I don't think so. ",
+      "type": "object",
+      "description": "...",
+      "properties": {
+        "structureNum": {
+          "$id": "#/definitions/structures/structureNum",
+          "$ref": "#/definitions/structureNum"
+        },
+        "structureName": {
+          "$id": "#/definitions/structures/structureName",
+          "$ref": "#/definitions/structureName"
+        },
+        "structureBulkOptions": {
+          "$id": "#/definitions/structures/structureBulkOptions",
+          "$ref": "#/definitions/structureBulkOptions"
+        }
+      }
+    },
+    "lot": {
+      "$id": "#/definitions/lot",
+      "$comment": "can it be anything other than an object? I don't think so. ",
+      "type": "object",
+      "description": "...",
+      "properties": {
+        "lotCoverage": {
+          "$id": "#/definitions/lot/lotCoverage",
+          "$ref": "#/definitions/lotCoverage"
+        },
+        "structures": {
+          "$id": "#/definitions/lot/structures",
+          "$ref": "#/definitions/structures"
+        }
+      }
+    },
+    "constraints": {
+      "$id": "#/definitions/constraint",
+      "type": "object",
+      "$comment": "can it be anything other than an object? I don't think so. ",
+      "description": "...",
+      "properties": {
+        "lot": {
+          "$id": "#/definitions/constraints/lot",
+          "$ref": "#/definitions/lot"
+        }
+      }
+    },
+    "lotCoverage": {
+      "$id": "...",
+      "$comment": "can it be anything other than an object? I don't think so. ",
+      "type": "object",
+      "description": "...",
+      "properties": {
+        "maximum": {
+          "$id": "...",
+          "type": "number",
+          "format": "decimal"
+        },
+        "minimum": {
+          "$id": "...",
+          "type": "number",
+          "format": "decimal"
+        }
+      }
+    },
+    "developmentOptionality": {
+      "$id": "#/definitions/...",
+      "type": "array",
+      "description": "this module establishes a heirarchy level for development options",
+      "items": {
+        "type": "object",
+        "enum": ["developmentType", "primaryStructures", "accessoryStructures"]
+      },
+      "developmentType": {
+        "$id": "#/definitions/...",
+        "type": "object",
+        "description": "module establishing the type of development that the ensuing nested constraints apply to",
+        "properties": {
+          "primaryAccessory": {
+            "$id": "#/definitions/developmentOptionality/primaryAccessory",
+            "$ref": "#/definitions/devTypeSchema"
+          },
+          "other": {
+            "$id": "#/definitions/developmentOptionality/other",
+            "$ref": "#/definitions/devTypeSchema"
+          }
+        }
+      },
+      "primaryStructures": {
+        "$id": "#/definitions/primaryStructures",
+        "type": "object"
+      },
+      "accessoryStructures": {
+        "$id": "#/definitions/accessoryStructures",
+        "type": "object"
+      },
+      "devTypeSchema": {
+        "$id": "#/definitions/devTypeSchema",
+        "type": "object"
+      }
+    }
+  }
+}

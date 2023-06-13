@@ -1,0 +1,150 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "constraintsModule": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "floor area",
+          "FAR",
+          "floor width",
+          "lot area",
+          "lot width",
+          "footprint",
+          "height",
+          "stories",
+          "story floors",
+          "lot coverage",
+          "allowed uses",
+          "district",
+          "setbacks"
+        ]
+      },
+      "minItems": 1
+    },
+    "lot": {
+      "type": "object",
+      "properties": {
+        "districtTypeGroups": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "districts": {
+                "type": "array",
+                "items": {
+                  "$comment": "Replace with actual district values",
+                  "enum": ["district1", "district2"]
+                }
+              }
+            },
+            "additionalProperties": {
+              "anyOf": [
+                { "$ref": "#/properties/constraintsModule/items" },
+                { "type": "object", "additionalProperties": true }
+              ]
+            }
+          }
+        },
+        "developmentOptionality": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "developmentType": {
+                "enum": ["primary", "accessory"]
+              },
+              "primaryStructures": {
+                "type": "object",
+                "properties": {
+                  "bulkOptionality": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "bulks": {
+                          "type": "array",
+                          "items": {
+                            "enum": [
+                              "single-family",
+                              "two-family",
+                              "three-family",
+                              "multi-family"
+                            ]
+                          }
+                        }
+                      },
+                      "additionalProperties": {
+                        "anyOf": [
+                          { "$ref": "#/properties/constraintsModule/items" },
+                          { "type": "object", "additionalProperties": true }
+                        ]
+                      }
+                    }
+                  }
+                }
+              },
+              "accessoryStructures": {
+                "type": "object",
+                "properties": {
+                  "ADbulkOptionality": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "ADbulks": {
+                          "type": "array",
+                          "items": {
+                            "enum": ["ADU", "garage"]
+                          }
+                        }
+                      },
+                      "additionalProperties": {
+                        "anyOf": [
+                          { "$ref": "#/properties/constraintsModule/items" },
+                          { "type": "object", "additionalProperties": true }
+                        ]
+                      }
+                    }
+                  },
+                  "ADtypeOptionality": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "ADtype": {
+                          "type": "array",
+                          "items": {
+                            "enum": ["interior", "attached", "detached"]
+                          }
+                        }
+                      },
+                      "additionalProperties": {
+                        "anyOf": [
+                          { "$ref": "#/properties/constraintsModule/items" },
+                          { "type": "object", "additionalProperties": true }
+                        ]
+                      }
+                    }
+                  },
+                  "bulkOptionality": {
+                    "$ref": "#/properties/lot/properties/developmentOptionality/items/properties/primaryStructures/properties/bulkOptionality"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "patternProperties": {
+        "^(floorArea|floorWidth|lotArea|lotWidth|footprint|height|stories|setbacks|ADlotLocation)$": {
+          "type": "object",
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "required": ["constraintsModule"]
+}

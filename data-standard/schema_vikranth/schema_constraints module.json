@@ -208,10 +208,16 @@
       "type": "object",
       "properties": {
         "permitted": {
-          "type": "boolean"
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         },
         "conditional": {
-          "type": "boolean"
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         },
         "accessoryStructures": {
           "type": "object",
@@ -223,17 +229,6 @@
               "type": "boolean"
             }
           }
-        }
-      }
-    },
-    "district": {
-      "type": "object",
-      "properties": {
-        "identifier": {
-          "type": "string"
-        },
-        "name": {
-          "type": "string"
         }
       }
     }

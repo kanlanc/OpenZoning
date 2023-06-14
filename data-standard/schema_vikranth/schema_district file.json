@@ -1,1 +1,30 @@
-
+{
+  "$id": "District File Schema",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "district": {
+      "type": "object",
+      "properties": {
+        "identifier": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "required": ["identifier", "name"]
+    },
+    "last_updated": {
+      "type": "string",
+      "pattern": "^[0-9]{8}$"
+    },
+    "author": {
+      "type": "string"
+    },
+    "allowedUses": {
+      "$ref": "schema_constraints module.json#/definitions/allowedUses"
+    }
+  },
+  "required": ["district", "last_updated", "author", "allowedUses"]
+}

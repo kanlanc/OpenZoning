@@ -26,20 +26,20 @@
     "dynamicConstraintProperties": {
       "type": "object",
       "anyOf": [
-        { "$ref": "#/definitions/maximum" },
-        { "$ref": "#/definitions/minimum" },
-        { "$ref": "#/definitions/height" },
-        { "$ref": "#/definitions/FAR" },
-        { "$ref": "#/definitions/floorArea" },
-        { "$ref": "#/definitions/floorWidth" },
-        { "$ref": "#/definitions/lotArea" },
-        { "$ref": "#/definitions/lotWidth" },
-        { "$ref": "#/definitions/footprint" },
-        { "$ref": "#/definitions/stories" },
-        { "$ref": "#/definitions/storyFloors" },
-        { "$ref": "#/definitions/setbacks" },
-        { "$ref": "#/definitions/lotCoverage" },
-        { "$ref": "#/definitions/allowedUses" }
+        { "$ref": "schema_constraints module.json#/definitions/maximum" },
+        { "$ref": "schema_constraints module.json#/definitions/minimum" },
+        { "$ref": "schema_constraints module.json#/definitions/height" },
+        { "$ref": "schema_constraints module.json#/definitions/FAR" },
+        { "$ref": "schema_constraints module.json#/definitions/floorArea" },
+        { "$ref": "schema_constraints module.json#/definitions/floorWidth" },
+        { "$ref": "schema_constraints module.json#/definitions/lotArea" },
+        { "$ref": "schema_constraints module.json#/definitions/lotWidth" },
+        { "$ref": "schema_constraints module.json#/definitions/footprint" },
+        { "$ref": "schema_constraints module.json#/definitions/stories" },
+        { "$ref": "schema_constraints module.json#/definitions/storyFloors" },
+        { "$ref": "schema_constraints module.json#/definitions/setbacks" },
+        { "$ref": "schema_constraints module.json#/definitions/lotCoverage" },
+        { "$ref": "schema_constraints module.json#/definitions/allowedUses" }
       ]
     },
     "lot": {

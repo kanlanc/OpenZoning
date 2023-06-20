@@ -47,7 +47,7 @@ I abstracted the notes from studying the structure of that file.
                                 object properties:
                                     "ADtype":
                                         type: array
-                                        enum: [interior, attached, detached, ]
+                                        enum: [interior, attached, detached ]
                                     (any constraint module)
                                 note: the "ADtypeOptionality" property can exist within any property within the "accessoryStructures" property
                             "bulkOptionality":

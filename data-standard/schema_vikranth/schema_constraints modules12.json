@@ -23,6 +23,25 @@
       },
       "minItems": 1
     },
+    "dynamicConstraintProperties": {
+      "type": "object",
+      "anyOf": [
+        { "$ref": "#/definitions/maximum" },
+        { "$ref": "#/definitions/minimum" },
+        { "$ref": "#/definitions/height" },
+        { "$ref": "#/definitions/FAR" },
+        { "$ref": "#/definitions/floorArea" },
+        { "$ref": "#/definitions/floorWidth" },
+        { "$ref": "#/definitions/lotArea" },
+        { "$ref": "#/definitions/lotWidth" },
+        { "$ref": "#/definitions/footprint" },
+        { "$ref": "#/definitions/stories" },
+        { "$ref": "#/definitions/storyFloors" },
+        { "$ref": "#/definitions/setbacks" },
+        { "$ref": "#/definitions/lotCoverage" },
+        { "$ref": "#/definitions/allowedUses" }
+      ]
+    },
     "lot": {
       "type": "object",
       "properties": {
@@ -41,8 +60,8 @@
             },
             "additionalProperties": {
               "anyOf": [
-                { "$ref": "#/properties/constraintsModule/items" },
-                { "type": "object", "additionalProperties": true }
+                { "$ref": "#/properties/dynamicConstraintProperties" },
+                { "type": "object", "additionalProperties": false }
               ]
             }
           }
@@ -137,12 +156,7 @@
           }
         }
       },
-      "patternProperties": {
-        "^(floorArea|floorWidth|lotArea|lotWidth|footprint|height|stories|setbacks|ADlotLocation)$": {
-          "type": "object",
-          "additionalProperties": true
-        }
-      },
+
       "additionalProperties": false
     }
   },

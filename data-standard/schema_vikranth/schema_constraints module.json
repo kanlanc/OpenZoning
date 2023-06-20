@@ -172,17 +172,87 @@
       "type": "object",
       "properties": {
         "front": {
-          "type": "number"
+          "type": "array",
+          "items": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "array",
+              "items": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          ]
         },
         "rear": {
-          "type": "number"
+          "type": "array",
+          "items": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "array",
+              "items": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          ]
         },
         "sideInterior": {
-          "type": "number"
+          "type": "object",
+          "properties": {
+            "interior": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "array",
+                  "items": [
+                    {
+                      "type": "number"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                }
+              ]
+            },
+            "corner": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "array",
+                  "items": [
+                    {
+                      "type": "number"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
         },
-        "sideCorner": {
-          "type": "number"
-        },
+
         "fromAnotherStructure": {
           "type": "object",
           "properties": {
@@ -210,16 +280,28 @@
         "permitted": {
           "type": "array",
           "items": {
-            "type": "string"
+            "type": "string",
+            "enum": [
+              "single-family",
+              "two-family",
+              "three-family",
+              "multi-family"
+            ]
           }
         },
         "conditional": {
           "type": "array",
           "items": {
-            "type": "string"
+            "type": "string",
+            "enum": [
+              "single-family",
+              "two-family",
+              "three-family",
+              "multi-family"
+            ]
           }
         },
-        "accessoryStructures": {
+        "accessoryStructuresPermissions": {
           "type": "object",
           "properties": {
             "allowedNumADs": {
@@ -233,12 +315,5 @@
       }
     }
   },
-  "properties": {
-    "maximum": {
-      "$ref": "#/definitions/maximum"
-    },
-    "minimum": {
-      "$ref": "#/definitions/minimum"
-    }
-  }
+  "properties": {}
 }

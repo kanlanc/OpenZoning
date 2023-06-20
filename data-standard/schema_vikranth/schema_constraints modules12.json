@@ -96,8 +96,10 @@
                       },
                       "additionalProperties": {
                         "anyOf": [
-                          { "$ref": "#/properties/constraintsModule/items" },
-                          { "type": "object", "additionalProperties": true }
+                          {
+                            "$ref": "#/properties/dynamicConstraintProperties"
+                          },
+                          { "type": "object", "additionalProperties": false }
                         ]
                       }
                     }
@@ -121,8 +123,10 @@
                       },
                       "additionalProperties": {
                         "anyOf": [
-                          { "$ref": "#/properties/constraintsModule/items" },
-                          { "type": "object", "additionalProperties": true }
+                          {
+                            "$ref": "#/properties/dynamicConstraintProperties"
+                          },
+                          { "type": "object", "additionalProperties": false }
                         ]
                       }
                     }
@@ -141,8 +145,10 @@
                       },
                       "additionalProperties": {
                         "anyOf": [
-                          { "$ref": "#/properties/constraintsModule/items" },
-                          { "type": "object", "additionalProperties": true }
+                          {
+                            "$ref": "#/properties/dynamicConstraintProperties"
+                          },
+                          { "type": "object", "additionalProperties": false }
                         ]
                       }
                     }

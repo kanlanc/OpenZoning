@@ -17,7 +17,7 @@ I abstracted the notes from studying the structure of that file.
                         type: array
                         enum: [any district identified in the 'municipality required info.json' file]
                         note: the "districtTypeGroups" property can exist within any property (after that property's required sub-properties) EXCEPT in development optionality
-            "developmentOptionality":
+            "developmentOptionalities":
                 type: array of objects
                 objects properties:
                     "developmentType":

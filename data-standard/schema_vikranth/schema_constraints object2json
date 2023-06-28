@@ -1,0 +1,106 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "definitions": {
+    "dynamicConstraint": {
+      "type": "object",
+      "anyOf": [
+        {
+          "$ref": "schema_constraints module.json#/definitions/maximum"
+        },
+        {
+          "$ref": "schema_constraints module.json#/definitions/minimum"
+        },
+        {
+          "$ref": "schema_constraints module.json#/definitions/height"
+        },
+        {
+          "$ref": "schema_constraints module.json#/definitions/FAR"
+        },
+        {
+          "$ref": "schema_constraints module.json#/definitions/floorArea"
+        },
+        {
+          "$ref": "schema_constraints module.json#/definitions/floorWidth"
+        },
+        {
+          "$ref": "schema_constraints module.json#/definitions/lotArea"
+        },
+        {
+          "$ref": "schema_constraints module.json#/definitions/lotWidth"
+        },
+        {
+          "$ref": "schema_constraints module.json#/definitions/footprint"
+        },
+        {
+          "$ref": "schema_constraints module.json#/definitions/stories"
+        },
+        {
+          "$ref": "schema_constraints module.json#/definitions/storyFloors"
+        },
+        {
+          "$ref": "schema_constraints module.json#/definitions/setbacks"
+        },
+        {
+          "$ref": "schema_constraints module.json#/definitions/lotCoverage"
+        },
+        {
+          "$ref": "schema_constraints module.json#/definitions/allowedUses"
+        }
+      ]
+    }
+  },
+  "properties": {
+    "constraintsModule": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "floor area",
+          "FAR",
+          "floor width",
+          "lot area",
+          "lot width",
+          "footprint",
+          "height",
+          "stories",
+          "story floors",
+          "lot coverage",
+          "allowed uses",
+          "district",
+          "setbacks"
+        ]
+      },
+      "minItems": 1
+    },
+    "lot": {
+      "type": "object",
+      "properties": {
+        "districtTypeGroups": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "districts": {
+                "type": "array",
+                "items": {
+                  "$comment": "Replace with actual district values",
+                  "enum": [
+                    "district1",
+                    "district2"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "constraints": {
+          "$ref": "#/definitions/dynamicConstraints"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "constraintsModule"
+  ]
+}

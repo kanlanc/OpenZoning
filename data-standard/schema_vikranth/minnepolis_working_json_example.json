@@ -1,0 +1,195 @@
+{
+  "district": {
+    "identifier": "MN-HennepinCo-Minneapolis-R2B",
+    "name": "R2B Multiple-Family District"
+  },
+  "last_updated": "20220705",
+  "author": "OZFS Team",
+  "allowedUses": {
+    "permitted": ["single-family", "two-family", "three-family"],
+    "conditional": [],
+    "accessoryStructuresPermissions": {
+      "bulkOptionalities": [
+        {
+          "bulks": ["single-family", "two-family"],
+          "allowedAccessoryStructures": {
+            "num": 1,
+            "types": "ADU, garage"
+          }
+        }
+      ]
+    }
+  },
+  "constraints": [
+    {
+      "constraintsModule": ["floorArea", "floorWidth"],
+      "lot": {
+        "floorArea": {
+          "unit": {
+            "standard": {
+              "minimum": 500
+            },
+            "efficiency": {
+              "minimum": 350
+            }
+          }
+        },
+        "developmentOptionalities": [
+          {
+            "developmentType": "primary/accessory",
+            "primaryStructures": {
+              "bulkOptionalities": [
+                {
+                  "bulks": ["single-family", "two-family", "three-family"],
+                  "floorwidth": {
+                    "minimum": {
+                      "value": 18,
+                      "applicableFloorArea": 0.8
+                    }
+                  }
+                }
+              ]
+            },
+            "accessoryStructures": {
+              "ADbulkOptionality": [
+                {
+                  "ADbulk": "ADU",
+                  "ADtypeOptionality": [
+                    {
+                      "ADtype": "detached",
+                      "floorArea": {
+                        "maximum": [
+                          {
+                            "lesserOf": {
+                              "greaterOf": [
+                                {
+                                  "maximum": 1300
+                                },
+                                {
+                                  "maximum": "16% of gross floor area of principal structure"
+                                }
+                              ]
+                            },
+                            "maximum": 1600
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "ADbulk": "garage",
+                  "ADtypeOptionality": [
+                    {
+                      "ADtype": ["detached", "attached"],
+                      "districtTypeGroups": [
+                        {
+                          "districts": ["Residential", "OR1"],
+                          "bulkOptionality": [
+                            {
+                              "bulks": [
+                                "single-family",
+                                "two-family",
+                                "three-family"
+                              ],
+                              "floorArea": {
+                                "maximum": [
+                                  {
+                                    "greaterOf": [
+                                      {
+                                        "maximum": 676
+                                      },
+                                      {
+                                        "maximum": "lotArea: 10%"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "maximum": 1000
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "bulks": "all others",
+                              "floorArea": {
+                                "maximum": [
+                                  {
+                                    "greaterOf": [
+                                      {
+                                        "maximum": 676
+                                      },
+                                      {
+                                        "maximum": "lotArea: 10%"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "districts": "all others",
+                          "garageOptionality": [
+                            {
+                              "garageType": {
+                                "not": [
+                                  "interior",
+                                  "entirely below grade",
+                                  "2+ stoires"
+                                ]
+                              },
+                              "floorArea": {
+                                "maximum": [
+                                  {
+                                    "greaterOf": [
+                                      {
+                                        "maximum": 676
+                                      },
+                                      {
+                                        "maximum": "lotArea: 10%"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "maximum": 1000
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "garageType": [
+                                "interior",
+                                "entirely below grade",
+                                "2+ stories"
+                              ],
+                              "floorArea": {
+                                "maximum": [
+                                  {
+                                    "greaterOf": [
+                                      {
+                                        "maximum": 676
+                                      },
+                                      {
+                                        "maximum": "lotArea: 10%"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

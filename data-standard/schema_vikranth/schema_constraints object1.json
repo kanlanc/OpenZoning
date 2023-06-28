@@ -1,6 +1,54 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "type": "object",
+  "definitions": {
+    "dynamicConstraints": {
+      "type": "object",
+      "properties": {
+        "maximum": {
+          "$ref": "schema_constraints module.json#/definitions/maximum"
+        },
+        "minimum": {
+          "$ref": "schema_constraints module.json#/definitions/minimum"
+        },
+        "height": {
+          "$ref": "schema_constraints module.json#/definitions/height"
+        },
+        "FAR": { "$ref": "schema_constraints module.json#/definitions/FAR" },
+        "floorArea": {
+          "$ref": "schema_constraints module.json#/definitions/floorArea"
+        },
+        "floorWidth": {
+          "$ref": "schema_constraints module.json#/definitions/floorWidth"
+        },
+        "lotArea": {
+          "$ref": "schema_constraints module.json#/definitions/lotArea"
+        },
+        "lotWidth": {
+          "$ref": "schema_constraints module.json#/definitions/lotWidth"
+        },
+        "footprint": {
+          "$ref": "schema_constraints module.json#/definitions/footprint"
+        },
+        "stories": {
+          "$ref": "schema_constraints module.json#/definitions/stories"
+        },
+        "storyFloors": {
+          "$ref": "schema_constraints module.json#/definitions/storyFloors"
+        },
+        "setbacks": {
+          "$ref": "schema_constraints module.json#/definitions/setbacks"
+        },
+        "lotCoverage": {
+          "$ref": "schema_constraints module.json#/definitions/lotCoverage"
+        },
+        "allowedUses": {
+          "$ref": "schema_constraints module.json#/definitions/allowedUses"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
   "properties": {
     "constraintsModule": {
       "type": "array",
@@ -22,25 +70,6 @@
         ]
       },
       "minItems": 1
-    },
-    "dynamicConstraintProperties": {
-      "type": "object",
-      "anyOf": [
-        { "$ref": "schema_constraints module.json#/definitions/maximum" },
-        { "$ref": "schema_constraints module.json#/definitions/minimum" },
-        { "$ref": "schema_constraints module.json#/definitions/height" },
-        { "$ref": "schema_constraints module.json#/definitions/FAR" },
-        { "$ref": "schema_constraints module.json#/definitions/floorArea" },
-        { "$ref": "schema_constraints module.json#/definitions/floorWidth" },
-        { "$ref": "schema_constraints module.json#/definitions/lotArea" },
-        { "$ref": "schema_constraints module.json#/definitions/lotWidth" },
-        { "$ref": "schema_constraints module.json#/definitions/footprint" },
-        { "$ref": "schema_constraints module.json#/definitions/stories" },
-        { "$ref": "schema_constraints module.json#/definitions/storyFloors" },
-        { "$ref": "schema_constraints module.json#/definitions/setbacks" },
-        { "$ref": "schema_constraints module.json#/definitions/lotCoverage" },
-        { "$ref": "schema_constraints module.json#/definitions/allowedUses" }
-      ]
     },
     "lot": {
       "type": "object",
@@ -66,7 +95,7 @@
             }
           }
         },
-        "developmentOptionality": {
+        "developmentOptionalities": {
           "type": "array",
           "items": {
             "type": "object",
@@ -160,11 +189,21 @@
               }
             }
           }
+        },
+        "constraints": {
+          "$ref": "#/definitions/dynamicConstraints"
         }
       },
 
-      "additionalProperties": false
+      "additionalProperties": true
     }
+  },
+  "additionalProperties": {
+    "$comment": "This seems to only validate one of the additionanl properties, not all of them, but would have to check again. Another recommneded method is to generate the schema dynamically with scripts",
+    "anyOf": [
+      { "$ref": "#/dynamicConstraintProperties" },
+      { "type": "object", "additionalProperties": false }
+    ]
   },
   "required": ["constraintsModule"]
 }

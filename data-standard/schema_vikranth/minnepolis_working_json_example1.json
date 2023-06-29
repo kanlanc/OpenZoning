@@ -24,15 +24,13 @@
     {
       "constraintsModule": ["floorArea", "floorWidth"],
       "lot": {
-        "dynamicConstraints": {
-          "floorArea": {
-            "unit": {
-              "standard": {
-                "minimum": 500
-              },
-              "efficiency": {
-                "minimum": 350
-              }
+        "floorArea": {
+          "unit": {
+            "standard": {
+              "minimum": 500
+            },
+            "efficiency": {
+              "minimum": 350
             }
           }
         },

@@ -33,13 +33,15 @@ I abstracted the notes from studying the structure of that file.
                                         enum: [single-family, two-family, three-family. multi-family]
                                     (any constraint module)
                     "accessoryStructures"
+                    (doesnt seem correct)
                         type: object
                         properties:
+                        
                             "ADbulkOptionality":
                                 type: array of objects
                                 object properties:
                                     "ADbulks":
-                                        type: array
+                                        type: string
                                         enum: [ADU, garage]
                                         properties:
                             "ADtypeOptionality":
@@ -48,7 +50,7 @@ I abstracted the notes from studying the structure of that file.
                                     "ADtype":
                                         type: array
                                         enum: [interior, attached, detached ]
-                                    (any constraint module)
+                                    
                                 note: the "ADtypeOptionality" property can exist within any property within the "accessoryStructures" property
                             "bulkOptionality":
                                 *see "bulkOptionality" definition above within the "primaryStructures" property under "DevelopmentOptionality"

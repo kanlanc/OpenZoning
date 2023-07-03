@@ -42,7 +42,7 @@
               "bulkOptionalities": [
                 {
                   "bulks": ["single-family", "two-family", "three-family"],
-                  "floorwidth": {
+                  "floorWidth": {
                     "minimum": {
                       "value": 18,
                       "applicableFloorArea": 0.8

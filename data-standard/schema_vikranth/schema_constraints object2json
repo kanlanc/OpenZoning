@@ -203,6 +203,22 @@
         "floorArea": {
           "type": "object",
           "properties": {
+            "standard": {
+              "type": "object",
+              "properties": {
+                "minimum": {
+                  "$ref": "#/definitions/minimum"
+                }
+              }
+            },
+            "efficiency": {
+              "type": "object",
+              "properties": {
+                "minimum": {
+                  "$ref": "#/definitions/minimum"
+                }
+              }
+            },
             "minimum": {
               "$ref": "#/definitions/minimum"
             },
@@ -344,7 +360,7 @@
       },
       "minItems": 1
     },
-    "bulkOptionality": {
+    "bulkOptionalities": {
       "type": "array",
       "items": {
         "type": "object",
@@ -416,7 +432,7 @@
             }
           },
           {
-            "$ref": "#/definitions/bulkOptionality"
+            "$ref": "#/definitions/bulkOptionalities"
           }
         ]
       }
@@ -474,21 +490,21 @@
                   "primaryStructures": {
                     "type": "object",
                     "properties": {
-                      "bulkOptionality": {
-                        "$ref": "#/definitions/bulkOptionality"
+                      "bulkOptionalities": {
+                        "$ref": "#/definitions/bulkOptionalities"
                       }
                     }
                   },
                   "accessoryStructures": {
                     "type": "object",
                     "properties": {
-                      "ADbulkOptionality": {
+                      "ADbulkOptionalities": {
                         "$comment": "Recheck this with Luke",
                         "type": "array",
                         "items": {
                           "type": "object",
                           "properties": {
-                            "ADbulks": {
+                            "ADbulk": {
                               "type": "string",
                               "items": {
                                 "enum": [
@@ -503,8 +519,8 @@
                           }
                         }
                       },
-                      "bulkOptionality": {
-                        "$ref": "#/definitions/bulkOptionality"
+                      "bulkOptionalities": {
+                        "$ref": "#/definitions/bulkOptionalities"
                       }
                     }
                   }
